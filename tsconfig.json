@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "strictNullChecks": true /* 不允许把null、undefined赋值给其他类型的变量 */,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    // "declaration": true,//生成 .d.ts 声明文件
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "checkJs": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "strictPropertyInitialization": false,
+    "downlevelIteration": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    "noImplicitAny": true /*不允许隐式any类型*/,
+    "noImplicitThis": true /* 关闭 this 类型注解提示  对隐含“any”类型的“this”表达式引发错误 */,
+    "removeComments": false,
+    "strictFunctionTypes": false,
+    "baseUrl": ".",
+    "types": ["vite/client"] /*"webpack-env",, "jest" */,
+    "typeRoots": ["./node_modules/@types/", "./types"],
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "lib": ["esnext", "dom"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "types/**/*.d.ts",
+    "types/**/*.ts",
+    "vite.config.ts"
+  ],
+  "exclude": ["node_modules", "dist", "**/*.js"]
+}

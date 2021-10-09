@@ -1,0 +1,6 @@
+src/assets
+public
+dist
+*.md
+.vscode
+public
