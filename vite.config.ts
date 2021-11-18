@@ -32,10 +32,10 @@ module.exports = ({ mode }: any) => {
     },
     server: {
       host: '0.0.0.0',
-      port: 3333,
+      port: 3030,
       proxy: {
         '/api/': {
-          target: 'http://192.168.2.121:8099/',
+          target: 'http://192.168.0.58:8001/',
           changeOrigin: true,
           rewrite: path => path.replace(/^\/api\//, '')
         }

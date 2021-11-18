@@ -64,6 +64,12 @@ module.exports = defineConfig({
     'vue/singleline-html-element-content-newline': 'off',
     'vue/attribute-hyphenation': 'off',
     'vue/require-default-prop': 'off',
+    'vue/first-attribute-linebreak': 'off',
+    'vue/multi-word-component-names': 'off',
+    'vue/no-computed-properties-in-data': 'off',
+    'vue/no-deprecated-router-link-tag-prop': 'off',
+    'vue/no-reserved-props': 'off',
+    'vue/comment-directive': 'off',
     'vue/html-self-closing': [
       'error',
       {
