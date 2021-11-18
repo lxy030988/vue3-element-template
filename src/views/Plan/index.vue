@@ -85,7 +85,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .plan {
-  color: var(--color);
+  color: var(--color1);
 }
 .plan2 {
   color: var(--color);

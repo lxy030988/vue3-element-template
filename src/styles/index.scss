@@ -21,7 +21,12 @@ body,
 
 :root {
   --color: rgb(0, 38, 255);
+  // --el-color-primary: green;
 }
+
+// .el-button--primary {
+//   --el-button-background-color: green !important;
+// }
 
 /*flex布局*/
 .jc-flex-warp {

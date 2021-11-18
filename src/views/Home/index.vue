@@ -85,8 +85,12 @@ export default defineComponent({
     }
     function testVuex() {
       console.log('testVuex')
+
+      const docEle = document.documentElement
+      docEle.style.setProperty('--color', 'green')
+
       // commit('user/GET_DATA', false)
-      dispatch('user/GET_DATA', false)
+      // dispatch('user/GET_DATA', false)
       // console.log('vuex state', state.user.loading)
       // setTimeout(() => {
       //   console.log('vuex state', state.user.loading)

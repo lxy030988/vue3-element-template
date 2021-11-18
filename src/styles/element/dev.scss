@@ -1,0 +1,27 @@
+:root {
+  --color1: rgb(6, 218, 233);
+}
+
+$jc-c1: rgb(45, 240, 6);
+$jc-colors: (
+  'white': #ffffff,
+  'black': #000000,
+  'primary': (
+    'base': $jc-c1
+  ),
+  'success': (
+    'base': #67c23a
+  ),
+  'warning': (
+    'base': #e6a23c
+  ),
+  'danger': (
+    'base': #f56c6c
+  ),
+  'error': (
+    'base': #f56c6c
+  ),
+  'info': (
+    'base': #909399
+  )
+);

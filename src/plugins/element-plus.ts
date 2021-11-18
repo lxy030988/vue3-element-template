@@ -1,8 +1,8 @@
 import type { App } from 'vue'
 
-import ElementPlus from 'element-plus'
+import '../styles/element/index.scss'
 
-import 'element-plus/dist/index.css'
+import ElementPlus from 'element-plus'
 
 export function setupElementPlus(app: App<Element>) {
   app.use(ElementPlus)

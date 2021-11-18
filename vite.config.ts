@@ -22,7 +22,7 @@ module.exports = ({ mode }: any) => {
   const env = loadEnv(mode, CWD)
   const viteEnv = wrapperEnv(env)
   console.log('viteEnv=>', viteEnv)
-  const { VITE_DROP_CONSOLE } = viteEnv
+  const { VITE_DROP_CONSOLE, VITE_THEME } = viteEnv
 
   return defineConfig({
     root: path.resolve(__dirname),
@@ -43,8 +43,12 @@ module.exports = ({ mode }: any) => {
     },
     css: {
       preprocessorOptions: {
+        // @use "@/styles/element/index.scss" as *;
         scss: {
-          additionalData: `@import "@/styles/variables.scss";`
+          additionalData: `
+            @use "@/styles/element/${VITE_THEME}.scss" as *;
+            @use "@/styles/variables.scss" as *;
+          `
         }
       }
     },

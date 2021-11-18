@@ -4,6 +4,7 @@ export interface ViteEnv {
   VITE_BASE_URL: string
   VITE_DROP_CONSOLE: boolean
   VITE_BUILD_GZIP: boolean
+  VITE_THEME: string
 }
 
 // Read all environment variable configuration files to process.env
