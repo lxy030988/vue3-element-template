@@ -1,89 +1,36 @@
-$jc-default-dis: 20px; //常用边距
+//颜色
+$jc-color-white: #ffffff !default;
+$jc-color-black: #000000 !default;
+$jc-color-transparent: #ffffff00 !default;
 
+//长度
+$jc-default-dis: 20px; //常用边距
 $jc-default-item-height: 40px; //常用高度
 
 //容器最小宽高
 $jc-min-width: 1000px;
 $jc-min-height: 500px;
 
-//背景颜色
-$jc-bg-color: #f5f5f5 !default;
-
-//全局默认色
-$jc-color-primary: #409eff !default;
-
-//header 背景色
-$jc-header-bgColor: #337df6 !default;
-
-//slider 背景色
-$jc-slider-bgColor: #051530 !default;
-
-//header 和menu 配置
-$jc-header-height: 60px;
-
-@mixin jc-header-style {
-  background-image: linear-gradient(0deg, #16356e 0%, #273688 100%),
-    linear-gradient(#000000, #000000);
-  background-blend-mode: normal, normal;
-  box-shadow: 0px 1px 9px 0px rgba(8, 33, 95, 0.8);
-}
-
-//左侧菜单
-$jc-menu-height: 40px;
-$jc-menu-hide-width: 40px;
-$jc-menu-width: 240px;
-$jc-menu-bg-color: #001529; //菜单背景色
-$jc-menu-control-bg: #102957; //controll 背景色
-$jc-submenu-bg-color: #0d2450; //二级菜单背景色
-$jc-menu-active-bg: $jc-color-primary; //选择背景色
-
-//树结构侧边菜单宽度
-$jc-trees-width: 240px;
-
-// 字体颜色
-$jc-color-white: #ffffff !default;
-$jc-color-black: #000000 !default;
-
-//字体颜色
-$jc-color-success: #67c23a !default;
-$jc-color-warning: #e6a23c !default;
-$jc-color-danger: #f56c6c !default;
-$jc-color-info: #909399 !default;
-
-//字体色值
-$jc-color-text-primary: #303133 !default;
-$jc-color-text-regular: #606266 !default;
-$jc-color-text-secondary: #909399 !default;
-$jc-color-text-placeholder: #c0c4cc !default;
-$jc-color-disabled-base: #bbb !default;
-$jc-color-label: #7b98a5 !default;
-$jc-color-text-mark: #0095ff !default;
-
-//字体大小控制
-$jc-font-size-larger: 22px !default;
+//字体大小
+$jc-font-size-extra-large: 20px !default;
 $jc-font-size-large: 18px !default;
 $jc-font-size-medium: 16px !default;
 $jc-font-size-base: 14px !default;
 $jc-font-size-small: 13px !default;
-$jc-font-size-smaller: 12px !default;
-$jc-font-weight-bold: 900 !default;
+$jc-font-size-extra-small: 12px !default;
+
 $jc-font-weight-primary: 500 !default;
-$jc-font-weight-secondary: 100 !default;
+
 $jc-font-line-height-primary: 24px !default;
-$jc-font-line-height-secondary: 16px !default;
 
-//常用背影样式
-$jc-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
-$jc-box-background: rgba(0, 4, 15, 0.65);
-$jc-command-module-background: rgba(
-  $color: #168fe4,
-  $alpha: 0.1
-);
+//borderRadius
 $jc-border-radius-base: 4px !default;
+$jc-border-radius-small: 2px !default;
+$jc-border-radius-round: 20px !default;
+$jc-border-radius-circle: 100% !default;
 
-//border线
-$jc-color-line-primary: #eeeeee !default;
-$jc-color-line-light-blue: #0060a6 !default;
+//树结构侧边菜单宽度
+$jc-trees-width: 240px;
 
 //超出隐藏设置
 @mixin jc-text-warp($line: 0) {

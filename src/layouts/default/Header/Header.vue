@@ -81,8 +81,8 @@ export default defineComponent({
   position: relative;
   box-sizing: border-box;
   height: $jc-header-height;
-  font-size: $jc-font-size-larger;
-  border-bottom: 1px solid $jc-color-line-primary;
+  font-size: $jc-font-size-extra-large;
+  border-bottom: 1px solid $jc-border-color-base;
 }
 
 .header .logo {

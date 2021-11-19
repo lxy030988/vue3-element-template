@@ -16,17 +16,13 @@ body,
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: $jc-text-color-primary;
 }
 
 :root {
   --color: rgb(0, 38, 255);
   // --el-color-primary: green;
 }
-
-// .el-button--primary {
-//   --el-button-background-color: green !important;
-// }
 
 /*flex布局*/
 .jc-flex-warp {
