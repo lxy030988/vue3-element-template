@@ -13,9 +13,12 @@ import { defineComponent, inject, provide, onMounted, PropType, reactive, Ref, r
 setup(props,ctx) {}
 ```
 
+
+
 ### element-plus
 
 - https://element-plus.gitee.io/zh-CN/
+
 
 
 ### vue3.2
@@ -60,14 +63,42 @@ setup(props,ctx) {}
 
 ### http数据请求
 
-- 例子 src/api/user/index.ts
+- 在 src\api\api.ts 添加请求地址
+- 在 src\api\user\index.ts 添加请求函数
+
+```js
+import http from '@/utils/http'
+import api from '../api'
+import { TParamsLogin, TResUser } from './model'
+
+/**
+ * 用户登录
+ * @param data
+ * @returns
+ */
+export function getUserInfo(data: TParamsLogin) {
+  return http.request<any, TResUser>({
+    url: api.user.login,
+    method: 'POST',
+    data
+  })
+}
+```
 
 
 
 ### mock数据
 
 - 在mock文件夹 添加json文件
-- 例子：src/api/mock/test.ts
+- 在 src/api/mock 文件夹新建ts文件
+
+```js
+import mock from '.'
+
+export function getNanJing() {
+  return mock.get('/mock/320100.json')
+}
+```
 
 
 
@@ -136,100 +167,10 @@ css: {
 
 
 
-### SVG图标使用
-
-```html
-svg文件存放路径为 src/assets/icons
-svg-icon组件 name字段： 文件夹名称+文件名称（没有文件夹则省略）
-
-用例1
-src/assets/icons/test2/dynamic-avatar-2.svg
-<svg-icon name="test2-dynamic-avatar-2"></svg-icon>
-
-用例2
-src/assets/icons/dynamic-avatar-2.svg
-<svg-icon name="dynamic-avatar-2"></svg-icon>
-
-```
-
-
-
-### VueEcharts使用
-
-```vue
-<template>
-    <div class="echarts">
-      <vue-echarts :options="options"></vue-echarts>
-    </div>
-    <div>
-      <el-button type="primary" @click="changeSeriesData">改变echarts数据</el-button>
-    </div>
-  </div>
-</template>
-
-<script lang="ts">
-import { computed, defineComponent, ref } from 'vue'
-
-import VueEcharts, { OptionType } from '@/components/echarts'
-
-export default defineComponent({
-  name: 'useEcharts',
-  components: {
-    VueEcharts
-  },
-  setup() {
-    const seriesData = ref([120, 200, 150, 80, 70, 110, 130])
-    const options = computed((): OptionType => ({
-        // tooltip: {},
-        color: ['red', '#006cff'],
-        // legend: {},
-        title: {
-          text: '柱状图',
-          borderWidth: 1,
-          borderType: 'solid'
-        },
-        xAxis: {
-          type: 'category',
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-        },
-        yAxis: {
-          type: 'value'
-        },
-        series: [
-          {
-            data: seriesData.value,
-            type: 'bar',
-            showBackground: true,
-            backgroundStyle: {
-              color: 'rgba(180, 180, 180, 0.2)'
-            }
-          }
-        ]
-      })
-    )
-
-    function changeSeriesData() {
-      seriesData.value = [80, 70, 110, 130, 120, 200, 150]
-    }
-    
-    return { options, changeSeriesData }
-  }
-})
-</script>
-<style lang="scss" scoped>
-.echarts {
-  width: 300px;
-  height: 200px;
-}
-</style>
-
-```
-
-
-
 ### vue3的vetur
 
-- Volar（vscode插件）
+- volar（vscode插件）
+- volar 和 vetur 只能开启一个
 
 
 
@@ -248,17 +189,11 @@ export default defineComponent({
         "wrap_attributes": "force-expand-multiline" //auto
     }
 }
-
 ```
 
 
 
-
----------------------------------------------------------
-
 ## 提升
-
-
 
 ### 插槽Slot样式传递
 
@@ -473,6 +408,102 @@ module.exports = {
   - `ci` 持续集成
   - `types` 类型定义文件更改
   - `wip` 开发中
+- vscode扩展 - Visual Studio Code Commitizen Support
+
+
+
+## 组件
+
+### SVG图标使用
+
+```html
+svg文件存放路径为 src/assets/icons
+svg-icon组件 name字段： 文件夹名称+文件名称（没有文件夹则省略）
+
+用例1
+src/assets/icons/test2/dynamic-avatar-2.svg
+<svg-icon name="test2-dynamic-avatar-2"></svg-icon>
+
+用例2
+src/assets/icons/dynamic-avatar-2.svg
+<svg-icon name="dynamic-avatar-2"></svg-icon>
+
+```
+
+
+
+### VueEcharts使用
+
+- 基础echarts使用
+
+```vue
+<template>
+    <div class="echarts">
+      <vue-echarts :options="options"></vue-echarts>
+    </div>
+    <div>
+      <el-button type="primary" @click="changeSeriesData">改变echarts数据</el-button>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import { computed, defineComponent, ref } from 'vue'
+
+import VueEcharts, { OptionType } from '@/components/echarts'
+
+export default defineComponent({
+  name: 'useEcharts',
+  components: {
+    VueEcharts
+  },
+  setup() {
+    const seriesData = ref([120, 200, 150, 80, 70, 110, 130])
+    const options = computed((): OptionType => ({
+        // tooltip: {},
+        color: ['red', '#006cff'],
+        // legend: {},
+        title: {
+          text: '柱状图',
+          borderWidth: 1,
+          borderType: 'solid'
+        },
+        xAxis: {
+          type: 'category',
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [
+          {
+            data: seriesData.value,
+            type: 'bar',
+            showBackground: true,
+            backgroundStyle: {
+              color: 'rgba(180, 180, 180, 0.2)'
+            }
+          }
+        ]
+      })
+    )
+
+    function changeSeriesData() {
+      seriesData.value = [80, 70, 110, 130, 120, 200, 150]
+    }
+    
+    return { options, changeSeriesData }
+  }
+})
+</script>
+<style lang="scss" scoped>
+.echarts {
+  width: 300px;
+  height: 200px;
+}
+</style>
+
+```
 
 
 
@@ -515,12 +546,11 @@ export default defineComponent({
 
 
 
-### script setup (eslint支持不友好)
+### script setup
 
 ```js
 import { defineProps, getCurrentInstance, useContext } from 'vue'
 const { expose } = useContext()
-
 
 //ref sugar 语法糖
 ref :num = 100  //==>  const num = ref(100)
