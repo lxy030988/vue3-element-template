@@ -280,12 +280,59 @@ export default defineComponent({
 
 
 
-### 环境变量
+### 环境变量&多环境打包
 
 - 客服端使用
 
 ```js
 import.meta.env.VITE_BASE_URL
+```
+
+- 不同环境的页面和组件都放在 src\env 文件夹下
+- 不同环境引入不同路由页面
+  - 在routes里判断不同的环境变量，引入不同的页面
+
+```js
+import { RouteRecordRaw } from 'vue-router'
+const testRoutes: Array<RouteRecordRaw> = []
+
+if (import.meta.env.VITE_NAME === 'dev') {
+  testRoutes.push({
+    path: 'dev',
+    name: 'dev',
+    component: () => import(/* webpackChunkName: "dev" */ '../env/comp/dev.vue'),
+    meta: {
+      title: 'dev'
+    }
+  })
+} else {
+  testRoutes.push({
+    path: 'setting/upload',
+    name: 'SettingUpload',
+    component: () => import(/* webpackChunkName: "upload" */ '../views/Upload/index.vue'),
+    meta: {
+      title: '文件上传'
+    }
+  })
+}
+
+export default testRoutes
+```
+
+- 同一页面，引入不同环境的组件
+  - 组件是允许操作环境变量的最小级别，不允许直接在页面 直接操作环境变量，来控制元素的显示隐藏 等
+  - 当这个页面不需要这个组件时，可以引入空组件
+
+```js
+const name = import.meta.env.VITE_NAME
+
+JcDev: defineAsyncComponent(() => {
+    if (name === 'dev') {
+        // return import(`../../env/comp/${name}.vue`) //只能写相对路径
+        return import('/comp/dev.vue')
+    }
+    return import('@/components/Empty.vue')
+})
 ```
 
 

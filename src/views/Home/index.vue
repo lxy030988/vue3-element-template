@@ -1,4 +1,5 @@
 <template>
+  <jc-dev />
   <div>
     <div>element 图标</div>
     <el-icon color="#409EFC" class="no-inherit">
@@ -26,8 +27,9 @@
 </template>
 
 <script lang="ts">
+const name = import.meta.env.VITE_NAME
 import Messagea from '@/components/Messagea.vue'
-import { computed, defineComponent, ref } from 'vue'
+import { computed, defineAsyncComponent, defineComponent, ref } from 'vue'
 
 // import { GlobleState } from '@/store'
 // import { useStore } from 'vuex'
@@ -40,10 +42,18 @@ export default defineComponent({
   components: {
     Messagea,
     VueEcharts,
-    RefreshRight
+    RefreshRight,
+
+    //根据不同环境 引入不同组件
+    JcDev: defineAsyncComponent(() => {
+      if (name === 'dev1') {
+        return import(`../../env/comp/${name}.vue`) //只能写相对路径
+      }
+      return import('@/components/Empty.vue')
+    })
   },
   setup() {
-    // console.log(import.meta.env.VITE_BASE_URL)
+    console.log('name', name)
     // const store = useStore<GlobleState>()
     // console.log(store.state.home.name)
     const { state, getters, commit, dispatch } = useMyStore()

@@ -29,18 +29,18 @@
 
 <script lang="ts">
 import { computed, defineComponent, ref } from 'vue'
-import updatePwd from './updatePwd/index.vue'
-import userInfo from './userInfo/index.vue'
+// import updatePwd from './updatePwd/index.vue'
+// import userInfo from './userInfo/index.vue'
 
 import { DropdownEnum } from '../enum'
 import { useRouter } from 'vue-router'
 import { useMyStore } from '@/hooks'
 export default defineComponent({
   name: 'Header',
-  components: {
-    updatePwd,
-    userInfo
-  },
+  // components: {
+  //   updatePwd,
+  //   userInfo
+  // },
   setup() {
     const router = useRouter()
     const { state, commit } = useMyStore()

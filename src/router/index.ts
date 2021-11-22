@@ -4,6 +4,8 @@ import DefaultLayout from '@/layouts/default/index.vue'
 import FullLayout from '@/layouts/full/index.vue'
 // import { getToken } from '@/utils/storage/user'
 
+import testRoutes from './test'
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/:pathMatch(.*)*',
@@ -34,14 +36,15 @@ const routes: Array<RouteRecordRaw> = [
           title: '计划页面'
         }
       },
-      {
-        path: 'setting/upload',
-        name: 'SettingUpload',
-        component: () => import(/* webpackChunkName: "upload" */ '../views/Upload/index.vue'),
-        meta: {
-          title: '文件上传'
-        }
-      }
+      ...testRoutes
+      // {
+      //   path: 'setting/upload',
+      //   name: 'SettingUpload',
+      //   component: () => import(/* webpackChunkName: "upload" */ '../views/Upload/index.vue'),
+      //   meta: {
+      //     title: '文件上传'
+      //   }
+      // }
     ]
   },
   {
