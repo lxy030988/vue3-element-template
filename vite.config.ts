@@ -43,10 +43,9 @@ module.exports = ({ mode }: any) => {
     },
     css: {
       preprocessorOptions: {
-        // @use "@/styles/element/index.scss" as *;
         scss: {
           additionalData: `
-            @use "@/styles/element/${VITE_THEME}.scss" as *;
+            @use "@/styles/theme/${VITE_THEME}.scss" as *;
             @use "@/styles/variables.scss" as *;
           `
         }

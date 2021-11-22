@@ -1,6 +1,6 @@
 import type { App } from 'vue'
 
-import '../styles/element/index.scss'
+import '../styles/theme/index.scss'
 
 import ElementPlus from 'element-plus'
 
