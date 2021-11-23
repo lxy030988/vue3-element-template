@@ -8,12 +8,10 @@
       <div class="right">
         <div class="content-box">
           <router-view v-slot="{ Component }">
-            <transition>
-              <div class="content">
-                <keep-alive>
-                  <component :is="Component" />
-                </keep-alive>
-              </div>
+            <transition name="fade-slide" mode="out-in" appear>
+              <keep-alive>
+                <component :is="Component" />
+              </keep-alive>
             </transition>
           </router-view>
         </div>
@@ -78,5 +76,20 @@ export default defineComponent({
       box-sizing: border-box;
     }
   }
+}
+
+.fade-slide-leave-active,
+.fade-slide-enter-active {
+  transition: all 0.3s;
+}
+
+.fade-slide-enter-from {
+  opacity: 0%;
+  transform: translateX(-30px);
+}
+
+.fade-slide-leave-to {
+  opacity: 0%;
+  transform: translateX(30px);
 }
 </style>

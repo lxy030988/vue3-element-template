@@ -326,8 +326,9 @@ extends: [
 
 
 
-### jest
+### jest(未用)
 
+- package.json
 ```json
 "test:unit":"jest"
 
@@ -341,9 +342,9 @@ extends: [
 "ts-jest":"^26.5.1"
 ```
 
-```js
-jest.config.js
 
+- jest.config.js
+```js
 module.exports = {
   transform: {
     "^.+//.vue$": "vue-jest",
@@ -354,8 +355,7 @@ module.exports = {
     "^@/components(.*)$": "<rootDir>/src/components$1",
   },
   testMatch:["**/tests/unit/**/*.[jt]s?(x)"]
-};
-
+}
 ```
 
 

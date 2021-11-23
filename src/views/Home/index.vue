@@ -1,27 +1,30 @@
 <template>
-  <jc-dev />
-  <div>
-    <div>element 图标</div>
-    <el-icon color="#409EFC" class="no-inherit">
-      <RefreshRight />
-    </el-icon>
-  </div>
-  <img alt="Vue logo" src="@/assets/logo.png" />
-  <img alt="Vue logo" src="../../assets/logo.png" />
-  <img src="@/assets/icons/menu/home.svg" alt="" style="width: 20px" />
-  <div>
-    <el-button type="primary" @click="testVuex"> 测试Vuex </el-button>
-  </div>
-  <Messagea />
-  <div class="jc-svg-icon assd s s s s">
-    <div>图标测试</div>
-    <svg-icon name="home" />
-    <svg-icon name="setting" />
-    <div class="echarts">
-      <vue-echarts :options="options" />
-    </div>
+  <div class="content">
+    <jc-dev />
     <div>
-      <el-button type="primary" @click="test"> 测试 </el-button>
+      <div>element 图标</div>
+      <el-icon color="#409EFC" class="no-inherit">
+        <RefreshRight />
+      </el-icon>
+      <el-input v-model="input" placeholder="Please input" />
+    </div>
+    <img alt="Vue logo" src="@/assets/logo.png" />
+    <img alt="Vue logo" src="../../assets/logo.png" />
+    <img src="@/assets/icons/menu/home.svg" alt="" style="width: 20px" />
+    <div>
+      <el-button type="primary" @click="testVuex"> 测试Vuex </el-button>
+    </div>
+    <Messagea />
+    <div class="jc-svg-icon assd s s s s">
+      <div>图标测试</div>
+      <svg-icon name="home" />
+      <svg-icon name="setting" />
+      <div class="echarts">
+        <vue-echarts :options="options" />
+      </div>
+      <div>
+        <el-button type="primary" @click="test"> 测试 </el-button>
+      </div>
     </div>
   </div>
 </template>
@@ -53,7 +56,7 @@ export default defineComponent({
     })
   },
   setup() {
-    console.log('name', name)
+    console.log('setup name', name)
     // const store = useStore<GlobleState>()
     // console.log(store.state.home.name)
     const { state, getters, commit, dispatch } = useMyStore()
@@ -106,7 +109,7 @@ export default defineComponent({
       //   console.log('vuex state', state.user.loading)
       // }, 3000)
     }
-    return { options, test, testVuex }
+    return { options, test, testVuex, input: ref('') }
   }
 })
 </script>

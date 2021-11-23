@@ -1,15 +1,17 @@
 <template>
-  <div class="plan">plan</div>
-  <div class="plan2">plan</div>
-  <div class="plan3">plan</div>
-  <div>color--{{ color }}</div>
-  <div>size--{{ size }}</div>
-  <el-button type="primary" @click="test">测试</el-button>
-  <!-- <img alt="Vue logo" src="@/assets/logo.png" /> -->
-  <test-setup ref="ref1" msg="xxx" :more="{ name: 'l', age: 11 }" @change="testSetupChange" />
-  <el-button type="primary" @click="testSetupBtn">test-setup-btn</el-button>
+  <div class="content">
+    <div class="plan">plan</div>
+    <div class="plan2">plan</div>
+    <div class="plan3">plan</div>
+    <div>color--{{ color }}</div>
+    <div>size--{{ size }}</div>
+    <el-button type="primary" @click="test">测试</el-button>
+    <!-- <img alt="Vue logo" src="@/assets/logo.png" /> -->
+    <test-setup ref="ref1" msg="xxx" :more="{ name: 'l', age: 11 }" @change="testSetupChange" />
+    <el-button type="primary" @click="testSetupBtn">test-setup-btn</el-button>
 
-  <my-count :init-value="1" />
+    <my-count :init-value="1" />
+  </div>
 </template>
 
 <script lang="ts">
@@ -27,6 +29,7 @@ export default defineComponent({
     TestSetup
   },
   setup() {
+    console.log('setup plan')
     const name = inject('name', 'lxy0')
     const color = ref('red')
     const font = reactive({ size: '30px' })
