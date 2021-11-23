@@ -1,12 +1,5 @@
 <template>
-  <div>script setup</div>
-  <img :src="logo" alt="" />
-
-  <ul>
-    <li v-for="item in list" :key="item.id">
-      {{ item.title }}
-    </li>
-  </ul>
+  <h1>testI18n</h1>
 
   <div>
     <label>{{ t('language') }}</label>
@@ -32,21 +25,13 @@
 </i18n>
 
 <script setup lang="ts">
-import logo from '@/assets/logo.png'
-import { computed, getCurrentInstance, reactive, ref } from 'vue'
-
-type c = {
-  id: number
-  title: string
-}
-
-const list = reactive<c[]>([{ id: 1, title: 'aaa' }])
+import { computed, getCurrentInstance, ref } from 'vue'
 
 const ins = getCurrentInstance()
 function useI18n() {
   const locale = ref('en')
   const i18n = (ins?.type as any).i18n
-  const t = key => {
+  const t = (key: string) => {
     return computed(() => i18n[locale.value][key]).value
   }
   return { locale, t }

@@ -4,7 +4,7 @@ import DefaultLayout from '@/layouts/default/index.vue'
 import FullLayout from '@/layouts/full/index.vue'
 // import { getToken } from '@/utils/storage/user'
 
-import testRoutes from './test'
+import { envDefaultPages, envFullPages } from './envPages'
 import { exampleRoutes } from '@/example'
 
 const routes: Array<RouteRecordRaw> = [
@@ -37,15 +37,7 @@ const routes: Array<RouteRecordRaw> = [
           title: '计划页面'
         }
       },
-      ...testRoutes
-      // {
-      //   path: 'setting/upload',
-      //   name: 'SettingUpload',
-      //   component: () => import(/* webpackChunkName: "upload" */ '../views/Upload/index.vue'),
-      //   meta: {
-      //     title: '文件上传'
-      //   }
-      // }
+      ...envDefaultPages
     ]
   },
   {
@@ -62,6 +54,7 @@ const routes: Array<RouteRecordRaw> = [
           ignore: true
         }
       },
+      ...envFullPages,
       ...exampleRoutes
     ]
   }

@@ -152,6 +152,9 @@ css: {
 <div :class="$style.a">
     <span :class="$style.b">aaaaa</span>
 </div>
+<script lang="ts">
+// import classes from './index.module.scss' //加载模块化scss
+</script>
 <style lang="scss" scoped module>
 //$style.a
 .a {
@@ -546,6 +549,36 @@ export default defineComponent({
 
 
 ### Suspense
+
+- 可以直接在组件内的setup函数上使用async
+
+```vue
+<template>
+  <suspense>
+    <template #default>
+      <upload />
+    </template>
+    <template #fallback>加载中...</template>
+  </suspense>
+</template>
+
+<script setup lang="ts">
+import upload from '@/components/upload/index.vue'
+</script>
+```
+
+```vue
+<!-- upload组件 -->
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  async setup () {
+    return {}
+  }
+})
+</script>
+```
 
 
 

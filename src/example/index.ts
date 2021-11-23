@@ -7,5 +7,13 @@ export const exampleRoutes: Array<RouteRecordRaw> = [
     meta: {
       title: 'ExampleEchartsGlMap'
     }
+  },
+  {
+    path: 'example/upload',
+    name: 'ExampleUpload',
+    component: () => import(/* webpackChunkName: "Upload" */ './Upload.vue'),
+    meta: {
+      title: 'ExampleUpload'
+    }
   }
 ]

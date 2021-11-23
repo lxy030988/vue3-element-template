@@ -14,7 +14,7 @@
     <div>
       <el-button type="primary" @click="testVuex"> 测试Vuex </el-button>
     </div>
-    <Messagea />
+
     <div class="jc-svg-icon assd s s s s">
       <div>图标测试</div>
       <svg-icon name="home" />
@@ -31,7 +31,7 @@
 
 <script lang="ts">
 const name = import.meta.env.VITE_NAME
-import Messagea from '@/components/Messagea.vue'
+
 import { computed, defineAsyncComponent, defineComponent, ref } from 'vue'
 
 // import { GlobleState } from '@/store'
@@ -43,13 +43,12 @@ import { RefreshRight } from '@element-plus/icons'
 export default defineComponent({
   name: 'Home',
   components: {
-    Messagea,
     VueEcharts,
     RefreshRight,
 
     //根据不同环境 引入不同组件
     JcDev: defineAsyncComponent(() => {
-      if (name === 'dev1') {
+      if (name === 'dev12') {
         return import(`../../env/comp/${name}.vue`) //只能写相对路径
       }
       return import('@/components/Empty.vue')
