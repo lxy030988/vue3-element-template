@@ -5,6 +5,7 @@ import FullLayout from '@/layouts/full/index.vue'
 // import { getToken } from '@/utils/storage/user'
 
 import testRoutes from './test'
+import { exampleRoutes } from '@/example'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -60,7 +61,8 @@ const routes: Array<RouteRecordRaw> = [
           title: '登录',
           ignore: true
         }
-      }
+      },
+      ...exampleRoutes
     ]
   }
 ]

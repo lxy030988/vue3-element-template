@@ -505,6 +505,9 @@ export default defineComponent({
 
 ```
 
+- echarts-gl 渲染3d地图 
+  - 例子：src\example\EchartsGlMap.vue
+
 
 
 ## 实验
