@@ -1,13 +1,15 @@
+import path from 'path'
+import { loadEnv, defineConfig } from 'vite'
+
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import viteSvgIcons from 'vite-plugin-svg-icons'
 
-const path = require('path')
-import { loadEnv, defineConfig } from 'vite'
 import { createRollupPlugin } from './build/plugin'
 import { wrapperEnv } from './build/utils'
+
 const CWD: string = process.cwd()
-const pkg = require('./package.json')
-import viteSvgIcons from 'vite-plugin-svg-icons'
+import pkg from './package.json'
 
 // import vm from './plugins/test-vite-plugin'
 // import i18n from './plugins/vite-plugin-i18n'
