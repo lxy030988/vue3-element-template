@@ -23,7 +23,7 @@ const routes: Array<RouteRecordRaw> = [
         path: 'home',
         component: () => import(/* webpackChunkName: "home" */ '@/views/Home/index.vue'),
         meta: {
-          title: '系统首页'
+          title: '工作台'
         }
       },
       {
