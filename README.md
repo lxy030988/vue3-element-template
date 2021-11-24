@@ -198,6 +198,26 @@ css: {
 
 ## 提升
 
+### [Teleport](https://v3.cn.vuejs.org/guide/teleport.html)
+
+- 将组件渲染到指定的DOM元素下
+
+```vue
+<teleport to="body">
+    <div v-if="modalOpen" class="modal">
+        <div>
+            I'm a teleported modal! 
+            (My parent is "body")
+            <button @click="modalOpen = false">
+                Close
+            </button>
+        </div>
+    </div>
+</teleport>
+```
+
+
+
 ### 插槽Slot样式传递
 
 ```scss
@@ -218,7 +238,7 @@ css: {
 
 
 
-### 环境变量&多环境打包
+### 环境变量
 
 - 客服端使用
 
@@ -226,36 +246,33 @@ css: {
 import.meta.env.VITE_BASE_URL
 ```
 
+
+
+### 多环境定制化页面
+
 - 不同环境的页面和组件都放在 src\env 文件夹下
-- 不同环境引入不同路由页面
-  - 在routes里判断不同的环境变量，引入不同的页面
+- 在src\env\index.ts文件里写入 页面配置
 
-```js
-import { RouteRecordRaw } from 'vue-router'
-const testRoutes: Array<RouteRecordRaw> = []
-
-if (import.meta.env.VITE_NAME === 'dev') {
-  testRoutes.push({
-    path: 'dev',
-    name: 'dev',
-    component: () => import(/* webpackChunkName: "dev" */ '../env/comp/dev.vue'),
-    meta: {
-      title: 'dev'
+```tsx
+//dev nj 代表两个不同的环境下的页面
+export const fullPageConfig: Record<string, TPageItem[]> = {
+  dev: [
+    {
+      path: 'dev/1',
+      name: 'dev1',
+      title: '测试1'
+    },
+    {
+      path: 'dev/2',
+      name: 'dev2',
+      title: '测试2'
     }
-  })
-} else {
-  testRoutes.push({
-    path: 'setting/upload',
-    name: 'SettingUpload',
-    component: () => import(/* webpackChunkName: "upload" */ '../views/Upload/index.vue'),
-    meta: {
-      title: '文件上传'
-    }
-  })
+  ],
+  nj: []
 }
-
-export default testRoutes
 ```
+
+
 
 - 同一页面，引入不同环境的组件
   - 组件是允许操作环境变量的最小级别，不允许直接在页面 直接操作环境变量，来控制元素的显示隐藏 等
