@@ -2,7 +2,7 @@
   <el-breadcrumb separator="/">
     <el-breadcrumb-item :to="{ path: '/home' }">工作台</el-breadcrumb-item>
     <el-breadcrumb-item :to="{ path: '/setting/plan' }">promotion management</el-breadcrumb-item>
-    <el-breadcrumb-item :to="{ path: '/setting/plan' }">promotion list</el-breadcrumb-item>
+    <el-breadcrumb-item :to="{ path: '/menu' }">菜单管理</el-breadcrumb-item>
     <el-breadcrumb-item :to="{ path: '/login' }">promotion detail</el-breadcrumb-item>
   </el-breadcrumb>
 </template>

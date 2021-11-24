@@ -1,13 +1,12 @@
 <template>
-  <a-pagination
-    :current="pages.pageNum"
+  <el-pagination
+    @current-change="onChange"
+    @size-change="showSizeChange"
+    :current-page="pages.pageNum"
     :page-size="pages.pageSize"
-    show-quick-jumper
-    show-size-changer
+    layout="total, sizes, prev, pager, next"
+    background
     :total="pages.total"
-    :show-total="total => `共${total}条`"
-    @showSizeChange="showSizeChange"
-    @change="onChange"
   />
 </template>
 <script lang="ts">
@@ -40,8 +39,11 @@ export default defineComponent({
 })
 </script>
 <style scoped lang="scss">
-.ant-pagination {
+.el-pagination {
   text-align: right;
   margin-top: $jc-default-dis;
+  ::v-deep(.el-icon) {
+    color: inherit;
+  }
 }
 </style>

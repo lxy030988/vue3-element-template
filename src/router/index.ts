@@ -37,6 +37,14 @@ const routes: Array<RouteRecordRaw> = [
           title: '计划页面'
         }
       },
+      {
+        name: 'Menu',
+        path: 'menu',
+        component: () => import(/* webpackChunkName: "menu" */ '@/views/Menu/index.vue'),
+        meta: {
+          title: '菜单管理'
+        }
+      },
       ...envDefaultPages
     ]
   },

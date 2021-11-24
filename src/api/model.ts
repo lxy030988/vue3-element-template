@@ -4,3 +4,8 @@ export interface TPageRes<T> {
   list: T[]
   total: number
 }
+
+export interface TResMsg {
+  code: string
+  msg: string
+}
