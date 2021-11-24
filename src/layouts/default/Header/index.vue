@@ -4,6 +4,7 @@
       <!-- <img src="@/assets/images/logo.png" /> -->
       vue3-element-template
     </div>
+    <div class="menu">menu</div>
     <div class="header-right">
       <div class="header-user-con">
         <!-- 用户名下拉菜单 -->
@@ -20,8 +21,6 @@
             </el-dropdown-menu>
           </template>
         </el-dropdown>
-        <!-- <update-pwd v-model:visible="visible" /> -->
-        <!-- <user-info v-model:visible="userVisible" /> -->
       </div>
     </div>
   </div>
@@ -29,18 +28,11 @@
 
 <script lang="ts">
 import { computed, defineComponent, ref } from 'vue'
-// import updatePwd from './updatePwd/index.vue'
-// import userInfo from './userInfo/index.vue'
-
-import { DropdownEnum } from '../enum'
+import { DropdownEnum } from '../model'
 import { useRouter } from 'vue-router'
 import { useMyStore } from '@/hooks'
 export default defineComponent({
   name: 'Header',
-  // components: {
-  //   updatePwd,
-  //   userInfo
-  // },
   setup() {
     const router = useRouter()
     const { state, commit } = useMyStore()
@@ -48,6 +40,7 @@ export default defineComponent({
     let userVisible = ref(false)
     let username = computed(() => state.user.user?.userName || 'admin')
     const handleCommand = (key: string) => {
+      console.log('handleCommand', key)
       if (key === DropdownEnum.LOGOUT) {
         try {
           commit('user/SET_USER', null)
@@ -77,40 +70,50 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .header {
-  background-color: $jc-color-white;
+  display: flex;
+  background-color: $jc-color-primary;
+  color: $jc-color-white;
   position: relative;
   box-sizing: border-box;
   height: $jc-header-height;
-  font-size: $jc-font-size-extra-large;
-  border-bottom: 1px solid $jc-border-color-base;
-}
-
-.header .logo {
-  float: left;
   line-height: $jc-header-height;
-  padding-left: $jc-default-dis;
-}
+  font-size: $jc-font-size-extra-large;
 
-.header-right {
-  float: right;
-  padding-right: $jc-default-dis * 2;
-}
+  .logo {
+    float: left;
+    padding-left: $jc-default-dis;
+  }
 
-.header-user-con {
-  display: flex;
-  height: $jc-header-height;
-  font-size: $jc-font-size-medium;
-  align-items: center;
-}
+  .menu {
+    flex: 1;
+    padding: 0 $jc-default-dis;
+  }
 
-.el-dropdown-link {
-  cursor: pointer;
+  .header-right {
+    float: right;
+    padding-right: $jc-default-dis * 2;
 
-  img {
-    width: 40px;
-    height: 40px;
-    margin-right: $jc-default-dis * 0.4;
-    border-radius: 50%;
+    .header-user-con {
+      display: flex;
+      height: $jc-header-height;
+      font-size: $jc-font-size-medium;
+      align-items: center;
+    }
+
+    .el-dropdown {
+      color: $jc-color-white;
+
+      .el-dropdown-link {
+        cursor: pointer;
+
+        img {
+          width: 40px;
+          height: 40px;
+          margin-right: $jc-default-dis * 0.4;
+          border-radius: 50%;
+        }
+      }
+    }
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="plan">
     <div class="plan">plan</div>
     <div class="plan2">plan</div>
     <div class="plan3">plan</div>

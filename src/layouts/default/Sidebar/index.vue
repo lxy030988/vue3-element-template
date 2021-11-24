@@ -17,7 +17,6 @@ import { defineComponent, reactive, toRefs } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 import SidebarItem from './SidebarItem.vue'
-import { AuthorizationTypes } from '@/views/AuthorizationManagement/CONST'
 
 const menus = [
   {
@@ -48,36 +47,6 @@ const menus = [
       }
     ]
   }
-  // {
-  //   id: 3,
-  //   parentId: 0,
-  //   icon: 'menu-internal-authorization',
-  //   path: 'internalAuthorization',
-  //   name: '内部授权',
-  //   children: [
-  //     {
-  //       id: 31,
-  //       parentId: 3,
-  //       path: AuthorizationTypes.INSIDE,
-  //       name: '授权管理'
-  //     }
-  //   ]
-  // },
-  // {
-  //   id: 4,
-  //   parentId: 0,
-  //   icon: 'menu-outside-authorization',
-  //   path: 'outsideAuthorization',
-  //   name: '外部授权',
-  //   children: [
-  //     {
-  //       id: 41,
-  //       parentId: 4,
-  //       path: AuthorizationTypes.OUTSIDE,
-  //       name: '授权码管理'
-  //     }
-  //   ]
-  // }
 ]
 
 export default defineComponent({

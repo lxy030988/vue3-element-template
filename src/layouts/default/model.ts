@@ -1,8 +1,5 @@
-import { VNodeChild } from 'vue'
-
-export interface MenuInfo {
-  key: string
-  keyPath: string[]
-  item: VNodeChild
-  domEvent: MouseEvent
+export enum DropdownEnum {
+  USER_INFO = '1',
+  UPDATE_PASSWORD = '2',
+  LOGOUT = '3'
 }

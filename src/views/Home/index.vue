@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="home">
     <jc-dev />
     <div>
       <div>element 图标</div>

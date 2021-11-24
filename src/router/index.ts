@@ -65,14 +65,15 @@ const router = createRouter({
   routes
 })
 
-// router.beforeEach((to, from, next) => {
-//   // console.log('beforeEach', to)
+router.beforeEach((to, from, next) => {
+  //   // console.log('beforeEach', to)
+  document.title = to.meta.title as string
 
-//   if (to.meta.ignore || getToken()) {
-//     next()
-//   } else {
-//     next({ path: '/login' })
-//   }
-// })
+  //   if (to.meta.ignore || getToken()) {
+  next()
+  //   } else {
+  //     next({ path: '/login' })
+  //   }
+})
 
 export default router

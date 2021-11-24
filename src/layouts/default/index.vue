@@ -1,20 +1,19 @@
 <template>
   <div class="wrapper">
     <v-head />
-    <div class="wrapper-con">
-      <div class="left">
-        <v-sidebar />
-      </div>
-      <div class="right">
-        <div class="content-box">
-          <router-view v-slot="{ Component }">
-            <transition name="fade-slide" mode="out-in" appear>
-              <keep-alive>
-                <component :is="Component" />
-              </keep-alive>
-            </transition>
-          </router-view>
-        </div>
+    <!-- <div class="wrapper-con">
+
+    </div> -->
+    <div class="content-box">
+      <bread-crumb />
+      <div class="content">
+        <router-view v-slot="{ Component }">
+          <transition name="fade-slide" mode="out-in" appear>
+            <keep-alive>
+              <component :is="Component" />
+            </keep-alive>
+          </transition>
+        </router-view>
       </div>
     </div>
   </div>
@@ -23,14 +22,14 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import VSidebar from './Sidebar/index.vue'
-import VHead from './Header/Header.vue'
+import VHead from './Header/index.vue'
+import BreadCrumb from './BreadCrumb.vue'
 
 export default defineComponent({
   name: 'DefaultLayout',
   components: {
-    VSidebar,
-    VHead
+    VHead,
+    BreadCrumb
   },
   setup() {
     return {}
@@ -44,26 +43,6 @@ export default defineComponent({
   overflow: hidden;
   box-sizing: border-box;
   flex-direction: column;
-  .wrapper-con {
-    flex: 1;
-    display: flex;
-    height: 0;
-  }
-}
-.left {
-  width: $jc-menu-width;
-  background: $jc-slider-bgColor;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.right {
-  width: 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  box-sizing: border-box;
   .content-box {
     flex: 1;
     background: $jc-bg-color;
@@ -71,9 +50,14 @@ export default defineComponent({
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    overflow: auto;
+    height: 0;
     .content {
+      flex: 1;
+      overflow-x: hidden;
+      overflow-y: auto;
       box-sizing: border-box;
+      background: $jc-color-white;
+      padding: $jc-default-dis;
     }
   }
 }

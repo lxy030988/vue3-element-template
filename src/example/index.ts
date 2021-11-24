@@ -5,7 +5,8 @@ export const exampleRoutes: Array<RouteRecordRaw> = [
     name: 'ExampleEchartsGlMap',
     component: () => import(/* webpackChunkName: "EchartsGl" */ './EchartsGlMap.vue'),
     meta: {
-      title: 'ExampleEchartsGlMap'
+      title: 'ExampleEchartsGlMap',
+      ignore: true
     }
   },
   {
@@ -13,7 +14,8 @@ export const exampleRoutes: Array<RouteRecordRaw> = [
     name: 'ExampleUpload',
     component: () => import(/* webpackChunkName: "Upload" */ './Upload.vue'),
     meta: {
-      title: 'ExampleUpload'
+      title: 'ExampleUpload',
+      ignore: true
     }
   }
 ]
