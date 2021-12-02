@@ -31,7 +31,7 @@ const props = defineProps({
   msg: String,
   more: {
     type: Object,
-    default: () => {}
+    default: () => ({})
   }
 })
 

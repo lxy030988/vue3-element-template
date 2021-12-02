@@ -1,4 +1,8 @@
 {
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+
   "editor.suggestSelection": "first",
   "editor.quickSuggestions": {
     "strings": true
@@ -8,16 +12,16 @@
   "editor.formatOnType": true,
   "editor.minimap.enabled": true,
   "editor.formatOnSave": true,
-  "diffEditor.ignoreTrimWhitespace": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "eslint.validate": ["javascript", "vue", "html", "typescript"],
-  "eslint.options": {
-    "overrideConfig": {
-      "plugins": ["vue"]
-    }
-  },
+  "eslint.validate": ["javascript", "vue", "html", "typescript", "javascriptreact", "typescriptreact"],
+  // "eslint.options": {
+  //   "overrideConfig": {
+  //     "plugins": ["vue"]
+  //   }
+  // },
+
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
