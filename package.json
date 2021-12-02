@@ -65,7 +65,7 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "src/**/**.{js,jsx,vue,ts,tsx}": [
+    "src/**/*.{js,jsx,vue,ts,tsx}": [
       "eslint --fix",
       "prettier --write .",
       "git add"
