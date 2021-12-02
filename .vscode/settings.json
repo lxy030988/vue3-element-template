@@ -16,6 +16,7 @@
     "source.fixAll.eslint": true
   },
   "eslint.validate": ["javascript", "vue", "html", "typescript", "javascriptreact", "typescriptreact"],
+  "eslint.options": {},
   // "eslint.options": {
   //   "overrideConfig": {
   //     "plugins": ["vue"]
