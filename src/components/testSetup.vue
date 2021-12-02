@@ -24,6 +24,7 @@ export default defineComponent({
 
 <script lang="ts" setup>
 import logo from '@/assets/logo.png'
+void
 
 import { reactive, ref, defineComponent } from 'vue'
 
