@@ -67,19 +67,17 @@ http.interceptors.response.use(
     if (res.status === 200) {
       if (res.data.code === ResCodeEnum.SUCCESS) {
         return res.data.data
-      } else {
-        if (res.data.code === ResCodeEnum.AUTH_EXPIRE) {
-          ElMessage.error('您未登录或登录已失效')
-          router.push({ path: '/login' })
-        } else {
-          ElMessage.error(res.data.msg)
-          console.error(res.data.msg)
-        }
-        return Promise.reject(res)
       }
-    } else {
+      if (res.data.code === ResCodeEnum.AUTH_EXPIRE) {
+        ElMessage.error('您未登录或登录已失效')
+        router.push({ path: '/login' })
+      } else {
+        ElMessage.error(res.data.msg)
+        console.error(res.data.msg)
+      }
       return Promise.reject(res)
     }
+    return Promise.reject(res)
   },
   (err: AxiosError) => {
     removePendingRequest(err.config)

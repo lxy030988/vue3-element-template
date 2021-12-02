@@ -40,9 +40,8 @@ class JcEnum implements IJcEnum {
           }
         })
         return result.join(',')
-      } else {
-        return this.container.get(keys) || ''
       }
+      return this.container.get(keys) || ''
     }
     const result = []
 

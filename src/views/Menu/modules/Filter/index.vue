@@ -19,7 +19,7 @@ export default defineComponent({
   name: 'MenuFilter',
   emits: ['filter'],
   setup(props, { emit }) {
-    let formState = reactive({
+    const formState = reactive({
       name: ''
     })
     const onSubmit = () => {

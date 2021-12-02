@@ -45,11 +45,11 @@ export default defineComponent({
   },
   emits: ['update:visible'],
   setup(props, { emit }) {
-    let formState = reactive({
+    const formState = reactive({
       name: '',
       enable: false
     })
-    let title = ref('新增')
+    const title = ref('新增')
 
     watch(
       () => props.visible,

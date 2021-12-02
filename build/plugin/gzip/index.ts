@@ -51,12 +51,11 @@ function getOutputFileContent(
       source += `//# source` + `MappingURL=${url}\n`
     }
     return source
-  } else {
-    return typeof outputFile.source === 'string'
-      ? outputFile.source
-      : // just to be sure, as it is typed string | Uint8Array in rollup 2.0.0
-        Buffer.from(outputFile.source)
   }
+  return typeof outputFile.source === 'string'
+    ? outputFile.source
+    : // just to be sure, as it is typed string | Uint8Array in rollup 2.0.0
+      Buffer.from(outputFile.source)
 }
 
 // actual plugin code
@@ -144,7 +143,9 @@ function gzipPlugin(options: GzipPluginOptions = {}): Plugin {
           })
           .concat([
             (() => {
-              if (!options.additionalFiles || !options.additionalFiles.length) return Promise.resolve()
+              if (!options.additionalFiles || !options.additionalFiles.length) {
+                return Promise.resolve()
+              }
 
               const compressAdditionalFiles = () =>
                 Promise.all(
@@ -172,9 +173,8 @@ function gzipPlugin(options: GzipPluginOptions = {}): Plugin {
               if (additionalFilesDelay) {
                 setTimeout(compressAdditionalFiles, additionalFilesDelay)
                 return Promise.resolve()
-              } else {
-                return compressAdditionalFiles()
               }
+              return compressAdditionalFiles()
             })()
           ])
       ) as Promise<any>

@@ -45,7 +45,7 @@ export default defineComponent({
   },
   emits: ['update:fileList'],
   setup(props, { emit }) {
-    let loading = ref(false)
+    const loading = ref(false)
 
     const handleChange = (info: FileInfo) => {
       console.log('handleChange', info.file.status, info)

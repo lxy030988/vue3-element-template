@@ -267,7 +267,9 @@ export async function sendRequest(requests: any[], chunks: any[], limit = 5) {
  * 如果第一次时间小于 100ms 则增大第二个切片大小；反之减小第二个切片大小；以此类推
  */
 export async function TCPSlowStart(file: File, hash: string) {
-  if (!file) return
+  if (!file) {
+    return
+  }
 
   const fileSize = file.size
   let offset = 10 * 1024 * 1024

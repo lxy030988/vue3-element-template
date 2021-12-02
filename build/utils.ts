@@ -50,17 +50,17 @@ export function readAllFile(root: string, reg: RegExp) {
           const t = readAllFile(root + '/' + file, reg)
           resultArr = resultArr.concat(t)
         })
-      } else {
-        if (reg !== undefined) {
-          if (isFunction(reg.test) && reg.test(root)) {
-            resultArr.push(root)
-          }
-        } else {
+      } else if (reg !== undefined) {
+        if (isFunction(reg.test) && reg.test(root)) {
           resultArr.push(root)
         }
+      } else {
+        resultArr.push(root)
       }
     }
-  } catch (error) {}
+  } catch (error) {
+    console.error('readAllFile', error)
+  }
 
   return resultArr
 }
