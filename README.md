@@ -1,9 +1,10 @@
 # vue3-element-template
- vite2 + vue3 + element-plus 后台管理系统模板
+
+vite2 + vue3 + element-plus 后台管理系统模板
 
 ## 基础
 
-### vue3基础
+### vue3 基础
 
 - https://v3.cn.vuejs.org/
 
@@ -13,22 +14,18 @@ import { defineComponent, inject, provide, onMounted, PropType, reactive, Ref, r
 setup(props,ctx) {}
 ```
 
-
-
 ### element-plus
 
 - https://element-plus.gitee.io/zh-CN/
 
-
-
 ### vue3.2
 
-- script setup + TS + Volar 
-- vscode禁用 Vetur，下载Volar
-- define 编译器宏  不需要引入，直接使用 。defineProps  defineEmits  defineExpose
+- script setup + TS + Volar
+- vscode 禁用 Vetur，下载 Volar
+- define 编译器宏 不需要引入，直接使用 。defineProps defineEmits defineExpose
 - 示例 src/components/testSetup.vue
 
-- 需要更新这几个包 
+- 需要更新这几个包
 
 ```json
 "vue": "^3.2.3",
@@ -39,29 +36,25 @@ setup(props,ctx) {}
 "@vue/compiler-sfc": "^3.2.3",
 ```
 
-
-
 ### 文件引入
 
-- @ = src目录
+- @ = src 目录
 
-- 相对路径   ./assets/logo.png
+- 相对路径 ./assets/logo.png
 
-- 绝对路径   @/assets/logo.png
+- 绝对路径 @/assets/logo.png
 
-- 在script中引入静态文件
+- 在 script 中引入静态文件
 
   ```html
   <img :src="logo" alt="" />
-  
+
   <script setup lang="ts">
-  import logo from '@/assets/logo.png'
+    import logo from '@/assets/logo.png'
   </script>
   ```
 
-  
-
-### http数据请求
+### http 数据请求
 
 - 在 src\api\api.ts 添加请求地址
 - 在 src\api\user\index.ts 添加请求函数
@@ -77,20 +70,22 @@ import { TParamsLogin, TResUser } from './model'
  * @returns
  */
 export function getUserInfo(data: TParamsLogin) {
-  return http.request<any, TResUser>({
-    url: api.user.login,
-    method: 'POST',
-    data
-  })
+  return (
+    http.request < any,
+    TResUser >
+      {
+        url: api.user.login,
+        method: 'POST',
+        data
+      }
+  )
 }
 ```
 
+### mock 数据
 
-
-### mock数据
-
-- 在mock文件夹 添加json文件
-- 在 src/api/mock 文件夹新建ts文件
+- 在 mock 文件夹 添加 json 文件
+- 在 src/api/mock 文件夹新建 ts 文件
 
 ```js
 import mock from '.'
@@ -100,9 +95,7 @@ export function getNanJing() {
 }
 ```
 
-
-
-### css深度选择器
+### css 深度选择器
 
 ```scss
 ::v-deep(.deep-test) {
@@ -113,9 +106,7 @@ export function getNanJing() {
 }
 ```
 
-
-
-### css变量
+### css 变量
 
 ```css
 :root {
@@ -127,63 +118,53 @@ export function getNanJing() {
 }
 ```
 
-
-
-### scss变量全局使用
+### scss 变量全局使用
 
 - src/styles/variables.scss 在此文件里定义变量
-- 如果新建文件定义变量  需要在vite.config.ts配置additionalData引入该文件
+- 如果新建文件定义变量 需要在 vite.config.ts 配置 additionalData 引入该文件
 
 ```js
 css: {
-    preprocessorOptions: {
-        scss: {
-            additionalData: `@import "@/styles/variables.scss";@import "@/styles/variables2.scss";`
-        }
+  preprocessorOptions: {
+    scss: {
+      additionalData: `@import "@/styles/variables.scss";@import "@/styles/variables2.scss";`
     }
+  }
 }
 ```
-
-
 
 ### module.css
 
 ```html
 <div :class="$style.a">
-    <span :class="$style.b">aaaaa</span>
+  <span :class="$style.b">aaaaa</span>
 </div>
 <script lang="ts">
-// import classes from './index.module.scss' //加载模块化scss
+  // import classes from './index.module.scss' //加载模块化scss
 </script>
 <style lang="scss" scoped module>
-//$style.a
-.a {
-  display: flex;
-  box-shadow: 0px 0px 3px #121212 inset;
-  background: rebeccapurple;
-  .b {
-    font-size: 28px;
+  //$style.a
+  .a {
+    display: flex;
+    box-shadow: 0px 0px 3px #121212 inset;
+    background: rebeccapurple;
+    .b {
+      font-size: 28px;
+    }
   }
-}
 </style>
 ```
 
+### vue3 的 vetur
 
-
-### vue3的vetur
-
-- volar（vscode插件）
+- volar（vscode 插件）
 - volar 和 vetur 只能开启一个
 
-
-
-### quicktype根据json生成ts interface
+### quicktype 根据 json 生成 ts interface
 
 - https://app.quicktype.io/
 
-
-
-### vscode设置
+### vscode 设置
 
 ```json
 //vscode Vue格式化HTML标签换行问题
@@ -194,13 +175,11 @@ css: {
 }
 ```
 
-
-
 ## 提升
 
 ### [Teleport](https://v3.cn.vuejs.org/guide/teleport.html)
 
-- 将组件渲染到指定的DOM元素下
+- 将组件渲染到指定的 DOM 元素下
 
 ```vue
 <teleport to="body">
@@ -216,27 +195,21 @@ css: {
 </teleport>
 ```
 
-
-
-### 插槽Slot样式传递
+### 插槽 Slot 样式传递
 
 ```scss
 ::v-slotted(.slot-class) {
-    background-color: #000;
+  background-color: #000;
 }
 ```
-
-
 
 ### 组件内注册全局样式
 
 ```scss
 ::v-global(.my-class) {
-    background-color: #000;
+  background-color: #000;
 }
 ```
-
-
 
 ### 环境变量
 
@@ -246,12 +219,10 @@ css: {
 import.meta.env.VITE_BASE_URL
 ```
 
-
-
 ### 多环境定制化页面
 
 - 不同环境的页面和组件都放在 src\env 文件夹下
-- 在src\env\index.ts文件里写入 页面配置
+- 在 src\env\index.ts 文件里写入 页面配置
 
 ```tsx
 //dev nj 代表两个不同的环境下的页面
@@ -272,8 +243,6 @@ export const fullPageConfig: Record<string, TPageItem[]> = {
 }
 ```
 
-
-
 - 同一页面，引入不同环境的组件
   - 组件是允许操作环境变量的最小级别，不允许直接在页面 直接操作环境变量，来控制元素的显示隐藏 等
   - 当这个页面不需要这个组件时，可以引入空组件
@@ -282,23 +251,19 @@ export const fullPageConfig: Record<string, TPageItem[]> = {
 const name = import.meta.env.VITE_NAME
 
 JcDev: defineAsyncComponent(() => {
-    if (name === 'dev') {
-        // return import(`../../env/comp/${name}.vue`) //只能写相对路径
-        return import('/comp/dev.vue')
-    }
-    return import('@/components/Empty.vue')
+  if (name === 'dev') {
+    // return import(`../../env/comp/${name}.vue`) //只能写相对路径
+    return import('/comp/dev.vue')
+  }
+  return import('@/components/Empty.vue')
 })
 ```
 
-
-
-### typescript版本
+### typescript 版本
 
 ```json
 "typescript": "^4.1.5",
 ```
-
-
 
 ### eslint
 
@@ -308,17 +273,13 @@ JcDev: defineAsyncComponent(() => {
 Vue 3 command line Type-Checking tool base on IDE plugin Volar
 ```
 
-
-
 ```json
 "lint": "eslint --fix /"src/**/*([^d]|[^.]d).{ts,vue}/""
 "lint": "eslint --ext .ts,.vue src/** --error-on-unmatched-pattern"   --quiet(不报警告)
 "lint:fix": "eslint --ext .ts,.vue src/** --error-on-unmatched-pattern --fix"
 ```
 
-
-
-*这段配置目前有点问题*
+_这段配置目前有点问题_
 
 Insert `··`eslint[prettier/prettier](https://github.com/prettier/eslint-plugin-prettier#options)
 
@@ -344,11 +305,10 @@ extends: [
 ],
 ```
 
-
-
 ### jest(未用)
 
 - package.json
+
 ```json
 "test:unit":"jest"
 
@@ -362,25 +322,24 @@ extends: [
 "ts-jest":"^26.5.1"
 ```
 
-
 - jest.config.js
+
 ```js
 module.exports = {
   transform: {
-    "^.+//.vue$": "vue-jest",
-    "^.+//js$": "babel-jest",
-    "^.+//ts$": "ts-jest",
+    '^.+//.vue$': 'vue-jest',
+    '^.+//js$': 'babel-jest',
+    '^.+//ts$': 'ts-jest'
   },
   moduleNameMapper: {
-    "^@/components(.*)$": "<rootDir>/src/components$1",
+    '^@/components(.*)$': '<rootDir>/src/components$1'
   },
-  testMatch:["**/tests/unit/**/*.[jt]s?(x)"]
+  testMatch: ['**/tests/unit/**/*.[jt]s?(x)']
 }
 ```
 
-
-
 ### git commit eslint
+
 - eslint lint -- --fix 修正分号
 
 ```json
@@ -397,14 +356,11 @@ module.exports = {
 - 如果提交钩子未生效可以手动运行 node node_modules/yorkie/bin/install.js 来安装。
 - 当然，你也可以运行 node node_modules/yorkie/bin/uninstall.js 来卸载提交钩子。
 
-
-
-### commitizen git提交规范
+### commitizen git 提交规范
 
 - npm install -g commitizen
 - commitizen init cz-conventional-changelog --save-dev --save-exact
 - git commit => git cz
-
 
 ```json
 "config": {
@@ -428,33 +384,24 @@ module.exports = {
   - `ci` 持续集成
   - `types` 类型定义文件更改
   - `wip` 开发中
-- vscode扩展 - Visual Studio Code Commitizen Support
-
-
+- vscode 扩展 - Visual Studio Code Commitizen Support
 
 ## 组件
 
-### SVG图标使用
+### SVG 图标使用
 
 ```html
-svg文件存放路径为 src/assets/icons
-svg-icon组件 name字段： 文件夹名称+文件名称（没有文件夹则省略）
-
-用例1
+svg文件存放路径为 src/assets/icons svg-icon组件 name字段： 文件夹名称+文件名称（没有文件夹则省略） 用例1
 src/assets/icons/test2/dynamic-avatar-2.svg
 <svg-icon name="test2-dynamic-avatar-2"></svg-icon>
 
-用例2
-src/assets/icons/dynamic-avatar-2.svg
+用例2 src/assets/icons/dynamic-avatar-2.svg
 <svg-icon name="dynamic-avatar-2"></svg-icon>
-
 ```
 
+### VueEcharts 使用
 
-
-### VueEcharts使用
-
-- 基础echarts使用
+- 基础 echarts 使用
 
 ```vue
 <template>
@@ -511,7 +458,7 @@ export default defineComponent({
     function changeSeriesData() {
       seriesData.value = [80, 70, 110, 130, 120, 200, 150]
     }
-    
+
     return { options, changeSeriesData }
   }
 })
@@ -525,14 +472,12 @@ export default defineComponent({
 
 ```
 
-- echarts-gl 渲染3d地图 
+- echarts-gl 渲染 3d 地图
   - 例子：src\example\EchartsGlMap.vue
-
-
 
 ## 实验
 
-### css使用js变量
+### css 使用 js 变量
 
 ```vue
 <div class="plan3">plan</div>
@@ -563,11 +508,9 @@ export default defineComponent({
 </style>
 ```
 
-
-
 ### Suspense
 
-- 可以直接在组件内的setup函数上使用async
+- 可以直接在组件内的 setup 函数上使用 async
 
 ```vue
 <template>
@@ -590,14 +533,12 @@ import upload from '@/components/upload/index.vue'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  async setup () {
+  async setup() {
     return {}
   }
 })
 </script>
 ```
-
-
 
 ### script setup
 
@@ -606,9 +547,8 @@ import { defineProps, getCurrentInstance, useContext } from 'vue'
 const { expose } = useContext()
 
 //ref sugar 语法糖
-ref :num = 100  //==>  const num = ref(100)
-onMounted:{
-  console.log('onMounted',num) 
+ref: num = 100 //==>  const num = ref(100)
+onMounted: {
+  console.log('onMounted', num)
 }
 ```
-

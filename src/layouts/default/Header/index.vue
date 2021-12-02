@@ -36,9 +36,9 @@ export default defineComponent({
   setup() {
     const router = useRouter()
     const { state, commit } = useMyStore()
-    let visible = ref(false)
-    let userVisible = ref(false)
-    let username = computed(() => state.user.user?.userName || 'admin')
+    const visible = ref(false)
+    const userVisible = ref(false)
+    const username = computed(() => state.user.user?.userName || 'admin')
     const handleCommand = (key: string) => {
       console.log('handleCommand', key)
       if (key === DropdownEnum.LOGOUT) {

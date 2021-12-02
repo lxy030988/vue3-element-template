@@ -23,17 +23,17 @@ $jc-text-color: (
   'primary': $jc-text-color-primary,
   'regular': $jc-text-color-regular,
   'secondary': $jc-text-color-secondary,
-  'placeholder': $jc-text-color-placeholder,
+  'placeholder': $jc-text-color-placeholder
 );
 
 $jc-border-color: (
   'base': $jc-border-color-base,
   'light': $jc-border-color-light,
   'lighter': $jc-border-color-lighter,
-  'extra-light': $jc-border-color-extra-light,
+  'extra-light': $jc-border-color-extra-light
 );
 
-@forward "element-plus/theme-chalk/src/common/var.scss" with (
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
   $colors: $jc-colors,
   $text-color: $jc-text-color,
   $border-color: $jc-border-color

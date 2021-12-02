@@ -1,14 +1,14 @@
 import { defineComponent } from 'vue'
 export default defineComponent({
-  name: "RItem",
+  name: 'RItem',
   props: {
     icon: {
       type: String,
-      default: ""
+      default: ''
     },
     title: {
       type: String,
-      default: ""
+      default: ''
     }
   },
   setup(prop) {

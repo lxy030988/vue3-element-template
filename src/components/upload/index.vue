@@ -60,16 +60,17 @@ import {
 export default defineComponent({
   async setup() {
     // let progressPercent = ref(0)
-    let hashProgress = ref(0)
-    let file: Ref<Nullable<File>> = ref(null)
-    let hash = ref('')
-    let state = reactive<any>({ uploadedChunks: [] })
+    const hashProgress = ref(0)
+    // eslint-disable-next-line no-undef
+    const file: Ref<Nullable<File>> = ref(null)
+    const hash = ref('')
+    const state = reactive<any>({ uploadedChunks: [] })
 
-    let cubeWidth = computed(() => {
+    const cubeWidth = computed(() => {
       return Math.ceil(Math.sqrt(state.uploadedChunks.length)) * 30 + 'px'
     })
 
-    let progressPercent = computed(() => {
+    const progressPercent = computed(() => {
       if (!file.value || !state.uploadedChunks.length) {
         return 0
       }

@@ -1,6 +1,2 @@
-src/assets
-public
+node_modules
 dist
-*.md
-.vscode
-public
