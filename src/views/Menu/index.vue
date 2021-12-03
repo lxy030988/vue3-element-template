@@ -43,7 +43,7 @@ export default defineComponent({
   name: 'MenuIndex',
   components: {
     MyFilter: defineAsyncComponent(() => import('./modules/Filter/index.vue')),
-    Pagination: defineAsyncComponent(() => import('@/components/pagination/index.vue')),
+
     Manage: defineAsyncComponent(() => import('./modules/Manage/index.vue'))
   },
   setup() {

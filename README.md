@@ -2,6 +2,136 @@
 
 vite2 + vue3 + element-plus 后台管理系统模板
 
+```js
+vue3-element-template
+├─ build //打包插件
+├─ mock //假数据
+├─ plugins //vite插件
+├─ public //静态资源
+├─ src
+│ ├─ api //接口
+│ │ ├─ user //用户
+│ │ │ ├─ index.ts //接口方法
+│ │ │ └─ model.ts //接口类型
+│ │ ├─ api.ts //接口地址
+│ │ └─ model.ts //同用类型
+│ ├─ assets //图片
+│ │ ├─ icons //svg图标
+│ │ │ ├─ login //登录模块相关的图标
+│ │ │ │ ├─ password.svg
+│ │ │ │ └─ user.svg
+│ │ ├─ images //图片
+│ │ │ └─ logo.png
+│ ├─ components //通用组件
+│ │ ├─ echarts
+│ │ │ └─ index.ts
+│ │ ├─ Icon
+│ │ │ └─ index.vue
+│ │ ├─ pagination
+│ │ │ └─ index.vue
+│ ├─ enums //枚举
+│ │ ├─ httpEnum.ts
+│ │ └─ storageEnum.ts
+│ ├─ env //各个环境 定制化页面
+│ │ ├─ dev // dev环境
+│ │ │ ├─ dev1 //dev环境 - dev1页面
+│ │ │ │ └─ index.vue
+│ │ │ └─ dev2 //dev环境 - dev2页面
+│ │ │ └─ index.vue
+│ │ └─ index.ts //定制化页面配置
+│ ├─ example //测试页面
+│ │ ├─ EchartsGlMap.vue
+│ │ ├─ index.ts
+│ │ └─ Upload.vue
+│ ├─ hooks //通用hooks
+│ │ ├─ index.ts
+│ │ ├─ usePage.ts
+│ │ └─ useStore.ts
+│ ├─ layouts //布局
+│ │ ├─ default //默认布局
+│ │ │ ├─ Header
+│ │ │ │ └─ index.vue
+│ │ │ ├─ Sidebar
+│ │ │ │ ├─ index.vue
+│ │ │ │ ├─ Item.tsx
+│ │ │ │ └─ SidebarItem.vue
+│ │ │ ├─ BreadCrumb.vue
+│ │ │ ├─ index.vue
+│ │ │ └─ model.ts
+│ │ └─ full //全部显示
+│ │ └─ index.vue
+│ ├─ plugins //vue插件 注册组件
+│ │ ├─ echarts.ts
+│ │ ├─ element-plus.ts
+│ │ ├─ index.ts
+│ │ └─ svgIcon.ts
+│ ├─ router //路由
+│ │ ├─ envPages.ts
+│ │ └─ index.ts
+│ ├─ store
+│ │ ├─ modules
+│ │ │ ├─ user
+│ │ │ │ ├─ actions.ts
+│ │ │ │ ├─ constant.ts
+│ │ │ │ ├─ getters.ts
+│ │ │ │ ├─ index.ts
+│ │ │ │ ├─ mutations.ts
+│ │ │ │ └─ store.ts
+│ │ ├─ index.ts
+│ │ ├─ modules.ts
+│ │ └─ utils.ts
+│ ├─ styles
+│ │ ├─ theme //主题
+│ │ │ ├─ default.scss //默认主题 变量
+│ │ │ └─ index.scss
+│ │ ├─ index.scss // 通用样式
+│ │ └─ variables.scss //通用变量
+│ ├─ utils //工具累
+│ │ ├─ download
+│ │ │ ├─ index.ts
+│ │ │ └─ model.ts
+│ │ ├─ enum
+│ │ │ └─ index.ts
+│ │ ├─ http
+│ │ │ ├─ index.ts
+│ │ │ └─ model.ts
+│ │ ├─ message
+│ │ │ └─ index.ts
+│ │ ├─ rule
+│ │ │ └─ index.ts
+│ │ ├─ storage
+│ │ │ ├─ user
+│ │ │ │ ├─ index.ts
+│ │ │ │ └─ model.ts
+│ │ │ └─ index.ts
+│ │ └─ util
+│ │ └─ index.ts
+│ ├─ views
+│ │ ├─ Menu
+│ │ │ ├─ hooks
+│ │ │ │ ├─ index.ts
+│ │ │ │ ├─ useTableData.ts
+│ │ │ │ └─ useTableOperate.ts
+│ │ │ ├─ modules
+│ │ │ │ ├─ Filter
+│ │ │ │ │ └─ index.vue
+│ │ │ │ └─ Manage
+│ │ │ │ └─ index.vue
+│ │ │ ├─ CONST.ts
+│ │ │ └─ index.vue
+│ ├─ App.vue
+│ ├─ main.ts
+│ └─ shims-vue.d.ts
+├─ babel.config.js
+├─ index.html
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.js
+├─ README.md
+├─ tsconfig.json
+└─ vite.config.ts
+```
+
 ## 基础
 
 ### vue3 基础
