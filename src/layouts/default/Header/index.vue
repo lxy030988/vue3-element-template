@@ -4,7 +4,7 @@
       <!-- <img src="@/assets/images/logo.png" /> -->
       vue3-element-template
     </div>
-    <div class="menu">menu</div>
+    <jc-menu />
     <div class="header-right">
       <div class="header-user-con">
         <!-- 用户名下拉菜单 -->
@@ -31,8 +31,11 @@ import { computed, defineComponent, ref } from 'vue'
 import { DropdownEnum } from '../model'
 import { useRouter } from 'vue-router'
 import { useMyStore } from '@/hooks'
+
+import JcMenu from './Menu.vue'
 export default defineComponent({
   name: 'Header',
+  components: { JcMenu },
   setup() {
     const router = useRouter()
     const { state, commit } = useMyStore()
@@ -84,7 +87,7 @@ export default defineComponent({
     padding-left: $jc-default-dis;
   }
 
-  .menu {
+  .el-menu {
     flex: 1;
     padding: 0 $jc-default-dis;
   }
