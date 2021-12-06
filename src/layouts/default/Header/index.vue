@@ -84,7 +84,17 @@ export default defineComponent({
 
   .logo {
     float: left;
-    padding-left: $jc-default-dis;
+    padding: 0 $jc-default-dis;
+    position: relative;
+    &::after {
+      content: '';
+      width: 1px;
+      height: 24px;
+      background-color: rgba($color: #fff, $alpha: 0.2);
+      position: absolute;
+      top: 28px;
+      right: 0;
+    }
   }
 
   .el-menu {

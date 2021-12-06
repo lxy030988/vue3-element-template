@@ -235,6 +235,11 @@ body,
       }
     }
   }
+
+  .el-table th.el-table__cell {
+    background-color: #f9f9f9;
+    padding: 16px 0;
+  }
 }
 
 //详情样式

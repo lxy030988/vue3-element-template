@@ -66,7 +66,7 @@ export default defineComponent({
     height: 4px;
     background-color: white;
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     left: 25%;
   }
 }
