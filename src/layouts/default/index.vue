@@ -56,8 +56,8 @@ export default defineComponent({
       overflow-x: hidden;
       overflow-y: auto;
       box-sizing: border-box;
-      background: $jc-color-white;
-      padding: $jc-default-dis;
+      // background: $jc-color-white;
+      // padding: $jc-default-dis;
     }
   }
 }

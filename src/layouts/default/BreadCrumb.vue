@@ -1,9 +1,17 @@
 <template>
   <el-breadcrumb separator="/">
-    <el-breadcrumb-item :to="{ path: '/home' }">工作台</el-breadcrumb-item>
-    <el-breadcrumb-item :to="{ path: '/setting/plan' }">promotion management</el-breadcrumb-item>
-    <el-breadcrumb-item :to="{ path: '/menu' }">菜单管理</el-breadcrumb-item>
-    <el-breadcrumb-item :to="{ path: '/login' }">promotion detail</el-breadcrumb-item>
+    <el-breadcrumb-item :to="{ path: '/home' }">
+      <svg-icon name="menu-home" />
+      <span>工作台</span>
+    </el-breadcrumb-item>
+    <el-breadcrumb-item :to="{ path: '/setting/plan' }">
+      <svg-icon name="menu-setting" />
+      <span>系统设置</span>
+    </el-breadcrumb-item>
+    <el-breadcrumb-item :to="{ path: '/menu' }">
+      <svg-icon name="menu-setting" />
+      <span>菜单管理</span>
+    </el-breadcrumb-item>
   </el-breadcrumb>
 </template>
 
@@ -21,9 +29,28 @@ export default defineComponent({
 <style scoped lang="scss">
 .el-breadcrumb {
   background: $jc-color-white;
-  height: 40px;
-  line-height: 40px;
+  height: 48px;
+  line-height: 48px;
   margin-bottom: $jc-default-dis;
   padding: 0 $jc-default-dis;
+  font-size: $jc-font-size-medium;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+  border-radius: $jc-border-radius-base;
+  ::v-deep(.el-breadcrumb__item) {
+    .el-breadcrumb__inner {
+      color: $jc-text-color-secondary;
+      font-weight: normal;
+    }
+    &:last-child .el-breadcrumb__inner {
+      color: $jc-text-color-primary;
+    }
+  }
+
+  .svg-icon {
+    margin-right: $jc-default-dis * 0.5;
+    font-size: $jc-font-size-large;
+    position: relative;
+    top: -2px;
+  }
 }
 </style>

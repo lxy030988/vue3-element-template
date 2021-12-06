@@ -1,14 +1,14 @@
 <template>
   <div class="menu">
-    <el-card>
+    <my-filter @filter="goFilter" />
+
+    <el-card class="jc-table-card">
       <template #header>
-        <div class="card-header">菜单列表</div>
+        <div class="jc-card-title jc-fl">菜单列表</div>
+        <div class="jc-fr">
+          <el-button type="primary" @click="manage">新增</el-button>
+        </div>
       </template>
-      <my-filter @filter="goFilter">
-        <template #right>
-          <el-button class="add-button" type="primary" @click="manage">新增</el-button>
-        </template>
-      </my-filter>
       <el-table class="mt" :data="list">
         <el-table-column type="index" :index="tableIndex" label="序号" />
         <el-table-column prop="menuType" label="菜单类型" />
@@ -25,8 +25,8 @@
         </el-table-column>
         <el-table-column label="操作" width="160">
           <template #default="scope">
-            <el-button type="primary" size="mini" @click="editRow(scope.row)">编辑</el-button>
-            <el-button type="primary" plain size="mini" @click="deleteRow(scope.row)">删除</el-button>
+            <el-button type="text" size="mini" @click="editRow(scope.row)">编辑</el-button>
+            <el-button type="text" size="mini" @click="deleteRow(scope.row)">删除</el-button>
           </template>
         </el-table-column>
       </el-table>

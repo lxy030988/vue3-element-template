@@ -7,15 +7,27 @@
     text-color="rgba(255,255,255,0.7)"
     active-text-color="#fff"
   >
-    <el-menu-item index="1">Processing Center</el-menu-item>
+    <el-menu-item index="1">
+      <svg-icon name="menu-home" />
+      <span>系统首页</span>
+    </el-menu-item>
     <el-sub-menu index="2">
-      <template #title>Workspace</template>
-      <el-menu-item index="2-1">item one</el-menu-item>
-      <el-menu-item index="2-2">item two</el-menu-item>
-      <el-menu-item index="2-3">item three</el-menu-item>
+      <template #title>
+        <svg-icon name="menu-setting" />
+        <span>系统设置</span>
+      </template>
+      <el-menu-item index="2-2">菜单管理</el-menu-item>
+      <el-menu-item index="2-1">组织管理</el-menu-item>
+      <el-menu-item index="2-3">角色管理</el-menu-item>
     </el-sub-menu>
-    <el-menu-item index="3">Info</el-menu-item>
-    <el-menu-item index="4">Orders</el-menu-item>
+    <el-menu-item index="3">
+      <svg-icon name="menu-internal-authorization" />
+      <span>项目管理</span>
+    </el-menu-item>
+    <el-menu-item index="4">
+      <svg-icon name="menu-outside-authorization" />
+      <span>数据采集</span>
+    </el-menu-item>
   </el-menu>
 </template>
 
@@ -50,7 +62,7 @@ export default defineComponent({
   &::after {
     content: '';
     width: 50%;
-    border-radius: 4px;
+    border-radius: $jc-border-radius-base;
     height: 4px;
     background-color: white;
     position: absolute;
@@ -65,6 +77,9 @@ export default defineComponent({
     border: none;
     &.is-active {
       @include active-after;
+    }
+    &:focus {
+      background-color: $jc-color-primary;
     }
 
     //     &:hover,
@@ -81,6 +96,10 @@ export default defineComponent({
     &.is-active ::v-deep(.el-sub-menu__title) {
       @include active-after;
     }
+  }
+
+  .svg-icon {
+    margin-right: $jc-default-dis * 0.5;
   }
 }
 ::v-global(.el-menu--popup .el-menu-item.is-active::after) {

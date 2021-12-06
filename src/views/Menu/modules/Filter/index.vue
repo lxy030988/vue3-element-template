@@ -1,15 +1,16 @@
 <template>
-  <el-form :inline="true" :model="formState" class="demo-form-inline">
-    <el-form-item label="菜单名称">
-      <el-input v-model="formState.name" placeholder="请输入" />
-    </el-form-item>
-    <el-form-item>
-      <el-button type="primary" @click="onSubmit">查询</el-button>
-    </el-form-item>
-    <el-form-item>
-      <slot name="right"></slot>
-    </el-form-item>
-  </el-form>
+  <el-card class="jc-tabfilter">
+    <el-form :inline="true" :model="formState" class="demo-form-inline">
+      <el-form-item label="菜单名称">
+        <el-input v-model="formState.name" placeholder="请输入" />
+      </el-form-item>
+
+      <el-form-item class="jc-fr">
+        <el-button type="primary" @click="onSubmit">查询</el-button>
+        <el-button>重置</el-button>
+      </el-form-item>
+    </el-form>
+  </el-card>
 </template>
 
 <script lang="ts">

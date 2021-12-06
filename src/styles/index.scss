@@ -139,32 +139,35 @@ body,
   text-align: right !important;
 }
 
+//浮动
+.jc-fl {
+  float: left;
+}
+.jc-fr {
+  float: right;
+}
+
 /*清除浮动*/
 .jc-clearfix:after {
-  content: '\20';
-  display: block;
+  content: '';
+  display: table;
   height: 0;
   clear: both;
 }
 
-.jc-clearfix {
-  *zoom: 1;
-}
-
-/*重写滚动条样式 for webkit浏览器*/
-/*滚动条整体部分，可以设置宽度啥的*/
+// 滚动条整体部分
 ::-webkit-scrollbar {
   width: 4px;
   height: 6px;
 }
 
-/*滚动条两端的按钮*/
+// 滚动条两端的按钮
 ::-webkit-scrollbar-button {
   width: 0px;
   height: 0px;
 }
 
-/*外层轨道*/
+// 外层轨道
 ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.5);
   border: solid 1px #121212;
@@ -172,38 +175,65 @@ body,
   border-radius: 8px;
 }
 
-/*内层滚动槽*/
+// 内层滚动槽
 ::-webkit-scrollbar-track-piece {
   background-color: #fff;
 }
 
-/*滚动的滑块*/
+// 滚动的滑块
 ::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 8px;
 }
 
-/*滚动的滑块,鼠标放上时*/
+// 滚动的滑块,鼠标放上时
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.5);
 }
 
-// 表格页面 头部赛选 样式
+// 表格页面
 .jc-tabfilter {
-  .ant-form-item {
-    margin-bottom: $jc-default-dis;
-  }
-  .ant-select {
-    width: 194px;
-  }
-  .jc-tabfilter-btns {
-    float: right;
+  margin-bottom: $jc-default-dis;
+
+  .el-card__body {
+    padding-bottom: 0;
   }
 }
 
 .jc-manage-form {
   .ant-calendar-picker {
     width: 100% !important;
+  }
+}
+
+.jc-table-card {
+  .el-card__header {
+    @extend .jc-clearfix;
+    padding-bottom: 0;
+    border: none;
+
+    .jc-card-title {
+      height: 22px;
+      line-height: 22px;
+      font-weight: $jc-font-weight-primary;
+      color: $jc-color-primary;
+      padding-left: $jc-default-dis;
+      position: relative;
+      top: 5px;
+      &:before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto 0;
+        content: '';
+        display: block;
+        width: 6px;
+        height: 18px;
+        border-radius: 3px;
+        background-color: $jc-color-primary;
+      }
+    }
   }
 }
 

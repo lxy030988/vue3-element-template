@@ -1,6 +1,6 @@
 <template>
   <el-dialog :model-value="visible" :title="title" width="600px" @close="resetForm">
-    <el-form :model="formState" size="small">
+    <el-form :model="formState">
       <el-form-item label="菜单名称">
         <el-input v-model="formState.name" placeholder="请输入" />
       </el-form-item>
