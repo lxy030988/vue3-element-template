@@ -3,8 +3,8 @@
     :default-active="activeIndex"
     mode="horizontal"
     @select="handleSelect"
-    background-color="#409eff"
-    text-color="#fff"
+    :background-color="bgColor"
+    text-color="rgba(255,255,255,0.7)"
     active-text-color="#fff"
   >
     <el-menu-item index="1">Processing Center</el-menu-item>
@@ -21,7 +21,13 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-// import variables from '@/styles/index.scss'
+
+const themeName = import.meta.env.VITE_THEME as string
+
+const themes = {
+  default: '#1D69E6'
+}
+
 export default defineComponent({
   name: 'Menu',
   setup() {
@@ -33,19 +39,54 @@ export default defineComponent({
     }
     return {
       activeIndex,
-      handleSelect
+      handleSelect,
+      bgColor: themes[themeName]
     }
   }
 })
 </script>
 <style lang="scss" scoped>
+@mixin active-after {
+  &::after {
+    content: '';
+    width: 50%;
+    border-radius: 4px;
+    height: 4px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+  }
+}
 .el-menu {
   border-bottom: none;
-  //   .el-menu-item {
-  //     &:hover,
-  //     &:focus {
-  //       background-color: transparent;
-  //     }
-  //   }
+  .el-menu-item {
+    font-size: $jc-font-size-extra-large;
+    border: none;
+    &.is-active {
+      @include active-after;
+    }
+
+    //     &:hover,
+    //     &:focus {
+    //       background-color: transparent;
+    //     }
+  }
+  .el-sub-menu {
+    ::v-deep(.el-sub-menu__title) {
+      font-size: $jc-font-size-extra-large;
+      border: none;
+    }
+
+    &.is-active ::v-deep(.el-sub-menu__title) {
+      @include active-after;
+    }
+  }
+}
+::v-global(.el-menu--popup .el-menu-item.is-active::after) {
+  content: none !important;
+}
+::v-global(.el-popper) {
+  border: none !important;
 }
 </style>

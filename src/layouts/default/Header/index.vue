@@ -2,7 +2,7 @@
   <div class="header">
     <div class="logo">
       <!-- <img src="@/assets/images/logo.png" /> -->
-      vue3-element-template
+      综合智慧指挥平台
     </div>
     <jc-menu />
     <div class="header-right">
@@ -80,7 +80,7 @@ export default defineComponent({
   box-sizing: border-box;
   height: $jc-header-height;
   line-height: $jc-header-height;
-  font-size: $jc-font-size-extra-large;
+  font-size: $jc-font-size-extra-larger;
 
   .logo {
     float: left;
@@ -89,7 +89,7 @@ export default defineComponent({
 
   .el-menu {
     flex: 1;
-    padding: 0 $jc-default-dis;
+    padding: $jc-default-dis * 0.5 $jc-default-dis;
   }
 
   .header-right {

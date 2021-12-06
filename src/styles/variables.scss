@@ -12,6 +12,7 @@ $jc-min-width: 1000px;
 $jc-min-height: 500px;
 
 //字体大小
+$jc-font-size-extra-larger: 22px !default;
 $jc-font-size-extra-large: 20px !default;
 $jc-font-size-large: 18px !default;
 $jc-font-size-medium: 16px !default;
@@ -31,6 +32,9 @@ $jc-border-radius-circle: 100% !default;
 
 //树结构侧边菜单宽度
 $jc-trees-width: 240px;
+
+//header
+$jc-header-height: 80px;
 
 //超出隐藏设置
 @mixin jc-text-warp($line: 0) {

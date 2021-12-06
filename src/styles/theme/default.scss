@@ -1,7 +1,7 @@
 //定制element主题风格
 
 //主题色
-$jc-color-primary: #409eff !default;
+$jc-color-primary: #1d69e6 !default;
 $jc-color-success: #67c23a !default;
 $jc-color-warning: #e6a23c !default;
 $jc-color-danger: #f56c6c !default;
@@ -31,16 +31,13 @@ $jc-header-bgColor: #337df6 !default;
 //slider 背景色
 $jc-slider-bgColor: #051530 !default;
 
-//header 和menu 配置
-$jc-header-height: 60px;
-
 @mixin jc-header-style {
   background-image: linear-gradient(0deg, #16356e 0%, #273688 100%), linear-gradient(#000000, #000000);
   background-blend-mode: normal, normal;
   box-shadow: 0px 1px 9px 0px rgba(8, 33, 95, 0.8);
 }
 
-//左侧菜单
+//菜单
 $jc-menu-height: 40px;
 $jc-menu-hide-width: 40px;
 $jc-menu-width: 240px;
