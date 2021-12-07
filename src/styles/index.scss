@@ -248,12 +248,9 @@ body,
   }
 }
 
-//详情样式
-.jc-detail {
-  .ant-row {
-    margin-bottom: $jc-default-dis;
-    .ant-col:first-child {
-      text-align: right;
-    }
+//详情detailContainer
+.jc-detail-card {
+  .jc-detail-card-title {
+    color: $jc-color-primary;
   }
 }

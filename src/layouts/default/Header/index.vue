@@ -92,14 +92,14 @@ export default defineComponent({
       height: 24px;
       background-color: rgba($color: #fff, $alpha: 0.2);
       position: absolute;
-      top: 28px;
+      top: 20px;
       right: 0;
     }
   }
 
   .el-menu {
     flex: 1;
-    padding: $jc-default-dis * 0.5 $jc-default-dis;
+    padding: ($jc-header-height - 60) * 0.5 $jc-default-dis;
   }
 
   .header-right {

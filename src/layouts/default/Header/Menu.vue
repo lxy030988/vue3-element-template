@@ -16,9 +16,18 @@
         <svg-icon name="menu-setting" />
         <span>系统设置</span>
       </template>
-      <el-menu-item index="2-2">菜单管理</el-menu-item>
-      <el-menu-item index="2-1">组织管理</el-menu-item>
-      <el-menu-item index="2-3">角色管理</el-menu-item>
+      <el-menu-item index="2-2">
+        <svg-icon name="menu-setting" />
+        <span>菜单管理</span>
+      </el-menu-item>
+      <el-menu-item index="2-1">
+        <svg-icon name="menu-setting" />
+        <span>组织管理</span>
+      </el-menu-item>
+      <el-menu-item index="2-3">
+        <svg-icon name="menu-setting" />
+        <span>角色管理</span>
+      </el-menu-item>
     </el-sub-menu>
     <el-menu-item index="3">
       <svg-icon name="menu-internal-authorization" />
@@ -63,7 +72,7 @@ export default defineComponent({
     height: 4px;
     background-color: white;
     position: absolute;
-    bottom: -5px;
+    bottom: -($jc-header-height - 60) * 0.5;
     left: 25%;
   }
 }
@@ -72,7 +81,7 @@ export default defineComponent({
   border-bottom: none;
 
   .el-menu-item {
-    font-size: $jc-font-size-extra-large;
+    font-size: $jc-font-size-medium;
     border: none;
 
     &.is-active {
@@ -84,13 +93,12 @@ export default defineComponent({
     }
   }
 
-  .el-sub-menu {
-    ::v-deep(.el-sub-menu__title) {
-      font-size: $jc-font-size-extra-large;
+  ::v-deep(.el-sub-menu) {
+    .el-sub-menu__title {
+      font-size: $jc-font-size-medium;
       border: none;
     }
-
-    &.is-active ::v-deep(.el-sub-menu__title) {
+    &.is-active .el-sub-menu__title {
       @include active-after;
     }
   }
