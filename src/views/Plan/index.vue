@@ -19,6 +19,7 @@
 // import { defineAsyncComponent } from 'vue'
 // const TestSetup = defineAsyncComponent(() => import('@/components/testSetup.vue'))
 import TestSetup from '@/components/testSetup.vue'
+import { bus } from '@/utils/eventBus'
 
 import { defineComponent, inject, onMounted, reactive, Ref, ref, toRefs, watch, watchEffect } from 'vue'
 import myCount from './count'
@@ -34,10 +35,16 @@ export default defineComponent({
     const color = ref('red')
     const font = reactive({ size: '30px' })
 
+    bus.on('bus-test', () => {
+      console.log('bus-test plan')
+    })
+
     function test() {
       console.log('test')
-      color.value = 'green'
-      font.size = '18px'
+      // color.value = 'green'
+      // font.size = '18px'
+
+      bus.emit('bus-test')
     }
     // watch
 

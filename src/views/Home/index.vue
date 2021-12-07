@@ -40,6 +40,8 @@ import { useMyStore } from '@/hooks'
 
 import VueEcharts, { OptionType } from '@/components/echarts'
 import { RefreshRight } from '@element-plus/icons'
+
+import { bus } from '@/utils/eventBus'
 export default defineComponent({
   name: 'Home',
   components: {
@@ -56,6 +58,9 @@ export default defineComponent({
   },
   setup() {
     console.log('setup name', name)
+    bus.on('bus-test', () => {
+      console.log('bus-test home')
+    })
     // const store = useStore<GlobleState>()
     // console.log(store.state.home.name)
     const { state, getters, commit, dispatch } = useMyStore()
@@ -94,6 +99,7 @@ export default defineComponent({
     function test() {
       console.log('test')
       installData.value = [80, 70, 110, 130, 120, 200, 150]
+      bus.emit('bus-test')
     }
     function testVuex() {
       console.log('testVuex')
