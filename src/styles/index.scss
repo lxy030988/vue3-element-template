@@ -191,6 +191,11 @@ body,
   background: rgba(0, 0, 0, 0.5);
 }
 
+//el-popper弹框全局样式
+.el-popper {
+  border: none !important;
+}
+
 // 表格页面
 .jc-tabfilter {
   margin-bottom: $jc-default-dis;
@@ -239,6 +244,7 @@ body,
   .el-table th.el-table__cell {
     background-color: #f9f9f9;
     padding: 16px 0;
+    color: $jc-text-color-primary;
   }
 }
 

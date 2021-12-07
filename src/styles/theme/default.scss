@@ -24,32 +24,3 @@ $jc-border-color-extra-light: #f2f6fc !default;
 
 //背景颜色
 $jc-bg-color: #f5f5f5 !default;
-
-//header 背景色
-$jc-header-bgColor: #337df6 !default;
-
-//slider 背景色
-$jc-slider-bgColor: #051530 !default;
-
-@mixin jc-header-style {
-  background-image: linear-gradient(0deg, #16356e 0%, #273688 100%), linear-gradient(#000000, #000000);
-  background-blend-mode: normal, normal;
-  box-shadow: 0px 1px 9px 0px rgba(8, 33, 95, 0.8);
-}
-
-//菜单
-$jc-menu-height: 40px;
-$jc-menu-hide-width: 40px;
-$jc-menu-width: 240px;
-$jc-menu-bg-color: #001529; //菜单背景色
-$jc-menu-control-bg: #102957; //controll 背景色
-$jc-submenu-bg-color: #0d2450; //二级菜单背景色
-$jc-menu-active-bg: $jc-color-primary; //选择背景色
-
-//常用背影样式
-$jc-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
-$jc-box-background: rgba(0, 4, 15, 0.65);
-$jc-command-module-background: rgba(
-  $color: #168fe4,
-  $alpha: 0.1
-);

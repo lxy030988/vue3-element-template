@@ -34,11 +34,8 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 
+import { themes } from '@/styles/theme'
 const themeName = import.meta.env.VITE_THEME as string
-
-const themes = {
-  default: '#1D69E6'
-}
 
 export default defineComponent({
   name: 'Menu',
@@ -70,23 +67,23 @@ export default defineComponent({
     left: 25%;
   }
 }
+
 .el-menu {
   border-bottom: none;
+
   .el-menu-item {
     font-size: $jc-font-size-extra-large;
     border: none;
+
     &.is-active {
       @include active-after;
     }
+
     &:focus {
       background-color: $jc-color-primary;
     }
-
-    //     &:hover,
-    //     &:focus {
-    //       background-color: transparent;
-    //     }
   }
+
   .el-sub-menu {
     ::v-deep(.el-sub-menu__title) {
       font-size: $jc-font-size-extra-large;
@@ -102,10 +99,8 @@ export default defineComponent({
     margin-right: $jc-default-dis * 0.5;
   }
 }
+
 ::v-global(.el-menu--popup .el-menu-item.is-active::after) {
   content: none !important;
-}
-::v-global(.el-popper) {
-  border: none !important;
 }
 </style>
