@@ -6,6 +6,7 @@ import FullLayout from '@/layouts/full/index.vue'
 
 import { envDefaultPages, envFullPages } from './envPages'
 import { exampleRoutes } from '@/example'
+import { detailRoutes } from './detail'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -45,7 +46,8 @@ const routes: Array<RouteRecordRaw> = [
           title: '菜单管理'
         }
       },
-      ...envDefaultPages
+      ...envDefaultPages,
+      ...detailRoutes
     ]
   },
   {

@@ -24,4 +24,22 @@ const sortRow = (row: TMenuListItem, n: number) => {
   console.log('sortRow', id, menuSort, n)
 }
 
-export const useTableOperate = { info, editRow, deleteRow, manageVisible, manage, sortRow }
+const detailVisible = ref(false)
+const detailId = ref('detailId')
+const show = (row: any) => {
+  console.log('show', row)
+  detailId.value += '1'
+  detailVisible.value = true
+}
+
+export const useTableOperate = {
+  info,
+  editRow,
+  deleteRow,
+  manageVisible,
+  manage,
+  sortRow,
+  detailVisible,
+  show,
+  detailId
+}

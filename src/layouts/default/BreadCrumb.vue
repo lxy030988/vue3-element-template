@@ -4,11 +4,11 @@
       <svg-icon name="menu-home" />
       <span>工作台</span>
     </el-breadcrumb-item>
-    <el-breadcrumb-item :to="{ path: '/setting/plan' }">
+    <el-breadcrumb-item :to="{ path: '/detail/menu/1112' }">
       <svg-icon name="menu-setting" />
       <span>系统设置</span>
     </el-breadcrumb-item>
-    <el-breadcrumb-item :to="{ path: '/menu' }">
+    <el-breadcrumb-item :to="{ path: '/detail/plan/111' }">
       <svg-icon name="menu-setting" />
       <span>菜单管理</span>
     </el-breadcrumb-item>

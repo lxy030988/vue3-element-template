@@ -25,6 +25,7 @@
         </el-table-column>
         <el-table-column label="操作" width="160">
           <template #default="scope">
+            <el-button type="text" size="mini" @click="show(scope.row)">详情</el-button>
             <el-button type="text" size="mini" @click="editRow(scope.row)">编辑</el-button>
             <el-button type="text" size="mini" @click="deleteRow(scope.row)">删除</el-button>
           </template>
@@ -33,6 +34,10 @@
       <pagination :pages="pages" @current-change="currentChange" @size-change="sizeChange" />
     </el-card>
     <manage v-model:visible="manageVisible" :info="info" />
+
+    <el-dialog v-model="detailVisible" title="菜单详情" width="600px">
+      <detail :detailId="detailId" />
+    </el-dialog>
   </div>
 </template>
 
@@ -43,8 +48,8 @@ export default defineComponent({
   name: 'MenuIndex',
   components: {
     MyFilter: defineAsyncComponent(() => import('./modules/Filter/index.vue')),
-
-    Manage: defineAsyncComponent(() => import('./modules/Manage/index.vue'))
+    Manage: defineAsyncComponent(() => import('./modules/Manage/index.vue')),
+    Detail: defineAsyncComponent(() => import('./modules/Detail/index.vue'))
   },
   setup() {
     const { initData } = useTableData
