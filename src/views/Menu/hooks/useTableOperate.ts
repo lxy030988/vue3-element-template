@@ -1,6 +1,6 @@
 import { TMenuListItem } from '@/api/menu/model'
 import { ref } from 'vue'
-
+import router from '@/router'
 const manageVisible = ref(false)
 const manageId = ref('')
 
@@ -36,6 +36,10 @@ const show = (row: any) => {
   detailVisible.value = true
 }
 
+const manage2 = () => {
+  router.push({ name: 'MenuManage' }) //query: { id: manageId.value }
+}
+
 export const useTableOperate = {
   manageId,
   editRow,
@@ -46,5 +50,6 @@ export const useTableOperate = {
   detailVisible,
   show,
   detailId,
-  closeManageDialog
+  closeManageDialog,
+  manage2
 }

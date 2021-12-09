@@ -3,12 +3,12 @@
     <template #header>
       <div class="jc-detail-card-title">
         <el-icon @click="back"><arrow-left-bold /></el-icon>
-        <span>详情</span>
+        <span>新增</span>
       </div>
     </template>
     <router-view v-slot="{ Component }">
       <keep-alive>
-        <component :is="Component" :detailId="detailId" />
+        <component :is="Component" :manageId="manageId" @close="back" />
       </keep-alive>
     </router-view>
   </el-card>
@@ -19,27 +19,27 @@ import { defineComponent, onActivated, ref, watchEffect } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { ArrowLeftBold } from '@element-plus/icons'
 export default defineComponent({
-  name: 'DetailContainer',
+  name: 'ManageContainer',
   components: { ArrowLeftBold },
   setup() {
     const route = useRoute()
-    // console.log('route', route.params)
+    console.log('route', route.query)
 
-    const detailId = ref(route.params.id)
+    const manageId = ref(route.query.id)
     watchEffect(() => {
-      console.log('DetailContainer watchEffect', route.params)
-      detailId.value = route.params.id
+      console.log('ManageContainer watchEffect', route.query)
+      manageId.value = route.query.id
     })
 
     onActivated(() => {
-      console.log('DetailContainer onActivated', route.params)
+      console.log('ManageContainer onActivated')
     })
 
     const router = useRouter()
     const back = () => {
       router.back()
     }
-    return { detailId, back }
+    return { manageId, back }
   }
 })
 </script>

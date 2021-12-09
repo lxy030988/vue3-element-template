@@ -7,6 +7,7 @@
         <div class="jc-card-title jc-fl">菜单列表</div>
         <div class="jc-fr">
           <el-button type="primary" @click="manage">新增</el-button>
+          <el-button type="primary" @click="manage2">新增2</el-button>
         </div>
       </template>
       <el-table class="mt" :data="list">
@@ -48,6 +49,7 @@
 import { bus } from '@/utils/eventBus'
 import { defineAsyncComponent, defineComponent } from 'vue'
 import { useTableData, useTableOperate } from './hooks/index'
+
 export default defineComponent({
   name: 'MenuIndex',
   components: {
@@ -61,6 +63,7 @@ export default defineComponent({
     bus.on('init-data-menu', () => {
       console.log('init-data-menu setup')
     })
+
     return { ...useTableData, ...useTableOperate }
   }
 })

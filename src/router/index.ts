@@ -7,6 +7,7 @@ import FullLayout from '@/layouts/full/index.vue'
 import { envDefaultPages, envFullPages } from './envPages'
 import { exampleRoutes } from '@/example'
 import { detailRoutes } from './detail'
+import { manageRoutes } from './manage'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -47,7 +48,8 @@ const routes: Array<RouteRecordRaw> = [
         }
       },
       ...envDefaultPages,
-      ...detailRoutes
+      ...detailRoutes,
+      ...manageRoutes
     ]
   },
   {
