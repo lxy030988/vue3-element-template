@@ -39,8 +39,7 @@ export default defineComponent({
   setup() {
     const router = useRouter()
     const { state, commit } = useMyStore()
-    const visible = ref(false)
-    const userVisible = ref(false)
+
     const username = computed(() => state.user.user?.userName || 'admin')
     const handleCommand = (key: string) => {
       console.log('handleCommand', key)
@@ -52,20 +51,12 @@ export default defineComponent({
           console.error(error)
         }
       }
-      if (key === DropdownEnum.UPDATE_PASSWORD) {
-        visible.value = true
-      }
-      if (key === DropdownEnum.USER_INFO) {
-        userVisible.value = true
-      }
     }
 
     return {
       username,
       handleCommand,
-      DropdownEnum,
-      visible,
-      userVisible
+      DropdownEnum
     }
   }
 })
@@ -80,7 +71,8 @@ export default defineComponent({
   box-sizing: border-box;
   height: $jc-header-height;
   line-height: $jc-header-height;
-  font-size: $jc-font-size-extra-larger;
+  font-size: $jc-font-size-extra-large;
+  font-weight: $jc-font-weight-primary;
 
   .logo {
     float: left;

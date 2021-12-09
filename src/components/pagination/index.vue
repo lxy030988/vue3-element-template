@@ -14,7 +14,7 @@ import { IPage } from '@/hooks/usePage'
 import { defineComponent, PropType } from 'vue'
 
 export default defineComponent({
-  name: 'Pagination',
+  name: 'JcPagination',
   props: {
     pages: {
       type: Object as PropType<IPage>,

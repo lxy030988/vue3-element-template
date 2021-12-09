@@ -255,3 +255,29 @@ body,
     font-size: $jc-font-size-medium;
   }
 }
+
+//dialog样式
+.el-dialog {
+  .el-dialog__header {
+    border-bottom: 1px solid $jc-border-color-base;
+    .el-dialog__title {
+      color: $jc-color-primary;
+    }
+  }
+  .el-dialog__body {
+    padding: $jc-default-dis;
+  }
+  .el-dialog__footer {
+    border-top: 1px solid $jc-border-color-base;
+    text-align: center;
+    padding: $jc-default-dis;
+  }
+}
+
+//form
+.el-form-item-footer.el-form-item {
+  border-top: 1px solid $jc-border-color-base;
+  padding-top: $jc-default-dis;
+  text-align: center;
+  margin: 0 (-$jc-default-dis);
+}

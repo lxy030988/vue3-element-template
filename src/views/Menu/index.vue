@@ -31,17 +31,21 @@
           </template>
         </el-table-column>
       </el-table>
-      <pagination :pages="pages" @current-change="currentChange" @size-change="sizeChange" />
+      <jc-pagination :pages="pages" @current-change="currentChange" @size-change="sizeChange" />
     </el-card>
-    <manage v-model:visible="manageVisible" :info="info" />
 
-    <el-dialog v-model="detailVisible" title="菜单详情" width="600px">
+    <el-dialog v-model="detailVisible" title="详情" width="600px">
       <detail :detailId="detailId" />
+    </el-dialog>
+
+    <el-dialog v-model="manageVisible" title="新增" width="600px">
+      <manage :manageId="manageId" @close="closeManageDialog" />
     </el-dialog>
   </div>
 </template>
 
 <script lang="ts">
+import { bus } from '@/utils/eventBus'
 import { defineAsyncComponent, defineComponent } from 'vue'
 import { useTableData, useTableOperate } from './hooks/index'
 export default defineComponent({
@@ -54,6 +58,9 @@ export default defineComponent({
   setup() {
     const { initData } = useTableData
     initData()
+    bus.on('init-data-menu', () => {
+      console.log('init-data-menu setup')
+    })
     return { ...useTableData, ...useTableOperate }
   }
 })

@@ -2,17 +2,21 @@ import { TMenuListItem } from '@/api/menu/model'
 import { ref } from 'vue'
 
 const manageVisible = ref(false)
-const info = ref(null)
+const manageId = ref('')
 
 const manage = () => {
-  info.value = null
+  manageId.value = ''
   manageVisible.value = true
 }
 
 const editRow = (row: any) => {
   console.log('editRow', row)
-  info.value = row
+  manageId.value = row.id
   manageVisible.value = true
+}
+
+const closeManageDialog = () => {
+  manageVisible.value = false
 }
 
 const deleteRow = (row: any) => {
@@ -33,7 +37,7 @@ const show = (row: any) => {
 }
 
 export const useTableOperate = {
-  info,
+  manageId,
   editRow,
   deleteRow,
   manageVisible,
@@ -41,5 +45,6 @@ export const useTableOperate = {
   sortRow,
   detailVisible,
   show,
-  detailId
+  detailId,
+  closeManageDialog
 }
