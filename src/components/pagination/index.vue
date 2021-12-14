@@ -40,7 +40,7 @@ export default defineComponent({
 </script>
 <style scoped lang="scss">
 .el-pagination {
-  text-align: right;
+  // text-align: right;
   margin-top: $jc-default-dis;
   ::v-deep(.el-icon) {
     color: inherit;

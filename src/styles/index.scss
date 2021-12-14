@@ -192,9 +192,9 @@ body,
 }
 
 //el-popper弹框全局样式
-.el-popper {
-  border: none !important;
-}
+// .el-popper {
+//   border: none !important;
+// }
 
 // 表格页面
 .jc-tabfilter {
@@ -242,7 +242,7 @@ body,
   }
 
   .el-table th.el-table__cell {
-    background-color: #f9f9f9;
+    background-color: $jc-table-head-bg-color;
     padding: 16px 0;
     color: $jc-text-color-primary;
   }
@@ -275,9 +275,14 @@ body,
 }
 
 //form
-.el-form-item-footer.el-form-item {
-  border-top: 1px solid $jc-border-color-base;
-  padding-top: $jc-default-dis;
-  text-align: center;
-  margin: 0 (-$jc-default-dis);
+.jc-form {
+  .el-form-item:not(.jc-form-footer) {
+    max-width: 600px;
+  }
+  .jc-form-footer.el-form-item {
+    border-top: 1px solid $jc-border-color-base;
+    padding-top: $jc-default-dis;
+    text-align: center;
+    margin: 0 (-$jc-default-dis);
+  }
 }

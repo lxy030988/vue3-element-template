@@ -1,0 +1,33 @@
+//定制element主题风格
+
+//主题色
+$jc-color-primary: #1d69e6 !default;
+$jc-color-success: #67c23a !default;
+$jc-color-warning: #e6a23c !default;
+$jc-color-danger: #f56c6c !default;
+$jc-color-error: #f56c6c !default;
+$jc-color-info: #909399 !default;
+
+//文本颜色
+$jc-text-color-primary: #fff !default;
+$jc-text-color-regular: rgba(255, 255, 255, 0.6) !default;
+$jc-text-color-secondary: rgba(255, 255, 255, 0.4) !default;
+$jc-text-color-placeholder: rgba(255, 255, 255, 0.2) !default;
+
+//边框颜色
+$jc-border-color-base: #08488a !default;
+$jc-border-color-light: #08488a !default;
+$jc-border-color-lighter: #08488a !default;
+$jc-border-color-extra-light: #08488a !default;
+
+//阴影颜色
+$jc-shadow-color-base: rgba(18, 142, 232, 0.5) !default;
+$jc-shadow-color-base2: rgba(18, 142, 232, 0.5) !default;
+$jc-shadow-color-light: rgba(18, 142, 232, 0.3) !default;
+
+// 系统样式
+
+//背景颜色
+$jc-bg-color: rgb(4, 7, 47) !default;
+$jc-content-bg-color: #050d4b !default;
+$jc-table-head-bg-color: rgba(255, 255, 255, 0.05) !default;

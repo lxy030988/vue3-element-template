@@ -28,13 +28,13 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .el-breadcrumb {
-  background: $jc-color-white;
+  background: $jc-content-bg-color;
   height: 48px;
   line-height: 48px;
   margin-bottom: $jc-default-dis;
   padding: 0 $jc-default-dis;
   font-size: $jc-font-size-medium;
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0px 12px 0 $jc-shadow-color-light;
   border-radius: $jc-border-radius-base;
   ::v-deep(.el-breadcrumb__item) {
     .el-breadcrumb__inner {

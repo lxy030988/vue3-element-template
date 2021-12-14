@@ -1,7 +1,10 @@
 $jc-colors: (
-  'primary': (
-    'base': $jc-color-primary
-  ),
+  'white': $jc-content-bg-color,
+  // 'black': $jc-color-black,
+  'primary':
+    (
+      'base': $jc-color-primary
+    ),
   'success': (
     'base': $jc-color-success
   ),
@@ -33,10 +36,20 @@ $jc-border-color: (
   'extra-light': $jc-border-color-extra-light
 );
 
+$jc-box-shadow: (
+  'base': (
+    inset 0 2px 4px $jc-shadow-color-base,
+    inset 0 0 6px $jc-shadow-color-base2
+  ),
+  'light': inset 0 0px 12px 0 $jc-shadow-color-light
+);
+
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
   $colors: $jc-colors,
   $text-color: $jc-text-color,
-  $border-color: $jc-border-color
+  $border-color: $jc-border-color,
+  $box-shadow: $jc-box-shadow,
+  $bg-color: $jc-bg-color
 );
 
 @use 'element-plus/theme-chalk/src/index.scss' as *;
