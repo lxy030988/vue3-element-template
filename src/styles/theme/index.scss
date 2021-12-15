@@ -58,3 +58,19 @@ $jc-box-shadow: (
   --el-color-white: white;
   --el-button-bg-color: $jc-content-bg-color;
 }
+
+.el-pager {
+  --el-color-white: white;
+}
+
+.el-table {
+  --el-table-text-color: $jc-text-color-primary;
+}
+
+// .el-checkbox {
+//   --el-checkbox-text-color: $jc-text-color-primary;
+// }
+
+// .el-radio {
+//   --el-radio-text-color: $jc-text-color-primary;
+// }

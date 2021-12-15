@@ -19,11 +19,6 @@ body,
   color: $jc-text-color-primary;
 }
 
-:root {
-  --color: rgb(0, 38, 255);
-  // --el-color-primary: green;
-}
-
 /*flex布局*/
 .jc-flex-warp {
   display: flex;
@@ -244,7 +239,7 @@ body,
   .el-table th.el-table__cell {
     background-color: $jc-table-head-bg-color;
     padding: 16px 0;
-    color: $jc-text-color-primary;
+    // color: $jc-text-color-primary;
   }
 }
 
@@ -275,6 +270,14 @@ body,
 }
 
 //form
+.el-form {
+  // ::v-deep(.el-form-item__label) {
+  // }
+  .el-form-item__label {
+    color: $jc-text-color-primary;
+  }
+}
+
 .jc-form {
   .el-form-item:not(.jc-form-footer) {
     max-width: 600px;

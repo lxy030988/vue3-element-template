@@ -35,7 +35,7 @@ export default defineComponent({
   padding: 0 $jc-default-dis;
   font-size: $jc-font-size-medium;
   box-shadow: $jc-box-shadow-light;
-  border: 1px solid $jc-border-color-base;
+  border: 1px solid $jc-border-color-light;
   border-radius: $jc-border-radius-base;
   ::v-deep(.el-breadcrumb__item) {
     .el-breadcrumb__inner {
