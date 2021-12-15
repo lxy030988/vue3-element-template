@@ -1,10 +1,10 @@
 $jc-colors: (
+  //多用为  组件内容背景色
   'white': $jc-content-bg-color,
-  // 'black': $jc-color-black,
-  'primary':
-    (
-      'base': $jc-color-primary
-    ),
+  'black': black,
+  'primary': (
+    'base': $jc-color-primary
+  ),
   'success': (
     'base': $jc-color-success
   ),
@@ -38,10 +38,10 @@ $jc-border-color: (
 
 $jc-box-shadow: (
   'base': (
-    inset 0 2px 4px $jc-shadow-color-base,
-    inset 0 0 6px $jc-shadow-color-base2
+    $jc-box-shadow-base,
+    $jc-box-shadow-base2
   ),
-  'light': inset 0 0px 12px 0 $jc-shadow-color-light
+  'light': $jc-box-shadow-light
 );
 
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
@@ -53,3 +53,8 @@ $jc-box-shadow: (
 );
 
 @use 'element-plus/theme-chalk/src/index.scss' as *;
+
+.el-button {
+  --el-color-white: white;
+  --el-button-bg-color: $jc-content-bg-color;
+}

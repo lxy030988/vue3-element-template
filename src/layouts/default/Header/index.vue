@@ -65,7 +65,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .header {
   display: flex;
-  background-color: $jc-color-primary;
+  background-color: $jc-header-bg-color;
   color: $jc-color-white;
   position: relative;
   box-sizing: border-box;

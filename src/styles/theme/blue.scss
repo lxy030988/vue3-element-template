@@ -10,9 +10,9 @@ $jc-color-info: #909399 !default;
 
 //文本颜色
 $jc-text-color-primary: #fff !default;
-$jc-text-color-regular: rgba(255, 255, 255, 0.6) !default;
-$jc-text-color-secondary: rgba(255, 255, 255, 0.4) !default;
-$jc-text-color-placeholder: rgba(255, 255, 255, 0.2) !default;
+$jc-text-color-regular: rgba(255, 255, 255, 0.7) !default;
+$jc-text-color-secondary: rgba(255, 255, 255, 0.55) !default;
+$jc-text-color-placeholder: rgba(255, 255, 255, 0.4) !default;
 
 //边框颜色
 $jc-border-color-base: #08488a !default;
@@ -22,12 +22,16 @@ $jc-border-color-extra-light: #08488a !default;
 
 //阴影颜色
 $jc-shadow-color-base: rgba(18, 142, 232, 0.5) !default;
-$jc-shadow-color-base2: rgba(18, 142, 232, 0.5) !default;
+$jc-shadow-color-base2: rgba(18, 142, 232, 0) !default;
 $jc-shadow-color-light: rgba(18, 142, 232, 0.3) !default;
+$jc-box-shadow-base: inset 0 2px 4px $jc-shadow-color-base !default;
+$jc-box-shadow-base2: inset 0 0 6px $jc-shadow-color-base2 !default;
+$jc-box-shadow-light: inset 0 0px 8px 0 $jc-shadow-color-light !default;
 
 // 系统样式
 
 //背景颜色
 $jc-bg-color: rgb(4, 7, 47) !default;
+$jc-header-bg-color: #10179e !default;
 $jc-content-bg-color: #050d4b !default;
 $jc-table-head-bg-color: rgba(255, 255, 255, 0.05) !default;
