@@ -1,6 +1,6 @@
 # vue3-element-template
 
-vite2 + vue3 + element-plus 后台管理系统模板
+vite + vue3 + element-plus 后台管理系统模板
 
 ```js
 vue3-element-template
@@ -380,7 +380,7 @@ export const fullPageConfig: Record<string, TPageItem[]> = {
 ```js
 const name = import.meta.env.VITE_NAME
 
-JcDev: defineAsyncComponent(() => {
+Dev: defineAsyncComponent(() => {
   if (name === 'dev') {
     // return import(`../../env/comp/${name}.vue`) //只能写相对路径
     return import('/comp/dev.vue')

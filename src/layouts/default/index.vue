@@ -45,8 +45,8 @@ export default defineComponent({
   flex-direction: column;
   .content-box {
     flex: 1;
-    background: $jc-bg-color;
-    padding: $jc-default-dis;
+    background: $tp-bg-color;
+    padding: $tp-default-dis;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -56,8 +56,8 @@ export default defineComponent({
       overflow-x: hidden;
       overflow-y: auto;
       box-sizing: border-box;
-      // background: $jc-color-white;
-      // padding: $jc-default-dis;
+      // background: $tp-color-white;
+      // padding: $tp-default-dis;
     }
   }
 }

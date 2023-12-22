@@ -1,5 +1,5 @@
 <!-- <template>
-  <el-form class="jc-form" :model="formState">
+  <el-form class="tp-form" :model="formState">
     <el-form-item label="菜单名称">
       <el-input v-model="formState.name" placeholder="请输入" />
     </el-form-item>
@@ -30,7 +30,7 @@
     <el-form-item label="是否禁用">
       <el-switch v-model="formState.enable" />
     </el-form-item>
-    <el-form-item class="jc-form-footer">
+    <el-form-item class="tp-form-footer">
       <el-button type="primary" @click="onSubmit">保存</el-button>
       <el-button @click="resetForm">取消</el-button>
     </el-form-item>

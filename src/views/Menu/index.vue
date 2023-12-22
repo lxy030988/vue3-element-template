@@ -2,10 +2,10 @@
   <div class="menu">
     <my-filter @filter="goFilter" />
 
-    <el-card class="jc-table-card">
+    <el-card class="tp-table-card">
       <template #header>
-        <div class="jc-card-title jc-fl">菜单列表</div>
-        <div class="jc-fr">
+        <div class="tp-card-title tp-fl">菜单列表</div>
+        <div class="tp-fr">
           <el-button type="primary" @click="manage">新增</el-button>
           <el-button type="primary" @click="manage2">新增2</el-button>
         </div>
@@ -32,7 +32,7 @@
           </template>
         </el-table-column>
       </el-table>
-      <jc-pagination :pages="pages" @current-change="currentChange" @size-change="sizeChange" />
+      <tp-pagination :pages="pages" @current-change="currentChange" @size-change="sizeChange" />
     </el-card>
 
     <el-dialog v-model="detailVisible" title="详情" width="600px">

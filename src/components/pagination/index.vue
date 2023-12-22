@@ -14,7 +14,7 @@ import { IPage } from '@/hooks/usePage'
 import { defineComponent, PropType } from 'vue'
 
 export default defineComponent({
-  name: 'JcPagination',
+  name: 'TpPagination',
   props: {
     pages: {
       type: Object as PropType<IPage>,
@@ -41,7 +41,7 @@ export default defineComponent({
 <style scoped lang="scss">
 .el-pagination {
   // text-align: right;
-  margin-top: $jc-default-dis;
+  margin-top: $tp-default-dis;
   ::v-deep(.el-icon) {
     color: inherit;
   }

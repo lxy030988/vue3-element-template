@@ -4,14 +4,14 @@ interface Item {
   label: string
 }
 
-interface IJcEnum {
+interface ITpEnum {
   readonly container: Map<PropertyKey, string>
   VALUES: Item[]
   toString(keys: any): string
   [key: string]: any
 }
 
-class JcEnum implements IJcEnum {
+class TpEnum implements ITpEnum {
   public readonly container: Map<PropertyKey, string>
   public VALUES: Item[];
   [key: string]: any
@@ -52,9 +52,9 @@ class JcEnum implements IJcEnum {
   }
 
   get [Symbol.toStringTag]() {
-    return 'JcEnum'
+    return 'TpEnum'
   }
 }
 
-export { JcEnum }
-export default JcEnum
+export { TpEnum }
+export default TpEnum

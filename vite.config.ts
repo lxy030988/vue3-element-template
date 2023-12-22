@@ -3,7 +3,7 @@ import { loadEnv, defineConfig } from 'vite'
 
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import viteSvgIcons from 'vite-plugin-svg-icons'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 import { createRollupPlugin } from './build/plugin'
 import { wrapperEnv } from './build/utils'
@@ -54,7 +54,7 @@ module.exports = ({ mode }: any) => {
       }
     },
     optimizeDeps: {
-      include: ['element-plus/lib/locale/lang/zh-cn'],
+      include: ['element-plus/es/locale/lang/zh-cn'],
       exclude: []
     },
     define: {
@@ -63,7 +63,7 @@ module.exports = ({ mode }: any) => {
     plugins: [
       vue(),
       vueJsx(),
-      viteSvgIcons({
+      createSvgIconsPlugin({
         iconDirs: [path.resolve(CWD, 'src/assets/icons')],
         symbolId: 'icon-[dir]-[name]'
       })
@@ -78,7 +78,7 @@ module.exports = ({ mode }: any) => {
           drop_console: VITE_DROP_CONSOLE
         }
       },
-      brotliSize: false,
+
       chunkSizeWarningLimit: 1500,
       rollupOptions: {
         plugins: createRollupPlugin()

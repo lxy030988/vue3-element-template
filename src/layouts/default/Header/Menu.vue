@@ -47,7 +47,7 @@ import { themes } from '@/styles/theme'
 const themeName = import.meta.env.VITE_THEME as string
 
 export default defineComponent({
-  name: 'Menu',
+  name: 'MyMenu',
   setup() {
     // console.log('variables', variables)
 
@@ -68,11 +68,11 @@ export default defineComponent({
   &::after {
     content: '';
     width: 50%;
-    border-radius: $jc-border-radius-base;
+    border-radius: $tp-border-radius-base;
     height: 4px;
     background-color: white;
     position: absolute;
-    bottom: -($jc-header-height - 60) * 0.5;
+    bottom: -($tp-header-height - 60) * 0.5;
     left: 25%;
   }
 }
@@ -81,7 +81,7 @@ export default defineComponent({
   border-bottom: none;
 
   .el-menu-item {
-    font-size: $jc-font-size-medium;
+    font-size: $tp-font-size-medium;
     border: none;
 
     &.is-active {
@@ -89,13 +89,13 @@ export default defineComponent({
     }
 
     &:focus {
-      background-color: $jc-color-primary;
+      background-color: $tp-color-primary;
     }
   }
 
   ::v-deep(.el-sub-menu) {
     .el-sub-menu__title {
-      font-size: $jc-font-size-medium;
+      font-size: $tp-font-size-medium;
       border: none;
     }
     &.is-active .el-sub-menu__title {
@@ -104,7 +104,7 @@ export default defineComponent({
   }
 
   .svg-icon {
-    margin-right: $jc-default-dis * 0.5;
+    margin-right: $tp-default-dis * 0.5;
   }
 }
 

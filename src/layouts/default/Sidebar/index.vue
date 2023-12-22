@@ -85,8 +85,8 @@ export default defineComponent({
   height: 100%;
   overflow-y: auto;
   ::v-deep(.svg-icon) {
-    margin-right: $jc-default-dis * 0.5;
-    font-size: $jc-font-size-large;
+    margin-right: $tp-default-dis * 0.5;
+    font-size: $tp-font-size-large;
   }
   .el-menu {
     height: 100%;

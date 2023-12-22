@@ -1,37 +1,54 @@
 //定制element主题风格
 
 //主题色
-$jc-color-primary: #1d69e6 !default;
-$jc-color-success: #67c23a !default;
-$jc-color-warning: #e6a23c !default;
-$jc-color-danger: #f56c6c !default;
-$jc-color-error: #f56c6c !default;
-$jc-color-info: #909399 !default;
+$tp-color-primary: #1d69e6 !default;
+$tp-color-success: #67c23a !default;
+$tp-color-warning: #e6a23c !default;
+$tp-color-remind: #fe731a !default;
+$tp-color-danger: #f56c6c !default;
+$tp-color-error: #f56c6c !default;
+$tp-color-info: #909399 !default;
 
 //文本颜色
-$jc-text-color-primary: #fff !default;
-$jc-text-color-regular: rgba(255, 255, 255, 0.7) !default;
-$jc-text-color-secondary: rgba(255, 255, 255, 0.55) !default;
-$jc-text-color-placeholder: rgba(255, 255, 255, 0.4) !default;
+$tp-text-color-primary: #fff !default;
+$tp-text-color-regular: rgb(255 255 255 / 70%) !default;
+$tp-text-color-secondary: rgb(255 255 255 / 55%) !default;
+$tp-text-color-placeholder: rgb(255 255 255 / 40%) !default;
 
 //边框颜色
-$jc-border-color-base: #08488a !default;
-$jc-border-color-light: #08488a !default;
-$jc-border-color-lighter: #08488a !default;
-$jc-border-color-extra-light: #08488a !default;
+$tp-border-color-base: #08488a !default;
+$tp-border-color-light: #08488a !default;
+$tp-border-color-lighter: #08488a !default;
+$tp-border-color-extra-light: #08488a !default;
 
 //阴影颜色
-$jc-shadow-color-base: rgba(18, 142, 232, 0.5) !default;
-$jc-shadow-color-base2: rgba(18, 142, 232, 0.4) !default;
-$jc-shadow-color-light: rgba(18, 142, 232, 0.3) !default;
-$jc-box-shadow-base: inset 0 2px 4px $jc-shadow-color-base !default;
-$jc-box-shadow-base2: inset 0 0 6px $jc-shadow-color-base2 !default;
-$jc-box-shadow-light: inset 0 0px 8px 0 $jc-shadow-color-light !default;
+$tp-shadow-color-base: rgb(18 142 232 / 50%) !default;
+$tp-shadow-color-base2: rgb(18 142 232 / 40%) !default;
+$tp-shadow-color-light: rgb(18 142 232 / 30%) !default;
+$tp-box-shadow-base: inset 0 2px 4px $tp-shadow-color-base !default;
+$tp-box-shadow-base2: inset 0 0 6px $tp-shadow-color-base2 !default;
+$tp-box-shadow-light: inset 0 0 8px 0 $tp-shadow-color-light !default;
 
 // 系统样式
 
 //背景颜色
-$jc-bg-color: rgb(4, 7, 47) !default;
-$jc-header-bg-color: #10179e !default;
-$jc-content-bg-color: #050d4b !default;
-$jc-table-head-bg-color: rgba(255, 255, 255, 0.05) !default;
+$tp-bg-color: rgb(4 7 47) !default;
+$tp-header-bg-color: #10179e !default;
+$tp-content-bg-color: #050d4b !default;
+$tp-table-head-bg-color: rgb(255 255 255 / 5%) !default;
+$tp-back-top-bg-color: rgb(255 255 255 / 10%) !default; //回到顶部按钮
+$tp-report-template-table-head-bg-color: #e8f0fc !default;
+
+:root {
+  --el-fill-color-blank: #050d4b;
+  --el-mask-color: rgb(4 7 47);
+  --el-fill-color-light: #242a5e;
+  --el-bg-color-overlay: #050d4b;
+  --el-border-color: #242a5e;
+  --el-border-color-hover: #242a5e;
+
+  // --el-text-color-primary: rgb(4, 7, 47);
+  --el-fill-color: #242a5e;
+  --el-bg-color: #050d4b;
+  --el-overlay-color-lighter: rgb(0 0 0 / 70%);
+}

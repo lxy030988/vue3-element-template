@@ -31,3 +31,7 @@ declare interface Window {
   cancelIdleCallback: (handle: RequestIdleCallbackHandle) => void
   [key: string]: any
 }
+
+declare interface ImportMeta {
+  [key: string]: any
+}

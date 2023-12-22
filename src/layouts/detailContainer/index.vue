@@ -1,7 +1,7 @@
 <template>
-  <el-card class="jc-detail-card">
+  <el-card class="tp-detail-card">
     <template #header>
-      <div class="jc-detail-card-title">
+      <div class="tp-detail-card-title">
         <el-icon @click="back"><arrow-left-bold /></el-icon>
         <span>详情</span>
       </div>
@@ -45,9 +45,9 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .el-icon {
-  color: $jc-text-color-secondary;
+  color: $tp-text-color-secondary;
   font-size: inherit;
-  margin-right: $jc-default-dis * 0.5;
+  margin-right: $tp-default-dis * 0.5;
   position: relative;
   top: 2px;
   cursor: pointer;

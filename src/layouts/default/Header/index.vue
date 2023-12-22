@@ -2,9 +2,9 @@
   <div class="header">
     <div class="logo">
       <!-- <img src="@/assets/images/logo.png" /> -->
-      综合智慧指挥平台
+      后台管理系统模板
     </div>
-    <jc-menu />
+    <tp-menu />
     <div class="header-right">
       <div class="header-user-con">
         <!-- 用户名下拉菜单 -->
@@ -32,10 +32,10 @@ import { DropdownEnum } from '../model'
 import { useRouter } from 'vue-router'
 import { useMyStore } from '@/hooks'
 
-import JcMenu from './Menu.vue'
+import TpMenu from './Menu.vue'
 export default defineComponent({
-  name: 'Header',
-  components: { JcMenu },
+  name: 'MyHeader',
+  components: { TpMenu },
   setup() {
     const router = useRouter()
     const { state, commit } = useMyStore()
@@ -65,18 +65,18 @@ export default defineComponent({
 <style lang="scss" scoped>
 .header {
   display: flex;
-  background-color: $jc-header-bg-color;
-  color: $jc-color-white;
+  background-color: $tp-header-bg-color;
+  color: $tp-color-white;
   position: relative;
   box-sizing: border-box;
-  height: $jc-header-height;
-  line-height: $jc-header-height;
-  font-size: $jc-font-size-extra-large;
-  font-weight: $jc-font-weight-primary;
+  height: $tp-header-height;
+  line-height: $tp-header-height;
+  font-size: $tp-font-size-extra-large;
+  font-weight: $tp-font-weight-primary;
 
   .logo {
     float: left;
-    padding: 0 $jc-default-dis;
+    padding: 0 $tp-default-dis;
     position: relative;
     &::after {
       content: '';
@@ -91,22 +91,22 @@ export default defineComponent({
 
   .el-menu {
     flex: 1;
-    padding: ($jc-header-height - 60) * 0.5 $jc-default-dis;
+    padding: ($tp-header-height - 60) * 0.5 $tp-default-dis;
   }
 
   .header-right {
     float: right;
-    padding-right: $jc-default-dis * 2;
+    padding-right: $tp-default-dis * 2;
 
     .header-user-con {
       display: flex;
-      height: $jc-header-height;
-      font-size: $jc-font-size-medium;
+      height: $tp-header-height;
+      font-size: $tp-font-size-medium;
       align-items: center;
     }
 
     .el-dropdown {
-      color: $jc-color-white;
+      color: $tp-color-white;
 
       .el-dropdown-link {
         cursor: pointer;
@@ -114,7 +114,7 @@ export default defineComponent({
         img {
           width: 40px;
           height: 40px;
-          margin-right: $jc-default-dis * 0.4;
+          margin-right: $tp-default-dis * 0.4;
           border-radius: 50%;
         }
       }

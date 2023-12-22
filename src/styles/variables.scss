@@ -1,43 +1,43 @@
 //颜色
-$jc-color-white: #ffffff !default;
-$jc-color-black: #000000 !default;
-$jc-color-transparent: #ffffff00 !default;
+$tp-color-white: #ffffff !default;
+$tp-color-black: #000000 !default;
+$tp-color-transparent: #ffffff00 !default;
 
 //长度
-$jc-default-dis: 20px; //常用边距
-$jc-default-item-height: 40px; //常用高度
+$tp-default-dis: 20px; //常用边距
+$tp-default-item-height: 40px; //常用高度
 
 //容器最小宽高
-$jc-min-width: 1000px;
-$jc-min-height: 500px;
+$tp-min-width: 1000px;
+$tp-min-height: 500px;
 
 //字体大小
-$jc-font-size-extra-larger: 22px !default;
-$jc-font-size-extra-large: 20px !default;
-$jc-font-size-large: 18px !default;
-$jc-font-size-medium: 16px !default;
-$jc-font-size-base: 14px !default;
-$jc-font-size-small: 13px !default;
-$jc-font-size-extra-small: 12px !default;
+$tp-font-size-extra-larger: 22px !default;
+$tp-font-size-extra-large: 20px !default;
+$tp-font-size-large: 18px !default;
+$tp-font-size-medium: 16px !default;
+$tp-font-size-base: 14px !default;
+$tp-font-size-small: 13px !default;
+$tp-font-size-extra-small: 12px !default;
 
-$jc-font-weight-primary: 500 !default;
+$tp-font-weight-primary: 500 !default;
 
-$jc-font-line-height-primary: 24px !default;
+$tp-font-line-height-primary: 24px !default;
 
 //borderRadius
-$jc-border-radius-base: 4px !default;
-$jc-border-radius-small: 2px !default;
-$jc-border-radius-round: 20px !default;
-$jc-border-radius-circle: 100% !default;
+$tp-border-radius-base: 4px !default;
+$tp-border-radius-small: 2px !default;
+$tp-border-radius-round: 20px !default;
+$tp-border-radius-circle: 100% !default;
 
 //树结构侧边菜单宽度
-$jc-trees-width: 240px;
+$tp-trees-width: 240px;
 
 //header
-$jc-header-height: 64px;
+$tp-header-height: 64px;
 
 //超出隐藏设置
-@mixin jc-text-warp($line: 0) {
+@mixin tp-text-warp($line: 0) {
   @if $line==0 {
     white-space: nowrap; //规定段落中的文本不进行换行
   } @else {
@@ -54,19 +54,19 @@ $jc-header-height: 64px;
 }
 
 //居中设置
-@mixin jc-hcenter {
+@mixin tp-hcenter {
   display: flex;
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
 }
 
-@mixin jc-vhcenter {
-  @include jc-hcenter;
+@mixin tp-vhcenter {
+  @include tp-hcenter;
   justify-content: center;
 }
 
-@mixin jc-close-animation {
+@mixin tp-close-animation {
   transform: rotate(0deg);
   transition: transform 0.4s;
 

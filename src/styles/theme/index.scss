@@ -1,76 +1,57 @@
-$jc-colors: (
-  //多用为  组件内容背景色
-  'white': $jc-content-bg-color,
-  'black': black,
-  'primary': (
-    'base': $jc-color-primary
-  ),
+$tp-colors: (
+  // 'white': white,
+  // 'black': black,
+  'primary':
+    (
+      'base': $tp-color-primary
+    ),
   'success': (
-    'base': $jc-color-success
+    'base': $tp-color-success
   ),
   'warning': (
-    'base': $jc-color-warning
+    'base': $tp-color-warning
+  ),
+  'remind': (
+    'base': $tp-color-remind
   ),
   'danger': (
-    'base': $jc-color-danger
+    'base': $tp-color-danger
   ),
   'error': (
-    'base': $jc-color-error
+    'base': $tp-color-error
   ),
   'info': (
-    'base': $jc-color-info
+    'base': $tp-color-info
   )
 );
-
-$jc-text-color: (
-  'primary': $jc-text-color-primary,
-  'regular': $jc-text-color-regular,
-  'secondary': $jc-text-color-secondary,
-  'placeholder': $jc-text-color-placeholder
+$tp-text-color: (
+  'primary': $tp-text-color-primary,
+  'regular': $tp-text-color-regular,
+  'secondary': $tp-text-color-secondary,
+  'placeholder': $tp-text-color-placeholder
 );
-
-$jc-border-color: (
-  'base': $jc-border-color-base,
-  'light': $jc-border-color-light,
-  'lighter': $jc-border-color-lighter,
-  'extra-light': $jc-border-color-extra-light
+$tp-border-color: (
+  'base': $tp-border-color-base,
+  'light': $tp-border-color-light,
+  'lighter': $tp-border-color-lighter,
+  'extra-light': $tp-border-color-extra-light
 );
-
-$jc-box-shadow: (
+$tp-box-shadow: (
   'base': (
-    $jc-box-shadow-base,
-    $jc-box-shadow-base2
+    $tp-box-shadow-base,
+    $tp-box-shadow-base2
   ),
-  'light': $jc-box-shadow-light
+  'light': $tp-box-shadow-light
 );
+
+
 
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
-  $colors: $jc-colors,
-  $text-color: $jc-text-color,
-  $border-color: $jc-border-color,
-  $box-shadow: $jc-box-shadow,
-  $bg-color: $jc-bg-color
+    $colors: $tp-colors,
+    $text-color: $tp-text-color,
+    $border-color: $tp-border-color,
+    $box-shadow: $tp-box-shadow
 );
 
 @use 'element-plus/theme-chalk/src/index.scss' as *;
 
-.el-button {
-  --el-color-white: white;
-  --el-button-bg-color: $jc-content-bg-color;
-}
-
-.el-pager {
-  --el-color-white: white;
-}
-
-.el-table {
-  --el-table-text-color: $jc-text-color-primary;
-}
-
-// .el-checkbox {
-//   --el-checkbox-text-color: $jc-text-color-primary;
-// }
-
-// .el-radio {
-//   --el-radio-text-color: $jc-text-color-primary;
-// }

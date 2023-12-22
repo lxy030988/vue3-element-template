@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <jc-dev />
+    <tp-dev />
     <div>
       <div>element 图标</div>
       <el-icon color="#409EFC" class="no-inherit">
@@ -15,7 +15,7 @@
       <el-button type="primary" @click="testVuex"> 测试Vuex </el-button>
     </div>
 
-    <div class="jc-svg-icon assd s s s s">
+    <div class="tp-svg-icon assd s s s s">
       <div>图标测试</div>
       <svg-icon name="home" />
       <svg-icon name="setting" />
@@ -49,7 +49,7 @@ export default defineComponent({
     RefreshRight,
 
     //根据不同环境 引入不同组件
-    JcDev: defineAsyncComponent(() => {
+    TpDev: defineAsyncComponent(() => {
       if (name === 'dev12') {
         return import(`../../env/comp/${name}.vue`) //只能写相对路径
       }
@@ -119,7 +119,7 @@ export default defineComponent({
 })
 </script>
 <style lang="scss" scoped>
-.jc-svg-icon {
+.tp-svg-icon {
   color: red;
 }
 .echarts {
