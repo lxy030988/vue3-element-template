@@ -13,8 +13,16 @@
   "editor.minimap.enabled": true,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
   },
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+
+  "stylelint.validate": ["css", "scss", "vue", "html"],
+
   "eslint.validate": ["javascript", "vue", "html", "typescript", "javascriptreact", "typescriptreact"],
   "eslint.options": {},
   // "eslint.options": {
