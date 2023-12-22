@@ -20,6 +20,12 @@ module.exports = {
       options: {
         printWidth: 200
       }
+    },
+    {
+      files: '*.html',
+      options: {
+        parser: 'html'
+      }
     }
   ]
 }

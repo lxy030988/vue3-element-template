@@ -44,14 +44,11 @@ $tp-box-shadow: (
   'light': $tp-box-shadow-light
 );
 
-
-
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
-    $colors: $tp-colors,
-    $text-color: $tp-text-color,
-    $border-color: $tp-border-color,
-    $box-shadow: $tp-box-shadow
+  $colors: $tp-colors,
+  $text-color: $tp-text-color,
+  $border-color: $tp-border-color,
+  $box-shadow: $tp-box-shadow
 );
 
 @use 'element-plus/theme-chalk/src/index.scss' as *;
-
