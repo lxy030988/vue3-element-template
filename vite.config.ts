@@ -19,14 +19,14 @@ const alias: Record<string, string> = {
   // img: path.resolve(__dirname, 'src/assets')
 }
 
-module.exports = ({ mode }: any) => {
+export default defineConfig(({ mode }: any) => {
   // console.log('mode', mode)
   const env = loadEnv(mode, CWD)
   const viteEnv = wrapperEnv(env)
   console.log('viteEnv=>', viteEnv)
   const { VITE_DROP_CONSOLE, VITE_THEME } = viteEnv
 
-  return defineConfig({
+  return {
     root: path.resolve(__dirname),
     base: '/', //生产过程中的基本公共路径 默认 '/'
     resolve: {
@@ -74,7 +74,7 @@ module.exports = ({ mode }: any) => {
       terserOptions: {
         compress: {
           keep_infinity: true,
-          // drop_debugger: true,
+          drop_debugger: true,
           drop_console: VITE_DROP_CONSOLE
         }
       },
@@ -84,5 +84,5 @@ module.exports = ({ mode }: any) => {
         plugins: createRollupPlugin()
       }
     }
-  })
-}
+  }
+})

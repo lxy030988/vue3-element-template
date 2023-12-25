@@ -134,36 +134,26 @@ vue3-element-template
 
 ## 基础
 
-### vue3 基础
+- vueuse
+- vite-plugin-top-level-await
+- icon 示例页面 全部加载
+- 浏览器es6以下兼容处理 垫片
+- [esmodule](https://cn.vitejs.dev/guide/troubleshooting)
 
-- https://v3.cn.vuejs.org/
+### script setup 特性
+
+- [script setup](https://cn.vuejs.org/api/sfc-script-setup.html#script-setup)
+- vscode 禁用 Vetur，下载 Volar
+
+### setup name
 
 ```js
-import { defineComponent, inject, provide, onMounted, PropType, reactive, Ref, ref, toRefs, watch, watchEffect } from 'vue'
-
-setup(props,ctx) {}
-```
-
-### element-plus
-
-- https://element-plus.gitee.io/zh-CN/
-
-### vue3.2
-
-- script setup + TS + Volar
-- vscode 禁用 Vetur，下载 Volar
-- define 编译器宏 不需要引入，直接使用 。defineProps defineEmits defineExpose
-- 示例 src/components/testSetup.vue
-
-- 需要更新这几个包
-
-```json
-"vue": "^3.2.3",
-"vue-router": "^4.0.11",
-
-"@vitejs/plugin-vue": "^1.4.0",
-"@vitejs/plugin-vue-jsx": "^1.1.7",
-"@vue/compiler-sfc": "^3.2.3",
+// https://cn.vuejs.org/api/sfc-script-setup.html#defineoptions
+// Vue 3.3+
+defineOptions({
+  name: 'Foo',
+  inheritAttrs: false
+})
 ```
 
 ### 文件引入

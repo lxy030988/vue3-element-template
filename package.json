@@ -1,6 +1,7 @@
 {
   "name": "vue3-element-template",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "cross-env NODE_ENV=production vite build --mode=production",
