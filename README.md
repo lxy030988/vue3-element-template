@@ -134,10 +134,20 @@ vue3-element-template
 
 ## 基础
 
+### TODO
+
+- [pinia](https://pinia.vuejs.org/zh/core-concepts/#setup-stores)
 - vueuse
 - vite-plugin-top-level-await
 - icon 示例页面 全部加载
+- stylelint
+- vue-tsc
+- tinymce
 - 浏览器es6以下兼容处理 垫片
+- 组件开发以及文档 链接到组件内部
+
+### 注意
+
 - [esmodule](https://cn.vitejs.dev/guide/troubleshooting)
 
 ### script setup 特性
@@ -218,7 +228,7 @@ export function getNanJing() {
 ### css 深度选择器
 
 ```scss
-::v-deep(.deep-test) {
+:deep(.deep-test) {
   color: red;
   .c1 {
     color: wheat;
@@ -279,10 +289,6 @@ css: {
 
 - volar（vscode 插件）
 - volar 和 vetur 只能开启一个
-
-### quicktype 根据 json 生成 ts interface
-
-- https://app.quicktype.io/
 
 ### vscode 设置
 
@@ -379,83 +385,12 @@ Dev: defineAsyncComponent(() => {
 })
 ```
 
-### typescript 版本
-
-```json
-"typescript": "^4.1.5",
-```
-
 ### eslint
-
-```json
-"build": "vue-tsc --noEmit && vite build"
-"vue-tsc":"https://www.npmjs.com/package/vue-tsc "
-Vue 3 command line Type-Checking tool base on IDE plugin Volar
-```
 
 ```json
 "lint": "eslint --fix /"src/**/*([^d]|[^.]d).{ts,vue}/""
 "lint": "eslint --ext .ts,.vue src/** --error-on-unmatched-pattern"   --quiet(不报警告)
 "lint:fix": "eslint --ext .ts,.vue src/** --error-on-unmatched-pattern --fix"
-```
-
-_这段配置目前有点问题_
-
-Insert `··`eslint[prettier/prettier](https://github.com/prettier/eslint-plugin-prettier#options)
-
-```json
-"@typescript-eslint/eslint-plugin": "^4.15.2",
-"@typescript-eslint/parser": "^4.15.2",
-"@vue/eslint-config-prettier": "^6.0.0",
-"@vue/eslint-config-typescript": "^7.0.0",
-"@vuedx/typescript-plugin-vue": "^0.6.3",
-"eslint": "^7.20.0",
-"eslint-plugin-prettier": "^3.3.1",
-"eslint-plugin-vue": "^7.6.0",
-"prettier": "^2.2.1",
-```
-
-```js
-extends: [
-    'plugin:vue/vue3-recommended',
-    'eslint:recommended',
-    '@vue/typescript/recommended',
-    '@vue/prettier',
-    '@vue/prettier/@typescript-eslint'
-],
-```
-
-### jest(未用)
-
-- package.json
-
-```json
-"test:unit":"jest"
-
-"jest":"^26.6.3"
-"@types/jest":"^26.0.20"
-"vue-jest":"^5.0.0-alpha.7"
-"babel-jest":"^26.6.3"
-"@babel/preset-env": "^7.12.17"
-"@vue/test-utils": "^2.0.0-beta.9"
-"@babel/preset-typescript": "^7.12.17"
-"ts-jest":"^26.5.1"
-```
-
-- jest.config.js
-
-```js
-module.exports = {
-  transform: {
-    '^.+//.vue$': 'vue-jest',
-    '^.+//js$': 'babel-jest',
-    '^.+//ts$': 'ts-jest'
-  },
-  moduleNameMapper: {
-    '^@/components(.*)$': '<rootDir>/src/components$1'
-  },
-  testMatch: ['**/tests/unit/**/*.[jt]s?(x)']
-}
 ```
 
 ### git commit eslint
@@ -658,17 +593,4 @@ export default defineComponent({
   }
 })
 </script>
-```
-
-### script setup
-
-```js
-import { defineProps, getCurrentInstance, useContext } from 'vue'
-const { expose } = useContext()
-
-//ref sugar 语法糖
-ref: num = 100 //==>  const num = ref(100)
-onMounted: {
-  console.log('onMounted', num)
-}
 ```

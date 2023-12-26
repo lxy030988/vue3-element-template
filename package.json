@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "cross-env NODE_ENV=production vite build --mode=production",
     "lint": "eslint src --ext .ts,.tsx,.vue,.js,.jsx",
-    "lint:fix": "eslint --fix src --ext .ts,.tsx,.vue,.js,.jsx",
+    "lint:fix": "eslint --fix . --ext .ts,.tsx,.vue,.js,.jsx",
     "prettier": "prettier --write ."
   },
   "dependencies": {
@@ -67,8 +67,8 @@
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": [
-      "eslint --fix",
       "prettier --write .",
+      "eslint --fix",
       "git add"
     ]
   }
