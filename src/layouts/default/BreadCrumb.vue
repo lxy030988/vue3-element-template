@@ -4,11 +4,7 @@
       <svg-icon name="menu-home" />
       <span>工作台</span>
     </el-breadcrumb-item>
-    <el-breadcrumb-item :to="{ path: '/detail/menu/1112' }">
-      <svg-icon name="menu-setting" />
-      <span>系统设置</span>
-    </el-breadcrumb-item>
-    <el-breadcrumb-item :to="{ path: '/detail/plan/111' }">
+    <el-breadcrumb-item :to="{ path: '/menu' }">
       <svg-icon name="menu-setting" />
       <span>菜单管理</span>
     </el-breadcrumb-item>
@@ -29,13 +25,13 @@ export default defineComponent({
 <style scoped lang="scss">
 .el-breadcrumb {
   height: 48px;
-  margin-bottom: $tp-default-dis;
-  padding: 0 $tp-default-dis;
+  margin: $tp-default-dis * 0.5;
+  padding: 0 $tp-default-dis * 0.5;
   border: 1px solid $tp-border-color-light;
   border-radius: $tp-border-radius-base;
   background: $tp-content-bg-color;
   box-shadow: $tp-box-shadow-light;
-  font-size: $tp-font-size-medium;
+  font-size: $tp-font-size-base;
   line-height: 48px;
 
   ::v-deep(.el-breadcrumb__item) {
@@ -53,7 +49,6 @@ export default defineComponent({
     position: relative;
     top: -2px;
     margin-right: $tp-default-dis * 0.5;
-    font-size: $tp-font-size-large;
   }
 }
 </style>

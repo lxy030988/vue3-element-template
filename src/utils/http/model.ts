@@ -1,4 +1,4 @@
-import { ResCodeEnum } from '@/enums/httpEnum'
+import { ResCodeEnum } from './enum'
 
 // interface TResMsg {
 //   msgCode: string
@@ -6,6 +6,7 @@ import { ResCodeEnum } from '@/enums/httpEnum'
 // }
 
 export interface TRes {
+  success: boolean
   code: ResCodeEnum
   data: any
   msg: string

@@ -1,8 +1,9 @@
 import type { App } from 'vue'
 
 import Pagination from '@/components/pagination/index.vue'
+import Dialog from '@/components/dialog/index.vue'
 
-const components = [Pagination]
+const components = [Pagination, Dialog]
 
 export function setupComponents(app: App<Element>) {
   components.forEach(item => {

@@ -1,10 +1,11 @@
 <template>
   <el-pagination
+    class="tp-pagination"
     @current-change="onChange"
     @size-change="showSizeChange"
     :current-page="pages.pageNum"
     :page-size="pages.pageSize"
-    layout="total, sizes, prev, pager, next"
+    :layout="layout"
     background
     :total="pages.total"
   />
@@ -19,6 +20,10 @@ export default defineComponent({
     pages: {
       type: Object as PropType<IPage>,
       required: true
+    },
+    layout: {
+      type: String,
+      default: 'total, sizes, prev, pager, next'
     }
   },
   emits: ['currentChange', 'sizeChange'],
@@ -27,7 +32,7 @@ export default defineComponent({
       emit('currentChange', current)
     }
 
-    const showSizeChange = (current: number, pageSize: number) => {
+    const showSizeChange = (pageSize: number) => {
       emit('sizeChange', pageSize)
     }
 
@@ -39,11 +44,12 @@ export default defineComponent({
 })
 </script>
 <style scoped lang="scss">
-.el-pagination {
-  // text-align: right;
-  margin-top: $tp-default-dis;
+.tp-pagination {
+  justify-content: flex-end;
+  margin-bottom: $tp-default-dis;
+  padding: 0 $tp-default-dis;
 
-  ::v-deep(.el-icon) {
+  :deep(.el-icon) {
     color: inherit;
   }
 }

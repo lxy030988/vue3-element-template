@@ -70,7 +70,6 @@ export default defineComponent({
   height: $tp-header-height;
   background-color: $tp-header-bg-color;
   color: $tp-color-white;
-  font-size: $tp-font-size-extra-large;
   font-weight: $tp-font-weight-primary;
   line-height: $tp-header-height;
 
@@ -78,6 +77,7 @@ export default defineComponent({
     position: relative;
     padding: 0 $tp-default-dis;
     float: left;
+    font-size: $tp-font-size-large;
 
     &::after {
       content: '';

@@ -1,12 +1,10 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper tp-flex tp-flex--column tp-full">
     <v-head />
-    <!-- <div class="wrapper-con">
 
-    </div> -->
-    <div class="content-box">
+    <div class="content-box tp-flex-con tp-flex tp-flex--column">
       <bread-crumb />
-      <div class="content">
+      <div class="content tp-flex-con tp-auto--x">
         <router-view v-slot="{ Component }">
           <transition name="fade-slide" mode="out-in" appear>
             <keep-alive>
@@ -39,28 +37,11 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .wrapper {
-  display: flex;
-  box-sizing: border-box;
-  flex-direction: column;
-  overflow: hidden;
+  background-color: $tp-bg-color;
 
-  .content-box {
-    display: flex;
-    box-sizing: border-box;
-    flex: 1;
-    flex-direction: column;
-    height: 0;
-    padding: $tp-default-dis;
-    background: $tp-bg-color;
-
-    .content {
-      box-sizing: border-box;
-      flex: 1;
-      overflow: hidden auto;
-
-      // background: $tp-color-white;
-      // padding: $tp-default-dis;
-    }
+  .content {
+    margin: 0 $tp-default-dis * 0.5 $tp-default-dis * 0.5;
+    transform: translateZ(0);
   }
 }
 
@@ -70,12 +51,12 @@ export default defineComponent({
 }
 
 .fade-slide-enter-from {
-  transform: translateX(-30px);
+  transform: translateY(30px);
   opacity: 0;
 }
 
 .fade-slide-leave-to {
-  transform: translateX(30px);
+  transform: translateY(-30px);
   opacity: 0;
 }
 </style>

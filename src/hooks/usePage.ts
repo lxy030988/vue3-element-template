@@ -20,7 +20,7 @@ export const usePage = (fn: Function) => {
     fn()
   }
 
-  const currentChange = (page: number) => {
+  const currentChange = (page = 1) => {
     pages.pageNum = page
     fn()
   }

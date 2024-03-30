@@ -1,6 +1,8 @@
 import { usePage } from '@/hooks'
 import { ref } from 'vue'
 
+const loading = ref(false)
+
 const list = ref<any[]>([
   { name: 'name' },
   { name: 'name' },
@@ -29,4 +31,4 @@ const goFilter = (v: any) => {
   currentChange(1)
 }
 
-export const useTableData = { initData, goFilter, list, pages, tableIndex, currentChange, sizeChange }
+export const useTableData = { loading, initData, goFilter, list, pages, tableIndex, currentChange, sizeChange }

@@ -1,47 +1,14 @@
 import axios from 'axios'
-import qs from 'qs'
-import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios'
-
-import { ResCodeEnum } from '@/enums/httpEnum'
+import type { AxiosInstance, AxiosResponse } from 'axios'
+import { ResCodeEnum } from './enum'
 import { TRes } from './model'
 import { getToken } from '../storage/user'
-
 import { ElMessage } from 'element-plus'
 import router from '@/router' //只能在setup里用useRouter
-
-//取消重复请求
-const CancelToken = axios.CancelToken
-
-const pendingRequest = new Map()
-
-const generateReqKey = (config: AxiosRequestConfig) => {
-  const { method, url, params, data } = config
-  return [method, url, qs.stringify(params), qs.stringify(data)].join('&')
-}
-
-const addPendingRequest = (config: AxiosRequestConfig) => {
-  if (!config.cancelToken) {
-    const requestKey = generateReqKey(config)
-    const source = CancelToken.source()
-    config.cancelToken = source.token
-    if (!pendingRequest.has(requestKey)) {
-      pendingRequest.set(requestKey, source.cancel)
-      // source.cancel('取消请求')
-    }
-  }
-}
-
-const removePendingRequest = (config: AxiosRequestConfig) => {
-  const requestKey = generateReqKey(config)
-  if (pendingRequest.has(requestKey)) {
-    const cancel = pendingRequest.get(requestKey)
-    cancel(`取消请求 ${requestKey}`)
-    pendingRequest.delete(requestKey)
-  }
-}
+import { debounce } from '../util'
 
 const http: AxiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_BASE_URL as string,
+  baseURL: import.meta.env.VITE_BASE_URL,
   timeout: 20_000,
   headers: {
     'Content-Security-Policy': 'upgrade-insecure-requests'
@@ -49,10 +16,9 @@ const http: AxiosInstance = axios.create({
 })
 
 http.interceptors.request.use(
-  (config: AxiosRequestConfig) => {
+  config => {
     config.headers!.token = getToken()!
-    removePendingRequest(config)
-    addPendingRequest(config)
+
     return config
   },
   error => {
@@ -62,30 +28,28 @@ http.interceptors.request.use(
 
 http.interceptors.response.use(
   (res: AxiosResponse<TRes>) => {
-    removePendingRequest(res.config)
-
     if (res.status === 200) {
       if (res.data.code === ResCodeEnum.SUCCESS) {
         return res.data.data
       }
-      if (res.data.code === ResCodeEnum.AUTH_EXPIRE) {
-        ElMessage.error('您未登录或登录已失效')
-        router.push({ path: '/login' })
+      if (res.data.code === ResCodeEnum.AUTH_NULL || res.data.code === ResCodeEnum.AUTH_EXPIRE) {
+        debounceBackLogin()
       } else {
         ElMessage.error(res.data.msg)
-        console.error(res.data.msg)
       }
       return Promise.reject(res)
     }
     return Promise.reject(res)
   },
-  (err: AxiosError) => {
-    removePendingRequest(err.config)
-    if (axios.isCancel(err)) {
-      console.log('已取消的重复请求：' + err.message)
-    }
+  err => {
     return Promise.reject(err)
   }
 )
+
+const backLogin = () => {
+  ElMessage.error('请登录')
+  router.push({ path: '/login' })
+}
+const debounceBackLogin = debounce(backLogin)
 
 export default http

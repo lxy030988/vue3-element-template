@@ -10,14 +10,14 @@
         </div>
         <el-form :model="form">
           <el-form-item>
-            <el-input v-model:value="form.account" placeholder="账号" @keyup.enter="onSubmit">
+            <el-input v-model="form.account" placeholder="账号" @keyup.enter="onSubmit">
               <template #prefix>
                 <svg-icon name="login-user" />
               </template>
             </el-input>
           </el-form-item>
           <el-form-item>
-            <el-input v-model:value.trim="form.userPwd" type="password" placeholder="密码" @keyup.enter="onSubmit">
+            <el-input v-model="form.userPwd" type="password" placeholder="密码" @keyup.enter="onSubmit">
               <template #prefix>
                 <svg-icon name="login-password" />
               </template>
@@ -34,8 +34,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive, toRaw } from 'vue'
-import { getUserInfo } from '@/api/user'
-import { Md5 } from 'ts-md5/dist/md5'
+import { Md5 } from 'ts-md5'
 import { useMyStore } from '@/hooks'
 import { useRouter } from 'vue-router'
 
@@ -52,11 +51,19 @@ export default defineComponent({
     const onSubmit = async () => {
       try {
         const { account, userPwd } = toRaw(form)
-        console.log(toRaw(form))
-        const res = await getUserInfo({
+
+        // const res = await getUserInfo({
+        //   account,
+        //   userPwd: Md5.hashStr(userPwd)
+        // })
+
+        const res = {
+          id: account,
           account,
-          userPwd: Md5.hashStr(userPwd)
-        })
+          userName: account,
+          token: Md5.hashStr(userPwd)
+        }
+
         commit('user/SET_USER', res)
         router.push({ path: '/' })
       } catch (error) {
