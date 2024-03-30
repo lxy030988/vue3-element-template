@@ -1,6 +1,6 @@
 import http from '@/utils/http'
 import api from '../api'
-import { TParamsLogin, TResUser, TParamsPwd, TResNewPwd } from './model'
+import { TParamsLogin, TResUser, TParamsPwd } from './model'
 
 /**
  * 用户登录

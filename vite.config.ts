@@ -1,22 +1,16 @@
 import path from 'path'
 import { loadEnv, defineConfig } from 'vite'
-
+import { visualizer } from 'rollup-plugin-visualizer'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
-
 import { createRollupPlugin } from './build/plugin'
 import { wrapperEnv } from './build/utils'
 
 const CWD: string = process.cwd()
-import pkg from './package.json'
-
-// import vm from './plugins/test-vite-plugin'
-// import i18n from './plugins/vite-plugin-i18n'
 
 const alias: Record<string, string> = {
   '@': path.resolve(__dirname, 'src')
-  // img: path.resolve(__dirname, 'src/assets')
 }
 
 export default defineConfig(({ mode }: any) => {
@@ -36,10 +30,15 @@ export default defineConfig(({ mode }: any) => {
       host: '0.0.0.0',
       port: 3030,
       proxy: {
-        '/api/': {
-          target: 'http://192.168.0.58:8001/',
+        '/imp-gwy-api/': {
+          target: 'http://192.168.4.151:10000/',
           changeOrigin: true,
-          rewrite: path => path.replace(/^\/api\//, '')
+          rewrite: path => path.replace(/^\/imp-gwy-api\//, '')
+        },
+        '/w-gwy-api': {
+          target: 'ws://192.168.4.151:10089',
+          changeOrigin: true,
+          rewrite: path => path.replace(/^\/ws-gwy-api/, '')
         }
       }
     },
@@ -54,11 +53,11 @@ export default defineConfig(({ mode }: any) => {
       }
     },
     optimizeDeps: {
-      include: ['element-plus/es/locale/lang/zh-cn'],
+      include: [],
       exclude: []
     },
     define: {
-      __VERSION__: JSON.stringify(pkg.version)
+      // __VERSION__: JSON.stringify(pkg.version)
     },
     plugins: [
       vue(),
@@ -66,7 +65,8 @@ export default defineConfig(({ mode }: any) => {
       createSvgIconsPlugin({
         iconDirs: [path.resolve(CWD, 'src/assets/icons')],
         symbolId: 'icon-[dir]-[name]'
-      })
+      }),
+      visualizer()
     ], //, vm(), i18n
     build: {
       target: 'es2015',
@@ -74,13 +74,21 @@ export default defineConfig(({ mode }: any) => {
       terserOptions: {
         compress: {
           keep_infinity: true,
-          drop_debugger: true,
-          drop_console: VITE_DROP_CONSOLE
+          drop_debugger: VITE_DROP_CONSOLE,
+          // drop_console: VITE_DROP_CONSOLE
+          pure_funcs: ['console.log']
         }
       },
 
       chunkSizeWarningLimit: 1500,
       rollupOptions: {
+        output: {
+          manualChunks: {
+            vue: ['vue', 'vue-router', 'vuex'],
+            'element-plus': ['element-plus'],
+            echarts: ['echarts', 'echarts-gl', 'echarts-wordcloud']
+          }
+        },
         plugins: createRollupPlugin()
       }
     }

@@ -28,30 +28,32 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .el-breadcrumb {
-  background: $tp-content-bg-color;
   height: 48px;
-  line-height: 48px;
   margin-bottom: $tp-default-dis;
   padding: 0 $tp-default-dis;
-  font-size: $tp-font-size-medium;
-  box-shadow: $tp-box-shadow-light;
   border: 1px solid $tp-border-color-light;
   border-radius: $tp-border-radius-base;
+  background: $tp-content-bg-color;
+  box-shadow: $tp-box-shadow-light;
+  font-size: $tp-font-size-medium;
+  line-height: 48px;
+
   ::v-deep(.el-breadcrumb__item) {
     .el-breadcrumb__inner {
       color: $tp-text-color-secondary;
       font-weight: normal;
     }
+
     &:last-child .el-breadcrumb__inner {
       color: $tp-text-color-primary;
     }
   }
 
   .svg-icon {
-    margin-right: $tp-default-dis * 0.5;
-    font-size: $tp-font-size-large;
     position: relative;
     top: -2px;
+    margin-right: $tp-default-dis * 0.5;
+    font-size: $tp-font-size-large;
   }
 }
 </style>

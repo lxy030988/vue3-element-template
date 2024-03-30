@@ -42,6 +42,7 @@ export default defineComponent({
 .el-pagination {
   // text-align: right;
   margin-top: $tp-default-dis;
+
   ::v-deep(.el-icon) {
     color: inherit;
   }

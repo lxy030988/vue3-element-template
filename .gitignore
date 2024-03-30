@@ -3,10 +3,11 @@ node_modules
 dist
 dist-ssr
 *.local
-
+src/common-utils
+src/common-utils.diff
+stats.html
 # local env files
-.env.local
-.env.*.local
+.env.*
 
 # Log files
 npm-debug.log*
@@ -21,3 +22,5 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+# nvm-desktop
+.nvmdrc

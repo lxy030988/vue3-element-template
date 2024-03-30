@@ -45,7 +45,7 @@ class TpEnum implements ITpEnum {
     }
     const result = []
 
-    for (const [value, label] of this.container) {
+    for (const [_value, label] of this.container) {
       result.push(label)
     }
     return result.join('，')

@@ -40,22 +40,24 @@ export default defineComponent({
 <style lang="scss" scoped>
 .wrapper {
   display: flex;
-  overflow: hidden;
   box-sizing: border-box;
   flex-direction: column;
+  overflow: hidden;
+
   .content-box {
-    flex: 1;
-    background: $tp-bg-color;
-    padding: $tp-default-dis;
-    box-sizing: border-box;
     display: flex;
+    box-sizing: border-box;
+    flex: 1;
     flex-direction: column;
     height: 0;
+    padding: $tp-default-dis;
+    background: $tp-bg-color;
+
     .content {
-      flex: 1;
-      overflow-x: hidden;
-      overflow-y: auto;
       box-sizing: border-box;
+      flex: 1;
+      overflow: hidden auto;
+
       // background: $tp-color-white;
       // padding: $tp-default-dis;
     }
@@ -68,12 +70,12 @@ export default defineComponent({
 }
 
 .fade-slide-enter-from {
-  opacity: 0%;
   transform: translateX(-30px);
+  opacity: 0;
 }
 
 .fade-slide-leave-to {
-  opacity: 0%;
   transform: translateX(30px);
+  opacity: 0;
 }
 </style>

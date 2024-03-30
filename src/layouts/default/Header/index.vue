@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, ref } from 'vue'
+import { computed, defineComponent } from 'vue'
 import { DropdownEnum } from '../model'
 import { useRouter } from 'vue-router'
 import { useMyStore } from '@/hooks'
@@ -65,27 +65,28 @@ export default defineComponent({
 <style lang="scss" scoped>
 .header {
   display: flex;
-  background-color: $tp-header-bg-color;
-  color: $tp-color-white;
   position: relative;
   box-sizing: border-box;
   height: $tp-header-height;
-  line-height: $tp-header-height;
+  background-color: $tp-header-bg-color;
+  color: $tp-color-white;
   font-size: $tp-font-size-extra-large;
   font-weight: $tp-font-weight-primary;
+  line-height: $tp-header-height;
 
   .logo {
-    float: left;
-    padding: 0 $tp-default-dis;
     position: relative;
+    padding: 0 $tp-default-dis;
+    float: left;
+
     &::after {
       content: '';
-      width: 1px;
-      height: 24px;
-      background-color: rgba($color: #fff, $alpha: 0.2);
       position: absolute;
       top: 20px;
       right: 0;
+      width: 1px;
+      height: 24px;
+      background-color: rgba($color: #fff, $alpha: 20%);
     }
   }
 
@@ -95,14 +96,14 @@ export default defineComponent({
   }
 
   .header-right {
-    float: right;
     padding-right: $tp-default-dis * 2;
+    float: right;
 
     .header-user-con {
       display: flex;
+      align-items: center;
       height: $tp-header-height;
       font-size: $tp-font-size-medium;
-      align-items: center;
     }
 
     .el-dropdown {

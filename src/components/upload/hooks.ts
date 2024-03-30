@@ -168,7 +168,7 @@ export async function calculateHashSample(file: File, cb: Function) {
 export async function uploadChunks(chunks: any[], uploadedList: any[]) {
   const requests = chunks
     .filter(chunk => uploadedList.indexOf(chunk.name) == -1)
-    .map((chunk, index) => {
+    .map(chunk => {
       // 转成promise
       const form = new FormData()
       form.append('chunk', chunk.chunk)

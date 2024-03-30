@@ -1,11 +1,7 @@
 <template>
   <div class="home">
-    <tp-dev />
     <div>
       <div>element 图标</div>
-      <el-icon color="#409EFC" class="no-inherit">
-        <RefreshRight />
-      </el-icon>
       <el-input v-model="input" placeholder="Please input" />
     </div>
     <img alt="Vue logo" src="@/assets/logo.png" />
@@ -32,29 +28,19 @@
 <script lang="ts">
 const name = import.meta.env.VITE_NAME
 
-import { computed, defineAsyncComponent, defineComponent, ref } from 'vue'
+import { computed, defineComponent, ref } from 'vue'
 
 // import { GlobleState } from '@/store'
 // import { useStore } from 'vuex'
 import { useMyStore } from '@/hooks'
 
 import VueEcharts, { OptionType } from '@/components/echarts'
-import { RefreshRight } from '@element-plus/icons'
 
 import { bus } from '@/utils/eventBus'
 export default defineComponent({
   name: 'Home',
   components: {
-    VueEcharts,
-    RefreshRight,
-
-    //根据不同环境 引入不同组件
-    TpDev: defineAsyncComponent(() => {
-      if (name === 'dev12') {
-        return import(`../../env/comp/${name}.vue`) //只能写相对路径
-      }
-      return import('@/components/Empty.vue')
-    })
+    VueEcharts
   },
   setup() {
     console.log('setup name', name)
@@ -63,8 +49,8 @@ export default defineComponent({
     })
     // const store = useStore<GlobleState>()
     // console.log(store.state.home.name)
-    const { state, getters, commit, dispatch } = useMyStore()
-    // console.log('vuex state', state.user.loading)
+    const { state, getters } = useMyStore()
+    console.log('vuex state', state.user)
     console.log('getters', getters['user/isLogin'])
     const installData = ref([120, 200, 150, 80, 70, 110, 130])
     const options = computed(
@@ -122,12 +108,15 @@ export default defineComponent({
 .tp-svg-icon {
   color: red;
 }
+
 .echarts {
   width: 800px;
   height: 600px;
 }
+
 ::v-deep(.deep-test) {
   color: red;
+
   .c1 {
     color: wheat;
   }

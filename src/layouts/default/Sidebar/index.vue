@@ -84,10 +84,12 @@ export default defineComponent({
 .sidebar {
   height: 100%;
   overflow-y: auto;
+
   ::v-deep(.svg-icon) {
     margin-right: $tp-default-dis * 0.5;
     font-size: $tp-font-size-large;
   }
+
   .el-menu {
     height: 100%;
   }

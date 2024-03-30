@@ -67,13 +67,13 @@ export default defineComponent({
 @mixin active-after {
   &::after {
     content: '';
-    width: 50%;
-    border-radius: $tp-border-radius-base;
-    height: 4px;
-    background-color: white;
     position: absolute;
     bottom: -($tp-header-height - 60) * 0.5;
     left: 25%;
+    width: 50%;
+    height: 4px;
+    border-radius: $tp-border-radius-base;
+    background-color: white;
   }
 }
 
@@ -81,8 +81,8 @@ export default defineComponent({
   border-bottom: none;
 
   .el-menu-item {
-    font-size: $tp-font-size-medium;
     border: none;
+    font-size: $tp-font-size-medium;
 
     &.is-active {
       @include active-after;
@@ -95,9 +95,10 @@ export default defineComponent({
 
   ::v-deep(.el-sub-menu) {
     .el-sub-menu__title {
-      font-size: $tp-font-size-medium;
       border: none;
+      font-size: $tp-font-size-medium;
     }
+
     &.is-active .el-sub-menu__title {
       @include active-after;
     }
@@ -108,7 +109,7 @@ export default defineComponent({
   }
 }
 
-::v-global(.el-menu--popup .el-menu-item.is-active::after) {
-  content: none !important;
-}
+// ::v-global(.el-menu--popup .el-menu-item.is-active::after) {
+//   content: none !important;
+// }
 </style>

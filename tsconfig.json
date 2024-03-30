@@ -30,8 +30,8 @@
     "removeComments": false,
     "strictFunctionTypes": false,
     "baseUrl": ".",
-    "types": ["node"],
-    "typeRoots": ["./node_modules/@types/", "./types"],
+    "types": ["node", "global"],
+    "typeRoots": ["./node_modules/@types/", "./types", "./node_modules/element-plus/"],
     "paths": {
       "@/*": ["src/*"]
     },

@@ -1,6 +1,7 @@
 const { defineConfig } = require('eslint-define-config')
 
 module.exports = defineConfig({
+  plugins: ['unused-imports'],
   root: true,
   env: {
     browser: true,
@@ -24,6 +25,7 @@ module.exports = defineConfig({
     'plugin:prettier/recommended'
   ],
   globals: {
+    Jessibuca: 'readonly',
     defineProps: 'readonly',
     defineEmits: 'readonly',
     defineExpose: 'readonly',
@@ -50,7 +52,12 @@ module.exports = defineConfig({
     '@typescript-eslint/no-unused-vars': 'off',
     'no-var': 'error',
     'prettier/prettier': 'error',
-
+    'no-unused-vars': 'off',
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'error',
+      { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' }
+    ],
     // 禁止出现重复的 case 标签
     'no-duplicate-case': 'warn',
     // 禁止出现空语句块
@@ -72,7 +79,7 @@ module.exports = defineConfig({
     // 禁止 if 语句中 return 语句之后有 else 块
     'no-else-return': 'warn',
     // 禁止出现空函数
-    'no-empty-function': 'warn',
+    'no-empty-function': 'off',
     // 禁用不必要的嵌套块
     'no-lone-blocks': 'warn',
     // 禁止使用多个空格
@@ -116,11 +123,11 @@ module.exports = defineConfig({
     // 强制回调函数最大嵌套深度
     'max-nested-callbacks': ['warn', 3],
     // 强制函数定义中最多允许的参数数量
-    'max-params': ['warn', 3],
+    // 'max-params': ['warn', 3],
     // 强制每一行中所允许的最大语句数量
     'max-statements-per-line': ['warn', { max: 1 }],
     // 要求方法链中每个调用都有一个换行符
-    'newline-per-chained-call': ['warn', { ignoreChainWithDepth: 3 }],
+    'newline-per-chained-call': ['warn', { ignoreChainWithDepth: 5 }],
     // 禁止 if 作为唯一的语句出现在 else 语句中
     'no-lonely-if': 'warn',
     // 禁止空格和 tab 的混合缩进
@@ -183,6 +190,8 @@ module.exports = defineConfig({
     'vue/no-deprecated-router-link-tag-prop': 'off',
     'vue/no-reserved-props': 'off',
     'vue/comment-directive': 'off',
+    'vue/no-v-html': 'off',
+    'vue/no-setup-props-destructure': 'off',
     'vue/html-self-closing': [
       'error',
       {

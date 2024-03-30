@@ -45,11 +45,11 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .el-icon {
-  color: $tp-text-color-secondary;
-  font-size: inherit;
-  margin-right: $tp-default-dis * 0.5;
   position: relative;
   top: 2px;
+  margin-right: $tp-default-dis * 0.5;
+  color: $tp-text-color-secondary;
+  font-size: inherit;
   cursor: pointer;
 }
 </style>

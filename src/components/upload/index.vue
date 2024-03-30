@@ -44,18 +44,7 @@ import { computed, defineComponent, onMounted, reactive, Ref, ref, toRefs } from
 
 import { utest, uploadFile, checkFile } from '@/api/upload'
 
-import {
-  bindEvents,
-  isImage,
-  isJpg,
-  createFileChunk,
-  calculateHashWorker,
-  calculateHashIdle,
-  calculateHashSample,
-  uploadChunks,
-  mergeRequest,
-  TCPSlowStart
-} from './hooks'
+import { bindEvents, isImage, createFileChunk, calculateHashIdle, mergeRequest, TCPSlowStart } from './hooks'
 
 export default defineComponent({
   async setup() {
@@ -196,10 +185,10 @@ export default defineComponent({
   .cube {
     width: 28px;
     height: 28px;
-    line-height: 26px;
+    float: left;
     border: 1px black solid;
     background: #eee;
-    float: left;
+    line-height: 26px;
 
     & > .success {
       background: green;

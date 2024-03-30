@@ -39,8 +39,8 @@ export default defineComponent({
 .svg-icon {
   width: 1em;
   height: 1em;
-  vertical-align: middle;
-  fill: currentColor;
   overflow: hidden;
+  fill: currentColor;
+  vertical-align: middle;
 }
 </style>
