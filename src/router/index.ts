@@ -4,11 +4,6 @@ import DefaultLayout from '@/layouts/default/index.vue'
 import FullLayout from '@/layouts/full/index.vue'
 // import { getToken } from '@/utils/storage/user'
 
-import { envDefaultPages, envFullPages } from './envPages'
-import { exampleRoutes } from '@/example'
-import { detailRoutes } from './detail'
-import { manageRoutes } from './manage'
-
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/:pathMatch(.*)*',
@@ -47,9 +42,22 @@ const routes: Array<RouteRecordRaw> = [
           title: '菜单管理'
         }
       },
-      ...envDefaultPages,
-      ...detailRoutes,
-      ...manageRoutes
+      {
+        name: 'MenuDetail',
+        path: 'menu/:id',
+        component: () => import(/* webpackChunkName: "MenuDetail" */ '@/views/Menu/modules/Detail/index.vue'),
+        meta: {
+          title: '详情MenuDetail'
+        }
+      },
+      {
+        name: 'PlanDetail',
+        path: 'plan/:id',
+        component: () => import(/* webpackChunkName: "MenuDetail" */ '@/views/Plan/index.vue'),
+        meta: {
+          title: '详情PlanDetail'
+        }
+      }
     ]
   },
   {
@@ -65,9 +73,7 @@ const routes: Array<RouteRecordRaw> = [
           title: '登录',
           ignore: true
         }
-      },
-      ...envFullPages,
-      ...exampleRoutes
+      }
     ]
   }
 ]

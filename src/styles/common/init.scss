@@ -1,0 +1,93 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent; //点击链接的时候出现的高亮颜色
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  color: $tp-text-color-primary;
+  font-family: 'PingFang SC';
+  font-size: $tp-font-size-base;
+  -webkit-font-smoothing: antialiased; //字体平滑
+  -moz-osx-font-smoothing: grayscale; //字体平滑
+}
+
+a {
+  color: $tp-text-color-primary;
+  text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  border: none;
+  vertical-align: middle;
+}
+
+ol[tp-ul],
+ul[tp-ul],
+ol[tp-ul] li,
+ul[tp-ul] li {
+  list-style: none;
+}
+
+ol,
+ul {
+  padding-left: $tp-default-dis;
+  line-height: normal;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+p {
+  word-wrap: break-word;
+}
+
+@include tp-scrollbar;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+}

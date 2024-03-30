@@ -1,0 +1,93 @@
+// .tp-text-color
+@include b(text-color) {
+  // .tp-text-color--primary
+  @include m(primary) {
+    color: $tp-text-color-primary;
+  }
+
+  @include m(regular) {
+    color: $tp-text-color-regular;
+  }
+
+  @include m(secondary) {
+    color: $tp-text-color-secondary;
+  }
+
+  @include m(placeholder) {
+    color: $tp-text-color-placeholder;
+  }
+
+  @include m(error) {
+    color: $tp-color-error;
+  }
+
+  // .tp-text-color--theme
+  @include m(theme) {
+    color: $tp-color-primary;
+  }
+}
+
+// .tp-font-size
+@include b(font-size) {
+  // .tp-font-size--extra-small
+  @include m(extra-small) {
+    font-size: $tp-font-size-extra-small;
+  }
+
+  // .tp-font-size--base
+  @include m(base) {
+    font-size: $tp-font-size-base;
+  }
+
+  // .tp-font-size--medium
+  @include m(medium) {
+    font-size: $tp-font-size-medium;
+  }
+
+  // .tp-font-size--large
+  @include m(large) {
+    font-size: $tp-font-size-large;
+  }
+
+  // .tp-font-size--extra-large
+  @include m(extra-large) {
+    font-size: $tp-font-size-extra-large;
+  }
+}
+
+// .tp-text-align
+@include b(text-align) {
+  // .tp-text-align--left
+  @include m(left) {
+    text-align: left;
+  }
+
+  // .tp-text-align--center
+  @include m(center) {
+    text-align: center;
+  }
+
+  // .tp-text-align--right
+  @include m(right) {
+    text-align: right;
+  }
+}
+
+//.tp-text-warp
+@include b(text-warp) {
+  @include tp-text-warp;
+
+  @for $i from 2 to 5 {
+    @include m($i) {
+      @include tp-text-warp($i);
+    }
+  }
+}
+
+@include b(pointer) {
+  cursor: pointer;
+}
+
+.tp-text-weight--medium {
+  font-weight: 700;
+}

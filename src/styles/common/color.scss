@@ -1,0 +1,98 @@
+// 全局状态颜色
+// 未处理(黄色)
+.tp-status-warning {
+  color: $tp-color-warning;
+}
+
+// 处理中(蓝色)
+.tp-status-primary {
+  color: $tp-color-primary;
+}
+
+// 已完成(绿色)
+.tp-status-success {
+  color: $tp-color-success;
+}
+
+// 已取消
+.tp-status-cancel {
+  color: #8b572a;
+}
+
+// 未完成(红色)
+.tp-status-error {
+  color: $tp-color-error;
+}
+
+// 提醒(橙色)
+.tp-status-remind {
+  color: $tp-color-remind;
+}
+
+// 文本(灰色)
+.tp-status-info {
+  color: $tp-color-info;
+}
+
+// 全局等级颜色
+// 一级(红色)
+.tp-level-error {
+  color: $tp-color-error;
+}
+
+// 二级
+.tp-level-danger {
+  color: $tp-color-danger;
+}
+
+// 三级(黄色)
+.tp-level-warning {
+  color: $tp-color-warning;
+}
+
+// 四级
+.tp-level-success {
+  color: $tp-color-success;
+}
+
+//全局文本颜色
+.tp-color-error {
+  color: $tp-color-error;
+}
+
+.tp-color-danger {
+  color: $tp-color-danger;
+}
+
+.tp-color-remind {
+  color: $tp-color-remind;
+}
+
+.tp-color-warning {
+  color: $tp-color-warning;
+}
+
+.tp-color-success {
+  color: $tp-color-success;
+}
+
+//全局背景颜色
+.tp-bg-color-error {
+  background-color: $tp-color-error;
+}
+
+.tp-bg-color-danger {
+  background-color: $tp-color-danger;
+}
+
+.tp-bg-color-remind {
+  background-color: $tp-color-remind;
+}
+
+.tp-bg-color-warning {
+  background-color: $tp-color-warning;
+}
+
+.tp-bg-color-success {
+  background-color: $tp-color-success;
+}

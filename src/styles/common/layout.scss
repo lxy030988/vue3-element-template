@@ -1,0 +1,250 @@
+// @use './variables.scss' as *;
+
+.tp-default-container {
+  min-width: 1000px;
+}
+
+//左右布局
+.tp-left-box {
+  // position: relative;
+  width: 25%;
+  min-width: 260px;
+  max-width: 400px;
+  margin-right: $tp-default-dis * 0.5;
+}
+
+.tp-left-box--small {
+  width: 200px;
+  margin-right: $tp-default-dis * 0.5;
+}
+
+//浮动
+.tp-fl {
+  float: left;
+}
+
+.tp-fr {
+  float: right;
+}
+
+/* 清除浮动 */
+.tp-clearfix::after {
+  @include tp-clearfix;
+}
+
+//常用边距
+
+//tp-pv
+@include b(pv) {
+  padding-top: $tp-default-dis;
+  padding-bottom: $tp-default-dis;
+
+  // .tp-pv--half
+  @include m(half) {
+    padding-top: $tp-default-dis * 0.5;
+    padding-bottom: $tp-default-dis * 0.5;
+  }
+}
+
+//tp-ph
+@include b(ph) {
+  padding-right: $tp-default-dis;
+  padding-left: $tp-default-dis;
+
+  // .tp-ph--half
+  @include m(half) {
+    padding-right: $tp-default-dis * 0.5;
+    padding-left: $tp-default-dis * 0.5;
+  }
+}
+
+// .tp-pl
+@include b(pl) {
+  padding-left: $tp-default-dis;
+
+  // .tp-pl--half
+  @include m(half) {
+    padding-left: $tp-default-dis * 0.5;
+  }
+}
+
+// .tp-pr
+@include b(pr) {
+  padding-right: $tp-default-dis;
+
+  // .tp-pr--half
+  @include m(half) {
+    padding-right: $tp-default-dis * 0.5;
+  }
+}
+
+// .tp-pt
+@include b(pt) {
+  padding-top: $tp-default-dis;
+
+  // .tp-pt--half
+  @include m(half) {
+    padding-top: $tp-default-dis * 0.5;
+  }
+}
+
+// .tp-pb
+@include b(pb) {
+  padding-bottom: $tp-default-dis;
+
+  // .tp-pb--half
+  @include m(half) {
+    padding-bottom: $tp-default-dis * 0.5;
+  }
+}
+
+//tp-mv
+@include b(mv) {
+  margin-top: $tp-default-dis;
+  margin-bottom: $tp-default-dis;
+
+  // .tp-mv--half
+  @include m(half) {
+    margin-top: $tp-default-dis * 0.5;
+    margin-bottom: $tp-default-dis * 0.5;
+  }
+}
+
+//tp-mh
+@include b(mh) {
+  margin-right: $tp-default-dis;
+  margin-left: $tp-default-dis;
+
+  // .tp-mh--half
+  @include m(half) {
+    margin-right: $tp-default-dis * 0.5;
+    margin-left: $tp-default-dis * 0.5;
+  }
+}
+
+//.tp-ml
+@include b(ml) {
+  margin-left: $tp-default-dis;
+
+  // .tp-ml--half
+  @include m(half) {
+    margin-left: $tp-default-dis * 0.5;
+  }
+
+  // .tp-ml--quarter
+  @include m(quarter) {
+    margin-left: $tp-default-dis * 0.25;
+  }
+}
+
+// .tp-mr
+@include b(mr) {
+  margin-right: $tp-default-dis;
+
+  // .tp-mr--half
+  @include m(half) {
+    margin-right: $tp-default-dis * 0.5;
+  }
+
+  // .tp-mr--quarter
+  @include m(quarter) {
+    margin-right: $tp-default-dis * 0.25;
+  }
+}
+
+// .tp-mt
+@include b(mt) {
+  margin-top: $tp-default-dis;
+
+  // .tp-mt--half
+  @include m(half) {
+    margin-top: $tp-default-dis * 0.5;
+  }
+}
+
+// .tp-mb
+@include b(mb) {
+  margin-bottom: $tp-default-dis;
+
+  // .tp-mb--half
+  @include m(half) {
+    margin-bottom: $tp-default-dis * 0.5;
+  }
+}
+
+//.tp-vcenter 垂直居中
+@include b(vcenter) {
+  @include tp-vcenter;
+}
+
+//.tp-vhcenter 水平垂直居中
+@include b(vhcenter) {
+  @include tp-vhcenter;
+}
+
+//自定义默认card样式 .tp-card
+@include b(card) {
+  position: relative;
+  border-radius: $tp-border-radius-base;
+  background-color: $tp-content-bg-color;
+
+  // box-shadow: $tp-box-shadow-base;
+
+  //.tp-card--primary-header
+  @include m(primary-header) {
+    background: rgba($color: $tp-color-primary, $alpha: 5%);
+  }
+
+  //.tp-card-header
+  @include b(card-header) {
+    display: flex;
+    position: relative;
+    padding: $tp-default-dis * 0.75 $tp-default-dis;
+
+    @include tp-vcenter;
+
+    //.tp-card-header__title
+    @include e(title) {
+      position: relative;
+      flex: 1;
+      color: $tp-color-primary;
+      text-indent: $tp-default-dis * 0.5;
+
+      @include tp-text-warp;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 4px;
+        height: 14px;
+        margin: auto 0;
+        border-radius: $tp-title-sign-width * 0.5;
+        background-color: $tp-color-primary;
+      }
+    }
+  }
+}
+
+//图标操作按钮
+//.tp-operate-button-box
+@include b(operate-button-box) {
+  color: $tp-color-primary;
+
+  //.tp-operate-button-item
+  @include b(operate-button-item) {
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: $tp-default-dis * 0.5;
+    }
+  }
+}
+
+//.tp-box-shadow-base
+@include b(box-shadow-base) {
+  box-shadow: $tp-box-shadow-base;
+}

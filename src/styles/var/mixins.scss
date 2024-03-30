@@ -1,0 +1,145 @@
+@forward 'config';
+@use 'config' as *;
+
+//.tp-block {}
+//@include b(block) {}
+@mixin b($block) {
+  $classname: $namespace + '-' + $block;
+  .#{$classname} {
+    @content;
+  }
+}
+
+// .tp-block.is-disabled  {color:red}
+// @include b(block) {
+//   @include when(disabled) {
+//     color: red;
+//   }
+// }
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
+
+// tp-block--primary
+// @include b(block) {
+//   @include m(primary) {
+//     color: green;
+//   }
+// }
+@mixin m($modifier) {
+  @at-root {
+    #{& + $modifier-separator + $modifier} {
+      @content;
+    }
+  }
+}
+
+//&__header  => .tp-block__header
+@mixin e($element) {
+  @at-root {
+    #{ & + $element-separator + $element} {
+      @content;
+    }
+  }
+}
+
+//超出隐藏设置
+@mixin tp-text-warp($line: 0) {
+  @if $line == 0 {
+    white-space: nowrap; //规定段落中的文本不进行换行
+  } @else {
+    // width: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word; //允许长单词换行到下一行
+  }
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+//居中设置
+@mixin tp-vcenter {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+}
+
+@mixin tp-vhcenter {
+  @include tp-vcenter;
+
+  justify-content: center;
+}
+
+@mixin tp-close-animation {
+  transform: rotate(0deg);
+  transition: transform 0.4s;
+
+  &:hover {
+    transform: rotate(180deg);
+  }
+}
+
+@mixin tp-clearfix {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+//设置滚动滑块 轨道的颜色，滑块的颜色，滚动条的宽度
+@mixin tp-scrollbar($track-color: transparent, $thumb-color: rgba(0, 0, 0, 0.3), $scrollbar-width: 5px) {
+  // 滚动条整体部分
+  ::-webkit-scrollbar {
+    width: $scrollbar-width;
+    height: $scrollbar-width;
+  }
+
+  // 滚动条两端的按钮
+  ::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  // 外层轨道
+  ::-webkit-scrollbar-track {
+    border: none;
+    border-radius: $scrollbar-width * 2;
+    background: $track-color;
+  }
+
+  // 滚动的滑块
+  ::-webkit-scrollbar-thumb {
+    border-radius: $scrollbar-width * 2;
+    background-color: rgba($color: $thumb-color, $alpha: 30%);
+
+    // 滚动的滑块,鼠标放上时
+    &:hover {
+      background-color: rgba($color: $thumb-color, $alpha: 60%);
+    }
+  }
+}
+
+//文字后面加 冒号
+@mixin tp-text-colon {
+  // position: relative;
+  // margin-right: 10px;
+  // padding-right: 5px;
+  &::after {
+    content: ' :';
+
+    // position: absolute;
+    // top: 0;
+    // bottom: 0;
+    // right: 0;
+    // display: flex;
+    // align-items: center;
+  }
+}

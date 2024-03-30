@@ -10,23 +10,6 @@ export const detailRoutes: Array<RouteRecordRaw> = [
     meta: {
       title: '详情'
     },
-    children: [
-      {
-        name: 'MenuDetail',
-        path: 'menu/:id',
-        component: () => import(/* webpackChunkName: "MenuDetail" */ '@/views/Menu/modules/Detail/index.vue'),
-        meta: {
-          title: '详情MenuDetail'
-        }
-      },
-      {
-        name: 'PlanDetail',
-        path: 'plan/:id',
-        component: () => import(/* webpackChunkName: "MenuDetail" */ '@/views/Plan/index.vue'),
-        meta: {
-          title: '详情PlanDetail'
-        }
-      }
-    ]
+    children: []
   }
 ]

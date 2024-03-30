@@ -1,0 +1,89 @@
+// class="tp-flex tp-flex--column"
+// .tp-flex
+@include b(flex) {
+  display: flex;
+  overflow: hidden;
+
+  // .tp-flex--row
+  @include m(row) {
+    flex-direction: row;
+  }
+
+  //.tp-flex--column
+  @include m(column) {
+    flex-direction: column;
+    -webkit-box-orient: vertical;
+  }
+}
+
+// .tp-flex-con
+@include b(flex-con) {
+  flex: 1;
+  overflow: hidden;
+
+  // .tp-flex-con--2 .tp-flex-con--3  ......
+  @for $i from 2 to 8 {
+    @include m($i) {
+      flex: $i;
+    }
+  }
+}
+
+//.tp-full
+@include b(full) {
+  height: 100%;
+}
+
+//.tp-width-full
+@include b(width-full) {
+  width: 100%;
+}
+
+//.tp-hidden
+@include b(hidden) {
+  overflow: hidden;
+
+  //.tp-hidden--x
+  @include m(x) {
+    overflow-x: hidden;
+  }
+
+  //.tp-hidden--y
+  @include m(y) {
+    overflow-y: hidden;
+  }
+}
+
+//.tp-auto
+@include b(auto) {
+  overflow: auto;
+
+  //.tp-auto--x
+  @include m(x) {
+    overflow-x: auto;
+  }
+
+  //.tp-auto--y
+  @include m(y) {
+    overflow-y: auto;
+  }
+}
+
+//.tp-revert
+@include b(revert) {
+  overflow: revert;
+}
+
+// .tp-ml--auto
+@include b(ml) {
+  @include m(auto) {
+    margin-left: auto;
+  }
+}
+
+// .tp-mr--auto
+@include b(mr) {
+  @include m(auto) {
+    margin-right: auto;
+  }
+}

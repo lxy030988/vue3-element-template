@@ -1,0 +1,37 @@
+//颜色
+$tp-color-white: #fff !default;
+$tp-color-black: #000 !default;
+$tp-color-transparent: #fff0 !default;
+
+//长度
+$tp-default-dis: 20px; //常用边距
+$tp-default-item-height: 40px; //常用高度
+
+//容器最小宽高
+$tp-min-width: 1000px;
+$tp-min-height: 500px;
+
+//字体大小
+$tp-font-size-extra-larger: 22px !default;
+$tp-font-size-extra-large: 20px !default;
+$tp-font-size-large: 18px !default;
+$tp-font-size-medium: 16px !default;
+$tp-font-size-base: 14px !default;
+$tp-font-size-small: 13px !default;
+$tp-font-size-extra-small: 12px !default;
+$tp-font-weight-primary: 500 !default;
+$tp-font-line-height-primary: 24px !default;
+
+//borderRadius
+$tp-border-radius-base: 4px !default;
+$tp-border-radius-small: 2px !default;
+$tp-border-radius-round: 20px !default;
+$tp-border-radius-circle: 100% !default;
+
+//header
+$tp-header-height: 60px;
+$tp-title-sign-width: 6px;
+$tp-breadcrumb-height: 40px;
+
+// 过冲
+$cb-overshoot: cubic-bezier(0.12, 0.4, 0.29, 1.46);

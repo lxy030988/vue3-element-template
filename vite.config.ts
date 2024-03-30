@@ -48,7 +48,7 @@ export default defineConfig(({ mode }: any) => {
         scss: {
           additionalData: `
             @use "@/styles/theme/${VITE_THEME}.scss" as *;
-            @use "@/styles/variables.scss" as *;
+            @use "@/styles/var/index.scss" as *;
           `
         }
       }

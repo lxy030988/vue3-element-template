@@ -44,11 +44,42 @@ $tp-box-shadow: (
   'light': $tp-box-shadow-light
 );
 
-@forward 'element-plus/theme-chalk/src/common/var.scss' with (
-  $colors: $tp-colors,
-  $text-color: $tp-text-color,
-  $border-color: $tp-border-color,
-  $box-shadow: $tp-box-shadow
-);
+// $tp-bg-colors: (
+//   '': $tp-bg-color,
+//   'page': $tp-bg-color,
+//   'overlay': $tp-bg-color
+// );
 
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+    $colors: $tp-colors,
+    $text-color: $tp-text-color,
+    $border-color: $tp-border-color,
+    $box-shadow: $tp-box-shadow,
+    // $bg-color: $tp-bg-colors
+  );
 @use 'element-plus/theme-chalk/src/index.scss' as *;
+
+// .el-button {
+//   --el-color-white: white;
+//   // --el-button-bg-color: $tp-content-bg-color;
+// }
+
+// .el-pager {
+//   --el-color-white: white;
+// }
+
+// .el-table {
+//   --el-table-text-color: $tp-text-color-primary;
+// }
+
+// .el-checkbox {
+//   --el-checkbox-text-color: $tp-text-color-primary;
+// }
+
+// .el-radio {
+//   --el-radio-text-color: $tp-text-color-primary;
+// }
+
+// .el-dialog {
+//   --el-dialog-bg-color: #fff;
+// }
