@@ -3,7 +3,7 @@
     <v-head />
 
     <div class="content-box tp-flex-con tp-flex tp-flex--column">
-      <bread-crumb />
+      <!-- <bread-crumb /> -->
       <div class="content tp-flex-con tp-auto--x">
         <router-view v-slot="{ Component }">
           <transition name="fade-slide" mode="out-in" appear>
@@ -40,7 +40,7 @@ export default defineComponent({
   background-color: $tp-bg-color;
 
   .content {
-    margin: 0 $tp-default-dis * 0.5 $tp-default-dis * 0.5;
+    margin: $tp-default-dis * 0.5;
     transform: translateZ(0);
   }
 }

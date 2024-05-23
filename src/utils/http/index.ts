@@ -1,7 +1,5 @@
 import axios from 'axios'
-import type { AxiosInstance, AxiosResponse } from 'axios'
-import { ResCodeEnum } from './enum'
-import { TRes } from './model'
+import type { AxiosInstance } from 'axios'
 import { getToken } from '../storage/user'
 import { ElMessage } from 'element-plus'
 import router from '@/router' //只能在setup里用useRouter
@@ -27,17 +25,19 @@ http.interceptors.request.use(
 )
 
 http.interceptors.response.use(
-  (res: AxiosResponse<TRes>) => {
+  res => {
     if (res.status === 200) {
-      if (res.data.code === ResCodeEnum.SUCCESS) {
-        return res.data.data
-      }
-      if (res.data.code === ResCodeEnum.AUTH_NULL || res.data.code === ResCodeEnum.AUTH_EXPIRE) {
-        debounceBackLogin()
-      } else {
-        ElMessage.error(res.data.msg)
-      }
-      return Promise.reject(res)
+      return res.data
+
+      // if (res.data.code === ResCodeEnum.SUCCESS) {
+      //   return res.data.data
+      // }
+      // if (res.data.code === ResCodeEnum.AUTH_NULL || res.data.code === ResCodeEnum.AUTH_EXPIRE) {
+      //   debounceBackLogin()
+      // } else {
+      //   ElMessage.error(res.data.msg)
+      // }
+      // return Promise.reject(res)
     }
     return Promise.reject(res)
   },
@@ -50,6 +50,6 @@ const backLogin = () => {
   ElMessage.error('请登录')
   router.push({ path: '/login' })
 }
-const debounceBackLogin = debounce(backLogin)
+const _debounceBackLogin = debounce(backLogin)
 
 export default http

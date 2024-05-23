@@ -2,9 +2,10 @@
   <div class="header">
     <div class="logo">
       <!-- <img src="@/assets/images/logo.png" /> -->
-      后台管理系统模板
+      首页
     </div>
-    <tp-menu />
+    <!-- <tp-menu /> -->
+    <div class="tp-flex-con"></div>
     <div class="header-right">
       <div class="header-user-con">
         <!-- 用户名下拉菜单 -->
@@ -15,8 +16,8 @@
           </span>
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item :command="DropdownEnum.USER_INFO">个人信息</el-dropdown-item>
-              <el-dropdown-item :command="DropdownEnum.UPDATE_PASSWORD">修改密码</el-dropdown-item>
+              <!-- <el-dropdown-item :command="DropdownEnum.USER_INFO">个人信息</el-dropdown-item>
+              <el-dropdown-item :command="DropdownEnum.UPDATE_PASSWORD">修改密码</el-dropdown-item> -->
               <el-dropdown-item :command="DropdownEnum.LOGOUT">退出登录</el-dropdown-item>
             </el-dropdown-menu>
           </template>

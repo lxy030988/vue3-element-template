@@ -1,7 +1,7 @@
 <template>
   <div class="tp-login-wrap">
     <div class="tp-login-contain">
-      <h1>vue3-element-template</h1>
+      <!-- <h1>vue3-element-template</h1> -->
       <div class="tp-login-info">
         <div class="tp-login-user">
           <div class="tp-user-box"></div>

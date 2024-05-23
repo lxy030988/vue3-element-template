@@ -30,15 +30,10 @@ export default defineConfig(({ mode }: any) => {
       host: '0.0.0.0',
       port: 3030,
       proxy: {
-        '/imp-gwy-api/': {
-          target: 'http://192.168.4.151:10000/',
+        '/api/': {
+          target: 'http://124.223.5.40:18080/',
           changeOrigin: true,
-          rewrite: path => path.replace(/^\/imp-gwy-api\//, '')
-        },
-        '/w-gwy-api': {
-          target: 'ws://192.168.4.151:10089',
-          changeOrigin: true,
-          rewrite: path => path.replace(/^\/ws-gwy-api/, '')
+          rewrite: path => path.replace(/^\/api\//, '')
         }
       }
     },
