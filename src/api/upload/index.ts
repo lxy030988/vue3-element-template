@@ -13,7 +13,7 @@ export function uploadFile(data: FormData, cb?: Function) {
     method: 'POST',
     data,
     onUploadProgress: progress => {
-      cb && cb(progress)
+      cb?.(progress)
     }
   })
 }

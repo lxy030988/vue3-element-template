@@ -1,6 +1,6 @@
 import http from '@/utils/http'
 import api from '../api'
-import { TPageRes, TResMsg } from '../model'
+import { TPageRes } from '../model'
 import { TMenuListItem, TMenuListParams } from './model'
 
 /**
@@ -22,7 +22,7 @@ export function getPageList(params: TMenuListParams) {
  * @returns
  */
 export function addMenu(data: TMenuListItem) {
-  return http.request<any, TResMsg>({
+  return http.request<any, any>({
     url: api.menu.add,
     method: 'POST',
     data
@@ -35,7 +35,7 @@ export function addMenu(data: TMenuListItem) {
  * @returns
  */
 export function editMenu(data: TMenuListItem) {
-  return http.request<any, TResMsg>({
+  return http.request<any, any>({
     url: api.menu.edit,
     method: 'PUT',
     data
@@ -57,7 +57,7 @@ export function saveMenu(data: TMenuListItem) {
  * @returns
  */
 export function delMenu(id: string) {
-  return http.request<any, TResMsg>({
+  return http.request<any, any>({
     url: api.menu.del + id,
     method: 'DELETE'
   })
@@ -82,7 +82,7 @@ export function detailMenu(id: string) {
  * @returns
  */
 export function modStateMenu(id: string, state: number) {
-  return http.request<any, TResMsg>({
+  return http.request<any, any>({
     url: `${api.menu.modState}/${id}/${state}`,
     method: 'PUT'
   })
@@ -94,7 +94,7 @@ export function modStateMenu(id: string, state: number) {
  * @returns
  */
 export function sortMenu(data: { id: string; menuSort: number }) {
-  return http.request<any, TResMsg>({
+  return http.request<any, any>({
     url: api.menu.sort,
     method: 'PUT',
     data

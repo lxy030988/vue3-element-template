@@ -37,7 +37,7 @@ type Getters = {
   [K in keyof ModuleGeters]: ReturnType<ModuleGeters[K]>
 }
 
-export { Getters }
+export type { Getters }
 
 //增强Commit type 类型
 type GetMutation<M> = M extends { mutations: infer T } ? T : unknown
@@ -53,7 +53,7 @@ type CommitPayloads = {
   [K in keyof Commits]: Parameters<Commits[K]>[1]
 }
 
-export { CommitTypes, CommitPayloads }
+export type { CommitTypes, CommitPayloads }
 
 //增强Dispatch type 类型
 type GetAction<M> = M extends { actions: infer T } ? T : unknown
@@ -68,4 +68,4 @@ type DispatchPayloads = {
   [K in keyof Dispatchs]: Parameters<Dispatchs[K]>[1]
 }
 
-export { DispatchTypes, DispatchPayloads }
+export type { DispatchTypes, DispatchPayloads }

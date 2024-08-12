@@ -19,7 +19,7 @@ export interface TCheckOptions {
  * @returns
  */
 export function check(options: TCheckOptions) {
-  options.value && (options.value = options.value.trim())
+  options.value = options.value?.trim()
   if (options.value) {
     const reg = typeof options.checkReg === 'string' ? new RegExp(options.checkReg) : options.checkReg //定义匹配
 
@@ -231,7 +231,7 @@ export const isObject = (target: unknown) =>
  * @param map
  * @returns
  */
-export function deepClone(target: Object, map = new WeakMap()) {
+export function deepClone(target: object, map = new WeakMap()) {
   if (map.get(target)) {
     return target
   }
@@ -249,10 +249,10 @@ export function deepClone(target: Object, map = new WeakMap()) {
   }
   if (isObject(target)) {
     map.set(target, true) // 为循环引用的对象做标记
-    const cloneTarget = Array.isArray(target) ? [] : {}
+    const cloneTarget: any = Array.isArray(target) ? [] : {}
     for (const prop in target) {
       if (Object.prototype.hasOwnProperty.call(target, prop)) {
-        cloneTarget[prop as keyof Object] = deepClone(target[prop as keyof Object], map)
+        cloneTarget[prop] = deepClone((target as any)[prop], map)
       }
     }
     return cloneTarget
@@ -551,22 +551,21 @@ export const deepEqual = (a: any, b: any): boolean => {
           //如果keys相等
           return keysA.every(function (key) {
             //用every和递归来比对a对象和b对象的每个元素值，并返回
-            return deepEqual(a[key], b[key])
+            return deepEqual((a as any)[key], (b as any)[key])
           })
         }
         //长度都不等直接返回false
         return false
       }
-      return false
     } catch (e) {
+      console.error('deepEqual', e)
       return false
     }
   } else if (!isObjectA && !isObjectB) {
     //如果都不是对象则按String来处理
     return String(a) === String(b)
-  } else {
-    return false
   }
+  return false
 }
 
 /**

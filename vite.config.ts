@@ -42,6 +42,9 @@ export default defineConfig(({ mode }: any) => {
         }
       }
     },
+    preview: {
+      port: 4030
+    },
     css: {
       preprocessorOptions: {
         scss: {

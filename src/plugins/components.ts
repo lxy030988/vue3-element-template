@@ -7,6 +7,6 @@ const components = [Pagination, Dialog]
 
 export function setupComponents(app: App<Element>) {
   components.forEach(item => {
-    app.component(item.name, item)
+    app.component(item.name as string, item)
   })
 }

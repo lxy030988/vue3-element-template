@@ -95,12 +95,11 @@
     // .tp-detail-item__content
     @include e(content) {
       flex: 1;
+      overflow: hidden;
 
       a {
         color: $tp-color-primary;
       }
-
-      overflow: hidden;
 
       // .tp-rich-text
       // @include b(rich-text) {

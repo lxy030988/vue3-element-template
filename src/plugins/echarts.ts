@@ -10,5 +10,5 @@ import type { App } from 'vue'
 import VueEcharts from '@/components/echarts'
 
 export function setupVueEcharts(app: App<Element>) {
-  app.component(VueEcharts.name, VueEcharts)
+  app.component(VueEcharts.name as string, VueEcharts)
 }
