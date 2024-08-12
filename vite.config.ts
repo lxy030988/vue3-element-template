@@ -18,7 +18,7 @@ export default defineConfig(({ mode }: any) => {
   const env = loadEnv(mode, CWD)
   const viteEnv = wrapperEnv(env)
   console.log('viteEnv=>', viteEnv)
-  const { VITE_DROP_CONSOLE, VITE_THEME } = viteEnv
+  const { VITE_THEME } = viteEnv
 
   return {
     root: path.resolve(__dirname),
@@ -71,18 +71,21 @@ export default defineConfig(({ mode }: any) => {
       }),
       visualizer()
     ], //, vm(), i18n
+    esbuild: {
+      // drop: ['console', 'debugger']
+      pure: ['console.log']
+    },
     build: {
       target: 'es2015',
-      // polyfillDynamicImport: true,
-      terserOptions: {
-        compress: {
-          keep_infinity: true,
-          drop_debugger: VITE_DROP_CONSOLE,
-          // drop_console: VITE_DROP_CONSOLE
-          pure_funcs: ['console.log']
-        }
-      },
-
+      // terserOptions: {
+      //   compress: {
+      //     keep_infinity: true,
+      //     drop_debugger: VITE_DROP_CONSOLE,
+      //     // drop_console: VITE_DROP_CONSOLE
+      //     pure_funcs: ['console.log']
+      //   }
+      // },
+      reportCompressedSize: false,
       chunkSizeWarningLimit: 1500,
       rollupOptions: {
         output: {

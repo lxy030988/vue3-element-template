@@ -18,7 +18,6 @@ module.exports = {
     'selector-not-notation': null,
     'import-notation': null,
     'function-no-unknown': null,
-    'selector-class-pattern': null,
     'selector-pseudo-class-no-unknown': [
       true,
       {
@@ -49,9 +48,7 @@ module.exports = {
     //     ]
     //   }
     // ],
-    'no-empty-source': null,
     'named-grid-areas-no-invalid': null,
-    'no-descending-specificity': null,
     'font-family-no-missing-generic-family-keyword': null,
     // 'rule-empty-line-before': [
     //   'always',
@@ -90,13 +87,6 @@ module.exports = {
     'media-query-no-invalid': null,
     'selector-anb-no-unmatchable': null,
     'scss/double-slash-comment-whitespace-inside': null,
-    'font-family-no-missing-generic-family-keyword': null,
-    'selector-pseudo-class-no-unknown': [
-      true,
-      {
-        ignorePseudoClasses: ['deep']
-      }
-    ],
     'declaration-block-no-duplicate-properties': null
   },
   ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts']

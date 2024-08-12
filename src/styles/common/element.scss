@@ -279,12 +279,12 @@
   padding: $tp-default-dis * 0.5 $tp-default-dis * 0.5 0;
 
   .el-form-item {
+    margin-right: 10px;
+    margin-bottom: 10px;
+
     &:last-child {
       margin-right: 0;
     }
-
-    margin-right: 10px;
-    margin-bottom: 10px;
   }
 
   .el-form-item__label {
