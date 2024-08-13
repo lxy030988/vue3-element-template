@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   extends: [
     'stylelint-config-standard', // 配置stylelint拓展插件
     'stylelint-config-property-sort-order-smacss',
