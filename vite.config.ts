@@ -4,9 +4,9 @@ import { visualizer } from 'rollup-plugin-visualizer'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
-import { createRollupPlugin } from './build/plugin'
 import { wrapperEnv } from './build/utils'
 import readIconFile from './plugins/vite-plugin-icon'
+import compression from 'vite-plugin-compression'
 
 const CWD: string = process.cwd()
 
@@ -71,7 +71,8 @@ export default defineConfig(({ mode }: any) => {
         symbolId: 'icon-[dir]-[name]'
       }),
       visualizer(),
-      readIconFile()
+      readIconFile(),
+      compression()
     ],
     esbuild: {
       // drop: ['console', 'debugger']
@@ -96,8 +97,7 @@ export default defineConfig(({ mode }: any) => {
             'element-plus': ['element-plus'],
             echarts: ['echarts', 'echarts-gl', 'echarts-wordcloud']
           }
-        },
-        plugins: createRollupPlugin()
+        }
       }
     }
   }
