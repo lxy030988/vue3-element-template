@@ -3,6 +3,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import DefaultLayout from '@/layouts/default/index.vue'
 import FullLayout from '@/layouts/full/index.vue'
 import { getToken } from '@/utils/storage/user'
+import { exampleRoutes } from '@/example'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -46,7 +47,8 @@ const routes: Array<RouteRecordRaw> = [
           title: '登录',
           ignore: true
         }
-      }
+      },
+      ...exampleRoutes
     ]
   }
 ]

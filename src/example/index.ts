@@ -1,9 +1,18 @@
 import { RouteRecordRaw } from 'vue-router'
 export const exampleRoutes: Array<RouteRecordRaw> = [
   {
+    path: 'example/icon',
+    name: 'ExampleIcon',
+    component: () => import('./Icon.vue'),
+    meta: {
+      title: 'ExampleIcon',
+      ignore: true
+    }
+  },
+  {
     path: 'example/echarts-gl-map',
     name: 'ExampleEchartsGlMap',
-    component: () => import(/* webpackChunkName: "EchartsGl" */ './EchartsGlMap.vue'),
+    component: () => import('./EchartsGlMap.vue'),
     meta: {
       title: 'ExampleEchartsGlMap',
       ignore: true
@@ -12,7 +21,7 @@ export const exampleRoutes: Array<RouteRecordRaw> = [
   {
     path: 'example/upload',
     name: 'ExampleUpload',
-    component: () => import(/* webpackChunkName: "Upload" */ './Upload.vue'),
+    component: () => import('./Upload.vue'),
     meta: {
       title: 'ExampleUpload',
       ignore: true

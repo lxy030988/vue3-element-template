@@ -1,5 +1,3 @@
-// @use './variables.scss' as *;
-
 .tp-default-container {
   min-width: 1000px;
 }
@@ -242,9 +240,4 @@
       margin-right: $tp-default-dis * 0.5;
     }
   }
-}
-
-//.tp-box-shadow-base
-@include b(box-shadow-base) {
-  box-shadow: $tp-box-shadow-base;
 }

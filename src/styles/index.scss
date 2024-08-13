@@ -22,55 +22,6 @@
   }
 }
 
-// .tp-category
-@include b(category) {
-  // .tp-category-item
-  @include b(category-item) {
-    align-items: center;
-    height: $tp-font-line-height-primary * 2;
-    color: $tp-text-color-regular;
-    line-height: $tp-font-line-height-primary * 2;
-    text-indent: $tp-default-dis * 0.5;
-    cursor: pointer;
-
-    &:hover {
-      background: rgba($color: $tp-color-primary, $alpha: 5%);
-      color: $tp-color-primary;
-    }
-
-    // .tp-category-item__title
-    @include e(title) {
-      margin-left: $tp-default-dis * 0.5;
-    }
-
-    // .tp-category-item__count
-    @include e(count) {
-      text-indent: 0;
-    }
-  }
-
-  // tp-category-active
-  @include b(category-active) {
-    position: relative;
-    background: rgba($color: $tp-color-primary, $alpha: 5%);
-    color: $tp-color-primary;
-
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: $tp-title-sign-width;
-      height: 100%;
-      margin: auto 0;
-      border-radius: $tp-title-sign-width * 0.5;
-      background-color: $tp-color-primary;
-    }
-  }
-}
-
 //详情
 // .tp-detail
 @include b(detail) {
@@ -116,28 +67,6 @@
   }
 }
 
-// 边框图标按钮
-// .tp-icon-button
-@include b(icon-button) {
-  display: flex;
-
-  @include b(icon-button-item) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: $tp-font-size-medium * 2;
-    height: $tp-font-size-medium * 2;
-    margin-right: $tp-font-size-extra-small;
-    border: 1px solid $tp-border-color-base;
-    border-radius: $tp-border-radius-base;
-    cursor: pointer;
-
-    &:hover {
-      background-color: $tp-back-top-bg-color;
-    }
-  }
-}
-
 //面包屑样式
 // .tp-breadcrumb
 @include b(breadcrumb) {
@@ -174,34 +103,6 @@
   }
 }
 
-// 各新增/编辑页面位置样式
-// .tp-position-wrap
-@include b(position-wrap) {
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-
-  // .tp-position-info
-  @include b(position-info) {
-    flex: 1;
-  }
-
-  .tp-icon {
-    flex: 0 0 $tp-default-dis;
-    width: $tp-default-dis;
-    margin-top: $tp-default-dis * 0.45;
-    cursor: pointer;
-  }
-}
-
-//全局border边框样式
-.tp-border {
-  margin-bottom: $tp-default-dis * 0.5;
-  border: 1px solid $tp-border-color-base;
-  border-radius: 4px;
-  box-shadow: none;
-}
-
 /* 禁止选中 */
 .tp-no-select {
   -webkit-user-select: none;
@@ -215,110 +116,4 @@
   /* IE 10+ */
   -o-user-select: none;
   user-select: none;
-}
-
-// 人员信息-拓展字段
-.tp-user-type-extend-content {
-  margin-left: $tp-default-dis * 2;
-  border-radius: $tp-border-radius-base;
-  background-color: $tp-bg-color;
-}
-
-// 项目设置, 组织人员添加弹窗样式
-.tp-project-setting-resources-tip {
-  // title
-  .el-message-box__title {
-    justify-content: flex-start;
-    font-size: $tp-font-size-base;
-  }
-
-  // content
-  .el-message-box__content {
-    padding-top: 0;
-    text-align: left;
-
-    .tp-tip-title {
-      padding-bottom: $tp-default-dis * 0.5;
-      color: $tp-text-color-secondary;
-    }
-
-    .tp-tip-item-label {
-      padding: 0 $tp-default-dis * 0.2;
-      color: $tp-color-primary;
-    }
-  }
-
-  // btn
-  .el-message-box__btns {
-    justify-content: flex-end;
-  }
-}
-
-// 一位一码 地图弹窗大小
-.tp-dialog-map-marker {
-  height: 800px;
-
-  .tp-map-marker {
-    height: 700px !important;
-  }
-}
-
-// cascader 去掉一个的选择框
-.tp-cascader-first-no-c {
-  .el-cascader-panel {
-    .el-cascader-menu {
-      &:first-child {
-        .el-checkbox {
-          display: none;
-        }
-      }
-    }
-  }
-
-  &.el-cascader-panel {
-    .el-cascader-menu {
-      &:first-child {
-        .el-checkbox {
-          display: none;
-        }
-      }
-    }
-  }
-}
-
-// ::v-global 样式迁移
-.tp-project-org-select {
-  min-width: 250px !important;
-  max-width: 250px;
-}
-
-.tp-project-area-select {
-  max-width: 250px;
-}
-
-.tp-project-org-select__option {
-  height: auto;
-}
-
-.el-menu--popup {
-  .el-menu-item.is-active::after {
-    content: none !important;
-  }
-
-  .tp-menu-name {
-    font-size: 13px;
-  }
-}
-
-.tp-form-work .el-form-item__label {
-  align-self: auto;
-}
-
-.tp-tooltip.el-popper.is-dark {
-  border-color: #333;
-  background: #333;
-}
-
-.el-select-dropdown__item {
-  max-width: 100%;
 }

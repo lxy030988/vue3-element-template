@@ -6,11 +6,12 @@
 import { defineComponent, onMounted, ref } from 'vue'
 import * as echarts from 'echarts'
 import 'echarts-gl'
-import { getNanJing } from '@/api/mock/map'
+// import { getNanJing } from '@/api/mock/map'
 
 async function getJsonData() {
-  const json = await getNanJing()
-  echarts.registerMap('testmap', json as any)
+  // const json = await getNanJing()
+  const json: any = []
+  echarts.registerMap('testmap', json)
 
   const option = {
     title: {

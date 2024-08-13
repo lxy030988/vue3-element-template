@@ -13,20 +13,7 @@ declare module '*.md' {
 }
 
 declare type Nullable<T> = T | null
-declare module 'leaflet'
-declare module 'mars2d'
-declare module 'mars3d'
 declare module 'virtual:*'
-
-// declare module '*.png'
-// declare module 'mars2d/dist/mars2d.js'
-
-// declare module '*.scss' {
-//   const classes: {
-//     [key: string]: string
-//   }
-//   export default classes
-// }
 
 type RequestIdleCallbackHandle = any
 type RequestIdleCallbackOptions = {

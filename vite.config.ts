@@ -6,6 +6,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { createRollupPlugin } from './build/plugin'
 import { wrapperEnv } from './build/utils'
+import readIconFile from './plugins/vite-plugin-icon'
 
 const CWD: string = process.cwd()
 
@@ -69,8 +70,9 @@ export default defineConfig(({ mode }: any) => {
         iconDirs: [path.resolve(CWD, 'src/assets/icons')],
         symbolId: 'icon-[dir]-[name]'
       }),
-      visualizer()
-    ], //, vm(), i18n
+      visualizer(),
+      readIconFile()
+    ],
     esbuild: {
       // drop: ['console', 'debugger']
       pure: ['console.log']
