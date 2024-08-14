@@ -24,3 +24,4 @@ pnpm-debug.log*
 *.sw?
 # nvm-desktop
 .nvmdrc
+components.d.ts

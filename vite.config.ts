@@ -7,7 +7,8 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { wrapperEnv } from './build/utils'
 import readIconFile from './plugins/vite-plugin-icon'
 import compression from 'vite-plugin-compression'
-
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 const CWD: string = process.cwd()
 
 const alias: Record<string, string> = {
@@ -66,6 +67,10 @@ export default defineConfig(({ mode }: any) => {
     plugins: [
       vue(),
       vueJsx(),
+      Components({
+        globs: ['src/components/*/index.vue'],
+        resolvers: [ElementPlusResolver()]
+      }),
       createSvgIconsPlugin({
         iconDirs: [path.resolve(CWD, 'src/assets/icons')],
         symbolId: 'icon-[dir]-[name]'
